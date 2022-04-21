@@ -3103,6 +3103,9 @@
       "ClinicaVistaalegre.Shared/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.1"
+        },
         "compile": {
           "bin/placeholder/ClinicaVistaalegre.Shared.dll": {}
         },
@@ -6157,6 +6160,9 @@
       "ClinicaVistaalegre.Shared/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.1"
+        },
         "compile": {
           "bin/placeholder/ClinicaVistaalegre.Shared.dll": {}
         },

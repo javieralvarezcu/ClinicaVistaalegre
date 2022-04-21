@@ -19,6 +19,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.Logging;
+using ClinicaVistaalegre.Server.Data;
 
 namespace ClinicaVistaalegre.Server.Areas.Identity.Pages.Account
 {
@@ -30,6 +31,7 @@ namespace ClinicaVistaalegre.Server.Areas.Identity.Pages.Account
         private readonly IUserEmailStore<ApplicationUser> _emailStore;
         private readonly ILogger<RegisterModel> _logger;
         private readonly IEmailSender _emailSender;
+        private ApplicationDbContext _dbContext;
 
         public RegisterModel(
             UserManager<ApplicationUser> userManager,
@@ -98,6 +100,22 @@ namespace ClinicaVistaalegre.Server.Areas.Identity.Pages.Account
             [Display(Name = "Confirm password")]
             [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
             public string ConfirmPassword { get; set; }
+
+            [Required]
+            [DataType(DataType.Text)]
+            [Display(Name = "Apellidos")]
+            public string Apellidos { get; set; }
+
+            [DataType(DataType.Date)]
+            [Display(Name = "FechaNacimiento")]
+            public DateTime FechaNacimiento { get; set; }
+
+            [Display(Name = "Sexo")]
+            public char Sexo { get; set; }
+
+            [DataType(DataType.Text)]
+            [Display(Name = "Especialidad")]
+            public string Especialidad { get; set; }
         }
 
 
@@ -113,7 +131,23 @@ namespace ClinicaVistaalegre.Server.Areas.Identity.Pages.Account
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
             if (ModelState.IsValid)
             {
-                var user = CreateUser();
+                //var user = CreateUser();
+                string _especialidad="";
+                if (Input.Especialidad == null|| Input.Especialidad == "")
+                {
+                    _especialidad = "Paciente";
+                }
+                else
+                {
+                    _especialidad = Input.Especialidad;
+                }
+                var user = new ApplicationUser
+                {
+                    Apellidos = Input.Apellidos,
+                    Especialidad = _especialidad,
+                    Sexo = Input.Sexo,
+                    FechaDeNacimiento = Input.FechaNacimiento
+                };
 
                 await _userStore.SetUserNameAsync(user, Input.Email, CancellationToken.None);
                 await _emailStore.SetEmailAsync(user, Input.Email, CancellationToken.None);
@@ -125,11 +159,19 @@ namespace ClinicaVistaalegre.Server.Areas.Identity.Pages.Account
 
                     var userId = await _userManager.GetUserIdAsync(user);
                     var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
+                    user.Apellidos = Input.Apellidos;
+                    user.Sexo = Input.Sexo;
+                    user.FechaDeNacimiento = new DateTime();
                     code = WebEncoders.Base64UrlEncode(Encoding.UTF8.GetBytes(code));
                     var callbackUrl = Url.Page(
                         "/Account/ConfirmEmail",
                         pageHandler: null,
-                        values: new { area = "Identity", userId = userId, code = code, returnUrl = returnUrl },
+                        values: new { area = "Identity", userId = userId, code = code, returnUrl = returnUrl
+                        //,
+                        //    Apellidos = Input.Apellidos,
+                        //    Sexo = Input.Sexo,
+                        //    FechaDeNacimiento = new DateTime()
+                        },
                         protocol: Request.Scheme);
 
                     await _emailSender.SendEmailAsync(Input.Email, "Confirm your email",

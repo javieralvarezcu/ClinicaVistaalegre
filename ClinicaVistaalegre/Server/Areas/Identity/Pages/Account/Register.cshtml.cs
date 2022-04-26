@@ -20,6 +20,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.Logging;
 using ClinicaVistaalegre.Server.Data;
+using ClinicaVistaalegre.Shared.Models;
 
 namespace ClinicaVistaalegre.Server.Areas.Identity.Pages.Account
 {
@@ -31,6 +32,7 @@ namespace ClinicaVistaalegre.Server.Areas.Identity.Pages.Account
         private readonly IUserEmailStore<ApplicationUser> _emailStore;
         private readonly ILogger<RegisterModel> _logger;
         private readonly IEmailSender _emailSender;
+        private readonly RoleManager<IdentityRole> _roleManager;
         private ApplicationDbContext _dbContext;
 
         public RegisterModel(
@@ -38,7 +40,9 @@ namespace ClinicaVistaalegre.Server.Areas.Identity.Pages.Account
             IUserStore<ApplicationUser> userStore,
             SignInManager<ApplicationUser> signInManager,
             ILogger<RegisterModel> logger,
-            IEmailSender emailSender)
+            IEmailSender emailSender,
+            ApplicationDbContext dbContext,
+            RoleManager<IdentityRole> roleManager)
         {
             _userManager = userManager;
             _userStore = userStore;
@@ -46,6 +50,8 @@ namespace ClinicaVistaalegre.Server.Areas.Identity.Pages.Account
             _signInManager = signInManager;
             _logger = logger;
             _emailSender = emailSender;
+            _dbContext = dbContext;
+            _roleManager = roleManager;
         }
 
         /// <summary>
@@ -131,7 +137,6 @@ namespace ClinicaVistaalegre.Server.Areas.Identity.Pages.Account
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
             if (ModelState.IsValid)
             {
-                //var user = CreateUser();
                 string _especialidad="";
                 if (Input.Especialidad == null|| Input.Especialidad == "")
                 {
@@ -155,25 +160,60 @@ namespace ClinicaVistaalegre.Server.Areas.Identity.Pages.Account
 
                 if (result.Succeeded)
                 {
+                    if (!await _roleManager.RoleExistsAsync("Medico"))
+                    {
+                        await _roleManager.CreateAsync(new IdentityRole("Medico"));
+                    }
+
+                    if (!await _roleManager.RoleExistsAsync("Paciente"))
+                    {
+                        await _roleManager.CreateAsync(new IdentityRole("Paciente"));
+                    }
+
                     _logger.LogInformation("User created a new account with password.");
 
                     var userId = await _userManager.GetUserIdAsync(user);
                     var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
                     user.Apellidos = Input.Apellidos;
                     user.Sexo = Input.Sexo;
-                    user.FechaDeNacimiento = new DateTime();
+                    user.FechaDeNacimiento = Input.FechaNacimiento;
                     code = WebEncoders.Base64UrlEncode(Encoding.UTF8.GetBytes(code));
                     var callbackUrl = Url.Page(
                         "/Account/ConfirmEmail",
                         pageHandler: null,
                         values: new { area = "Identity", userId = userId, code = code, returnUrl = returnUrl
-                        //,
-                        //    Apellidos = Input.Apellidos,
-                        //    Sexo = Input.Sexo,
-                        //    FechaDeNacimiento = new DateTime()
                         },
                         protocol: Request.Scheme);
 
+                    if (user.Especialidad.Equals("Paciente"))
+                    {
+                        var dbPaciente = new Paciente()
+                        {
+                            Id = user.Id,
+                            Apellidos = user.Apellidos,
+                            FechaDeNacimiento = user.FechaDeNacimiento.Value,
+                            Sexo = (char)user.Sexo
+                        };
+
+                        await _userManager.AddToRoleAsync(user, "Paciente");
+
+                        _dbContext.Add(dbPaciente);
+                    }
+                    else
+                    {
+                        var dbMedico = new Medico()
+                        {
+                            Id = user.Id,
+                            Apellidos = user.Apellidos,
+                            Especialidad = user.Especialidad
+                        };
+
+                        await _userManager.AddToRoleAsync(user, "Medico");
+
+                        _dbContext.Add(dbMedico);
+                    }
+                    _dbContext.SaveChanges();
+                    
                     await _emailSender.SendEmailAsync(Input.Email, "Confirm your email",
                         $"Please confirm your account by <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>clicking here</a>.");
 

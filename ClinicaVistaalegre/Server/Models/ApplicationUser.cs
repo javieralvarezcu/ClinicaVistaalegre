@@ -8,7 +8,5 @@ namespace ClinicaVistaalegre.Server.Models
         public DateTime? FechaDeNacimiento { get; set; }
         public char? Sexo { get; set; }
         public string? Especialidad { get; set; }
-
-
     }
 }

@@ -6,6 +6,7 @@ using System;
 using System.ComponentModel.DataAnnotations;
 using System.Text.Encodings.Web;
 using System.Threading.Tasks;
+using ClinicaVistaalegre.Server.Data;
 using ClinicaVistaalegre.Server.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -17,13 +18,16 @@ namespace ClinicaVistaalegre.Server.Areas.Identity.Pages.Account.Manage
     {
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly SignInManager<ApplicationUser> _signInManager;
+        private ApplicationDbContext _dbContext;
 
         public IndexModel(
             UserManager<ApplicationUser> userManager,
-            SignInManager<ApplicationUser> signInManager)
+            SignInManager<ApplicationUser> signInManager,
+            ApplicationDbContext dbContext)
         {
             _userManager = userManager;
             _signInManager = signInManager;
+            _dbContext = dbContext;
         }
 
         /// <summary>
@@ -57,8 +61,24 @@ namespace ClinicaVistaalegre.Server.Areas.Identity.Pages.Account.Manage
             ///     directly from your code. This API may change or be removed in future releases.
             /// </summary>
             [Phone]
-            [Display(Name = "Phone number")]
+            [Display(Name = "Número de teléfono")]
             public string PhoneNumber { get; set; }
+
+            [Required]
+            [DataType(DataType.Text)]
+            [Display(Name = "Apellidos")]
+            public string Apellidos { get; set; }
+
+            [DataType(DataType.Date)]
+            [Display(Name = "FechaNacimiento")]
+            public DateTime FechaNacimiento { get; set; }
+
+            [Display(Name = "Sexo")]
+            public char Sexo { get; set; }
+
+            [DataType(DataType.Text)]
+            [Display(Name = "Especialidad")]
+            public string Especialidad { get; set; }
         }
 
         private async Task LoadAsync(ApplicationUser user)
@@ -70,7 +90,11 @@ namespace ClinicaVistaalegre.Server.Areas.Identity.Pages.Account.Manage
 
             Input = new InputModel
             {
-                PhoneNumber = phoneNumber
+                PhoneNumber = phoneNumber,
+                Apellidos = user.Apellidos,
+                Especialidad = user.Especialidad,
+                FechaNacimiento = (DateTime)user.FechaDeNacimiento,
+                Sexo = (char)user.Sexo
             };
         }
 
@@ -79,7 +103,7 @@ namespace ClinicaVistaalegre.Server.Areas.Identity.Pages.Account.Manage
             var user = await _userManager.GetUserAsync(User);
             if (user == null)
             {
-                return NotFound($"Unable to load user with ID '{_userManager.GetUserId(User)}'.");
+                return NotFound($"Error al cargar usuario con id: '{_userManager.GetUserId(User)}'.");
             }
 
             await LoadAsync(user);
@@ -91,7 +115,7 @@ namespace ClinicaVistaalegre.Server.Areas.Identity.Pages.Account.Manage
             var user = await _userManager.GetUserAsync(User);
             if (user == null)
             {
-                return NotFound($"Unable to load user with ID '{_userManager.GetUserId(User)}'.");
+                return NotFound($"Error al cargar usuario con id: '{_userManager.GetUserId(User)}'.");
             }
 
             if (!ModelState.IsValid)
@@ -106,13 +130,73 @@ namespace ClinicaVistaalegre.Server.Areas.Identity.Pages.Account.Manage
                 var setPhoneResult = await _userManager.SetPhoneNumberAsync(user, Input.PhoneNumber);
                 if (!setPhoneResult.Succeeded)
                 {
-                    StatusMessage = "Unexpected error when trying to set phone number.";
+                    StatusMessage = "Error inesperado.";
                     return RedirectToPage();
                 }
             }
 
+            if (Input.Apellidos != user.Apellidos)
+            {
+                try
+                {
+                    user.Apellidos = Input.Apellidos;
+                    _dbContext.Update(user);
+                    _dbContext.SaveChanges();
+                }
+                catch (Exception e)
+                {
+                    StatusMessage = "Error inesperado.";
+                    RedirectToPage();
+                }
+            }
+
+            if(Input.Especialidad != user.Especialidad && user.Especialidad != "Paciente")
+            {
+                try
+                {
+                    user.Especialidad = Input.Especialidad;
+                    _dbContext.Update(user);
+                    _dbContext.SaveChanges();
+                }
+                catch (Exception e)
+                {
+                    StatusMessage = "Error inesperado.";
+                    RedirectToPage();
+                }
+            }
+
+            if (Input.FechaNacimiento != user.FechaDeNacimiento && user.Especialidad == "Paciente")
+            {
+                try
+                {
+                    user.FechaDeNacimiento = (DateTime)Input.FechaNacimiento;
+                    _dbContext.Update(user);
+                    _dbContext.SaveChanges();
+                }
+                catch (Exception e)
+                {
+                    StatusMessage = "Error inesperado.";
+                    RedirectToPage();
+                }
+            }
+
+            if (Input.Sexo != user.Sexo && user.Especialidad != "Medico")
+            {
+                try
+                {
+                    user.Sexo = Input.Sexo;
+                    _dbContext.Update(user);
+                    _dbContext.SaveChanges();
+                }
+                catch (Exception e)
+                {
+                    StatusMessage = "Error inesperado.";
+                    RedirectToPage();
+                }
+            }
+
             await _signInManager.RefreshSignInAsync(user);
-            StatusMessage = "Your profile has been updated";
+            StatusMessage = "Su perfil ha sido actualizado";
             return RedirectToPage();
         }
     }

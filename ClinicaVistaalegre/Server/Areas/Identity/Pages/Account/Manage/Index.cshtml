@@ -1,7 +1,9 @@
 ﻿@page
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<ApplicationUser> SignInManager
 @model IndexModel
 @{
-    ViewData["Title"] = "Profile";
+    ViewData["Title"] = "Perfil";
     ViewData["ActivePage"] = ManageNavPages.Index;
 }
 
@@ -16,11 +18,39 @@
                 <label asp-for="Username" class="form-label"></label>
             </div>
             <div class="form-floating">
+                <input asp-for="Input.Apellidos" class="form-control" />
+                <label asp-for="Input.Apellidos" class="form-label"></label>
+                <span asp-validation-for="Input.Apellidos" class="text-danger"></span>
+            </div>
+            @if (SignInManager.Context.User.IsInRole("Medico"))
+            {
+                <div class="form-floating">
+                    <input asp-for="Input.Especialidad" class="form-control" />
+                    <label asp-for="Input.Especialidad" class="form-label"></label>
+                    <span asp-validation-for="Input.Especialidad" class="text-danger"></span>
+                </div>
+            }
+            else
+            {
+                <AuthorizeView Roles="Paciente">
+                <div class="form-floating">
+                    <input asp-for="Input.FechaNacimiento" class="form-control" />
+                    <label asp-for="Input.FechaNacimiento" class="form-label"></label>
+                    <span asp-validation-for="Input.FechaNacimiento" class="text-danger"></span>
+                </div>
+                <div class="form-floating">
+                    <input asp-for="Input.Sexo" class="form-control" />
+                    <label asp-for="Input.Sexo" class="form-label"></label>
+                    <span asp-validation-for="Input.Sexo" class="text-danger"></span>
+                </div>
+            </AuthorizeView>
+            }
+            <div class="form-floating">
                 <input asp-for="Input.PhoneNumber" class="form-control" />
                 <label asp-for="Input.PhoneNumber" class="form-label"></label>
                 <span asp-validation-for="Input.PhoneNumber" class="text-danger"></span>
             </div>
-            <button id="update-profile-button" type="submit" class="w-100 btn btn-lg btn-primary">Save</button>
+            <button id="update-profile-button" type="submit" class="w-100 btn btn-lg btn-primary">Guardar</button>
         </form>
     </div>
 </div>

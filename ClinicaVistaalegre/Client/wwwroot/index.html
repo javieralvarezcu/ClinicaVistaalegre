@@ -15,8 +15,8 @@
     <div id="app">Loading...</div>
 
     <div id="blazor-error-ui">
-        An unhandled error has occurred.
-        <a href="" class="reload">Reload</a>
+        Un error inesperado ha ocurrido.
+        <a href="" class="reload">Recargar</a>
         <a class="dismiss">🗙</a>
     </div>
     <script src="_content/Microsoft.AspNetCore.Components.WebAssembly.Authentication/AuthenticationService.js"></script>
@@ -24,3 +24,20 @@
 </body>
 
 </html>
+
+<script>
+    window.NewSelectValue = (id, horas) => {
+        let select = document.getElementById(id);
+        var i, L = select.options.length - 1;
+        for (i = L; i >= 0; i--) {
+            select.remove(i);
+        }
+        console.log(horas)
+        horas.forEach((hora) => {
+            let option = document.createElement('option')
+            option.text = hora
+            option.value = hora
+            select.append(option)
+        })
+    }
+</script>

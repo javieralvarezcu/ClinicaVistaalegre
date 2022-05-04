@@ -1,0 +1,104 @@
+﻿@page "/fetchcitas"
+@using ClinicaVistaalegre.Shared.Models
+@using Microsoft.AspNetCore.Authorization
+@using Microsoft.AspNetCore.Components.WebAssembly.Authentication
+@using ClinicaVistaalegre.Shared
+@using System.Security.Claims
+@attribute [Authorize]
+@inject HttpClient Http
+@inject IJSRuntime JS
+@inject AuthenticationStateProvider AuthenticationStateProvider
+
+<PageTitle>Citas</PageTitle>
+
+<h1>Listar citas</h1>
+
+<div>
+    <a class="btn btn-success" href="creacitas">Nueva cita</a>
+</div>
+
+@if (citas == null)
+{
+    <p><em>Cargando...</em></p>
+}
+else if (citas.Count == 0)
+{
+    <text>No hay citas</text>
+}else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Operaciones</th>
+                <th>Motivo</th>
+                <th>Médico</th>
+                <th>Fecha y hora</th>
+                <th>Estado</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var cita in citas)
+            {
+                <tr>
+                    <td>
+                        <a class="btn btn-success" href="updatecitas/@cita.Id">Editar</a>
+                        <a class="btn btn-danger" @onclick="(() => BorrarCita(cita.Id))">Borrar</a>
+                    </td>
+                    <td>@cita.Motivo</td>
+                    <td>@cita.Medico.Apellidos</td>
+                    <td>@cita.FechaHora</td>
+                    <td>@cita.Estado</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private string _authMessage;       
+    private string _userId;
+    private IEnumerable<Claim> _claims = Enumerable.Empty<Claim>();
+    private List<Cita>? citas;
+
+    protected override async Task OnInitializedAsync()
+    {
+        GetClaimsPrincipalData();
+        try
+        {
+            citas = await Http.GetFromJsonAsync<List<Cita>>($"api/Citas/ByPaciente/{_userId}");
+
+            foreach(var cita in citas)
+            {
+                if (cita.Medico == null)
+                {
+                    cita.Medico= await Http.GetFromJsonAsync<Medico>($"api/Medicos/{cita.MedicoId}");
+                }
+            }
+        }
+        catch (AccessTokenNotAvailableException exception)
+        {
+            exception.Redirect();
+        }
+    }
+
+    async Task BorrarCita(int CitaId)
+    {
+        var citaBorrada = citas.First(x => x.Id == CitaId);
+        string confirmacion = $"¿Deseas borrar la cita con motivo:\n{citaBorrada.Motivo}?";
+        if (await JS.InvokeAsync<bool>("confirm", confirmacion))
+        {
+            await Http.DeleteAsync($"api/Citas/{CitaId}");
+            citas = await Http.GetFromJsonAsync<List<Cita>>("api/Citas");
+        }
+    }
+
+    private async Task GetClaimsPrincipalData()
+    {
+        var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+        var user = authState.User;
+
+            _authMessage = $"{user.Identity.Name} is authenticated.";
+            _claims = user.Claims;
+            _userId = user.FindFirst(c => c.Type == "sub")?.Value;
+    }
+}

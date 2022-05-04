@@ -1,0 +1,26 @@
+﻿@page "/creacitas"
+@using System.Net.Http.Json
+@using ClinicaVistaalegre.Shared.Models
+@inject HttpClient Http
+@inject NavigationManager NavMan
+
+
+<PageTitle>Citas</PageTitle>
+
+<h1>Crear cita</h1>
+
+<FormularioCita TextoBoton="Crear cita" CitaChanged="@CrearCita" Cita="@cita"/>
+
+@code {
+    Cita cita = new Cita();
+
+    async Task CrearCita(){
+        HttpResponseMessage mensaje = await Http.PostAsJsonAsync("api/Citas", cita);
+
+        if (mensaje.IsSuccessStatusCode)
+        {
+            NavMan.NavigateTo("fetchcitas");
+        }
+
+    }
+}

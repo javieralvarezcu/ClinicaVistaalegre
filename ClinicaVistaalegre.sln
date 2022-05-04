@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32408.312
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClinicaVistaalegre.Server", "ClinicaVistaalegre\Server\ClinicaVistaalegre.Server.csproj", "{E7A48B0A-A753-4122-8819-47C033CE674A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClinicaVistaalegre.Server", "ClinicaVistaalegre\Server\ClinicaVistaalegre.Server.csproj", "{E7A48B0A-A753-4122-8819-47C033CE674A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClinicaVistaalegre.Client", "ClinicaVistaalegre\Client\ClinicaVistaalegre.Client.csproj", "{5C14CAF9-C905-4950-8D0A-A11E99B71543}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClinicaVistaalegre.Client", "ClinicaVistaalegre\Client\ClinicaVistaalegre.Client.csproj", "{5C14CAF9-C905-4950-8D0A-A11E99B71543}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClinicaVistaalegre.Shared", "ClinicaVistaalegre\Shared\ClinicaVistaalegre.Shared.csproj", "{2B31E72B-535D-4E5D-9869-E261FB3ECE56}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClinicaVistaalegre.Shared", "ClinicaVistaalegre\Shared\ClinicaVistaalegre.Shared.csproj", "{2B31E72B-535D-4E5D-9869-E261FB3ECE56}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

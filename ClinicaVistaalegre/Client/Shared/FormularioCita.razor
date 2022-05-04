@@ -1,0 +1,157 @@
+﻿@using ClinicaVistaalegre.Shared.Models
+@using System.Security.Claims
+@inject IJSRuntime JsRuntime
+@inject HttpClient Http
+@page "/claims/formularioCita"
+@inject AuthenticationStateProvider AuthenticationStateProvider
+
+<EditForm Model="@Cita" OnValidSubmit="@OnValidSubmit">
+    <div class="form-group row">
+        <label for="Motivo" class="col-sm-2 col-form-label">
+            Motivo
+        </label>
+        <div class="col-sm-10">
+            <InputText id="Motivo" class="form-control" placeholder="Motivo"
+                       @bind-Value="Cita.Motivo" />
+        </div>
+        <ValidationMessage For="() => this.Cita.Motivo"></ValidationMessage>
+    </div>
+    <div class="form-group row">
+        <label for="FechaHora" class="col-sm-2 col-form-label">
+            Fecha y Hora
+        </label>
+        <div class="col-sm-10">
+            <InputDate onblur="@OnBlurHoras" id="Fecha" class="form-control" placeholder="Fecha"
+                       @bind-Value="@_fechaCita" />
+        </div>
+        <ValidationMessage For="() => this._fechaCita"></ValidationMessage>
+    </div>
+    <div class="form-group row">
+        <label for="FechaHora" class="col-sm-2 col-form-label">
+            Hora
+        </label>
+        <div class="col-sm-10">
+            <select id="Hora" class="form-control" placeholder="Hora" <!--value="@_horaCita"--> >
+                @*<option value="">---</option>*@
+            </select>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="MedicoId" class="col-sm-2 col-form-label">
+            Medico
+        </label>
+        <div class="col-sm-10">
+            <InputSelect onblur="@OnBlurHoras" id="Medico" class="form-control" placeholder="Medico" @bind-Value="@Cita.MedicoId">
+                <option value="---">---</option>
+                @if(medicos!=null){
+                    foreach (Medico m in medicos)
+                {
+                    <option value="@m.Id">@m.Apellidos</option>
+                }
+                }
+            </InputSelect>
+        </div>
+        <ValidationMessage For="() => this.Cita.MedicoId"></ValidationMessage>
+    </div>
+
+    <button type="submit" class="btn btn-success">@TextoBoton</button>
+    @*<DataAnnotationsValidator/>*@
+
+</EditForm>
+
+@code {
+
+    private string _authMessage;       
+    private string _userId;
+    private IEnumerable<Claim> _claims = Enumerable.Empty<Claim>();
+
+    [Parameter] public String TextoBoton { get; set; } = "Guardar";
+    [Parameter] public Cita Cita { get; set; }
+    [Parameter] public EventCallback<Cita> CitaChanged { get; set; }
+    private Cita cita;
+    private List<Medico>? medicos;
+    private List<DateTime>? horas;
+
+    private DateTime fechaCita;
+    public DateTime _fechaCita
+    {
+        get { return fechaCita; }
+        set
+        {
+            fechaCita = value;
+        }
+    }
+
+    private DateTime horaCita;
+    public DateTime _horaCita
+    {
+        get { return horaCita; }
+        set { horaCita = value; }
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        Cita.FechaHora = DateTime.Now;
+        medicos = await Http.GetFromJsonAsync<List<Medico>>("api/Medicos");
+        base.OnInitializedAsync();
+        GetClaimsPrincipalData();
+    }
+
+    public async Task<List<DateTime>> getHoras(string medicoId, DateTime date)
+    {
+        string formattedDate = date.ToString("dd-MM-yyyy");
+        List<DateTime> list = await Http.GetFromJsonAsync<List<DateTime>>($"api/Citas/HorasByMedico/{medicoId}/{_userId}/{formattedDate}");
+        string[] stringDates = new string[list.Count];
+        for (int i = 0; i < list.Count; i++)
+        {
+            stringDates[i] = $"{list[i].Hour}:{list[i].Minute}";
+        }
+        await JsRuntime.InvokeAsync<object>(  //<--- Interop
+            "NewSelectValue",
+            "Hora",
+            stringDates);
+
+        return list;
+    }
+
+    protected override void OnParametersSet()
+    {
+        if (cita != Cita )
+        {
+            cita = Cita;
+        }
+    }
+
+    private async void OnBlurHoras()
+    {
+        if (_fechaCita > DateTime.Now)
+        {
+            if(Cita.MedicoId!="---" || Cita.MedicoId != "")
+            {
+                horas = await getHoras(Cita.MedicoId, _fechaCita);
+            }
+        }
+        else
+        {
+            string error = "Inserta una fecha posterior al día de hoy";
+            await JsRuntime.InvokeAsync<bool>("confirm", error);
+        }
+    }
+
+    private async void OnValidSubmit()
+    {
+        cita.PacienteId = _userId;
+        cita.FechaHora = fechaCita.AddHours(horaCita.Hour).AddMinutes(horaCita.Minute);
+        CitaChanged.InvokeAsync(cita);
+    } 
+
+    private async Task GetClaimsPrincipalData()
+    {
+        var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+        var user = authState.User;
+
+            _authMessage = $"{user.Identity.Name} is authenticated.";
+            _claims = user.Claims;
+            _userId = user.FindFirst(c => c.Type == "sub")?.Value;
+    }
+}

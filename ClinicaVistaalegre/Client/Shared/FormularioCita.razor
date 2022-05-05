@@ -17,8 +17,8 @@
         <ValidationMessage For="() => this.Cita.Motivo"></ValidationMessage>
     </div>
     <div class="form-group row">
-        <label for="FechaHora" class="col-sm-2 col-form-label">
-            Fecha y Hora
+        <label for="Fecha" class="col-sm-2 col-form-label">
+            Fecha
         </label>
         <div class="col-sm-10">
             <InputDate onblur="@OnBlurFecha" id="Fecha" class="form-control" placeholder="Fecha"
@@ -27,7 +27,7 @@
         <ValidationMessage For="() => this._fechaCita"></ValidationMessage>
     </div>
     <div class="form-group row">
-        <label for="FechaHora" class="col-sm-2 col-form-label">
+        <label for="Hora" class="col-sm-2 col-form-label">
             Hora
         </label>
         <div class="col-sm-10">
@@ -62,7 +62,7 @@
 @code {
 
     private string _authMessage;       
-    private string _userId;
+    private string _userId="";
     private IEnumerable<Claim> _claims = Enumerable.Empty<Claim>();
 
     [Parameter] public String TextoBoton { get; set; } = "Guardar";
@@ -104,37 +104,52 @@
         Cita.MedicoId = "";
         medicos = await Http.GetFromJsonAsync<List<Medico>>("api/Medicos");
         base.OnInitializedAsync();
-        GetClaimsPrincipalData();
     }
 
     public async Task<List<DateTime>> getHoras(string medicoId, DateTime date)
     {
         string formattedDate = date.ToString("dd-MM-yyyy");
-        List<DateTime> list = await Http.GetFromJsonAsync<List<DateTime>>($"api/Citas/HorasByMedico/{medicoId}/{_userId}/{formattedDate}");
+        List<DateTime>? list = await Http.GetFromJsonAsync<List<DateTime>>($"api/Citas/HorasByMedico/{medicoId}/{_userId}/{formattedDate}");
         string[] stringDates = new string[list.Count];
         for (int i = 0; i < list.Count; i++)
         {
             stringDates[i] = $"{list[i].Hour}:{list[i].Minute}";
         }
-        await JsRuntime.InvokeAsync<object>(  //<--- Interop
+
+            await JsRuntime.InvokeAsync<object>(
             "NewSelectValue",
             "Hora",
             stringDates);
 
+            await JsRuntime.InvokeAsync<object>(
+            "DefaultSelectedValue",
+            "Hora",
+            $"{cita.FechaHora.Hour}:{cita.FechaHora.Minute}");
+
         return list;
     }
 
-    protected override void OnParametersSet()
+    protected async override void OnParametersSet()
     {
+        await GetClaimsPrincipalData();
         if (cita != Cita )
         {
             cita = Cita;
+        }
+
+        if(cita.FechaHora != new DateTime() && !cita.MedicoId.Equals(""))
+        {
+            _fechaCita = cita.FechaHora;
+
+            await getHoras(Cita.MedicoId, _fechaCita);
+
+            _horaCita = cita.FechaHora;
         }
     }
 
     private async void OnBlurFecha()
     {
-        Console.WriteLine("medico"+Cita.MedicoId);
+        Console.WriteLine($"medico {Cita.MedicoId}");
         if (_fechaCita > DateTime.Now)
         {
             if(!Cita.MedicoId.Equals(""))
@@ -152,7 +167,13 @@
     private async void OnValidSubmit()
     {
         cita.PacienteId = _userId;
-        cita.FechaHora = fechaCita.AddHours(_horaCita.Hour).AddMinutes(_horaCita.Minute);
+        cita.FechaHora = new DateTime(
+            fechaCita.Year,
+            fechaCita.Month,
+            fechaCita.Day,
+            _horaCita.Hour,
+            _horaCita.Minute, 0
+    );
         CitaChanged.InvokeAsync(cita);
     } 
 

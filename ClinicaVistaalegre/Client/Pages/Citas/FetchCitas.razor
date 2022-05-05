@@ -14,7 +14,7 @@
 <h1>Listar citas</h1>
 
 <div>
-    <a class="btn btn-success" href="creacitas">Nueva cita</a>
+    <a class="btn btn-outline-info" href="creacitas">Nueva cita</a>
 </div>
 
 @if (citas == null)
@@ -41,8 +41,8 @@ else if (citas.Count == 0)
             {
                 <tr>
                     <td>
-                        <a class="btn btn-success" href="updatecitas/@cita.Id">Editar</a>
-                        <a class="btn btn-danger" @onclick="(() => BorrarCita(cita.Id))">Borrar</a>
+                        <a class="btn btn-info" href="updatecitas/@cita.Id">Editar</a>
+                        <a class="btn btn-light" @onclick="(() => BorrarCita(cita.Id))">Borrar</a>
                     </td>
                     <td>@cita.Motivo</td>
                     <td>@cita.Medico.Apellidos</td>
@@ -63,32 +63,17 @@ else if (citas.Count == 0)
     protected override async Task OnInitializedAsync()
     {
         GetClaimsPrincipalData();
-        try
-        {
-            citas = await Http.GetFromJsonAsync<List<Cita>>($"api/Citas/ByPaciente/{_userId}");
-
-            foreach(var cita in citas)
-            {
-                if (cita.Medico == null)
-                {
-                    cita.Medico= await Http.GetFromJsonAsync<Medico>($"api/Medicos/{cita.MedicoId}");
-                }
-            }
-        }
-        catch (AccessTokenNotAvailableException exception)
-        {
-            exception.Redirect();
-        }
+        citas = await getCitas();
     }
 
-    async Task BorrarCita(int CitaId)
+    private async Task BorrarCita(int CitaId)
     {
         var citaBorrada = citas.First(x => x.Id == CitaId);
         string confirmacion = $"¿Deseas borrar la cita con motivo:\n{citaBorrada.Motivo}?";
         if (await JS.InvokeAsync<bool>("confirm", confirmacion))
         {
             await Http.DeleteAsync($"api/Citas/{CitaId}");
-            citas = await Http.GetFromJsonAsync<List<Cita>>("api/Citas");
+            citas = await getCitas();
         }
     }
 
@@ -100,5 +85,28 @@ else if (citas.Count == 0)
             _authMessage = $"{user.Identity.Name} is authenticated.";
             _claims = user.Claims;
             _userId = user.FindFirst(c => c.Type == "sub")?.Value;
+    }
+
+    private async Task<List<Cita>> getCitas()
+    {
+        List<Cita> _citas = new List<Cita>();
+        try
+        {
+            _citas = await Http.GetFromJsonAsync<List<Cita>>($"api/Citas/ByPaciente/{_userId}");
+
+            foreach(var cita in _citas)
+            {
+                if (cita.Medico == null)
+                {
+                    cita.Medico= await Http.GetFromJsonAsync<Medico>($"api/Medicos/{cita.MedicoId}");
+                }
+            }
+        }
+        catch (AccessTokenNotAvailableException exception)
+        {
+            exception.Redirect();
+        }
+
+        return _citas;
     }
 }

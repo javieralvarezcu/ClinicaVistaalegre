@@ -25,19 +25,33 @@
 
 </html>
 
-<script>
+<script defer>
     window.NewSelectValue = (id, horas) => {
         let select = document.getElementById(id);
-        var i, L = select.options.length - 1;
-        for (i = L; i >= 0; i--) {
-            select.remove(i);
+
+        if (select != null) {
+            var i, L = select.options.length - 1;
+            for (i = L; i >= 0; i--) {
+                select.remove(i);
+            }
+            console.log(horas)
+            horas.forEach((hora) => {
+                let option = document.createElement('option')
+                option.text = hora
+                option.value = hora
+                select.append(option)
+            })
         }
-        console.log(horas)
-        horas.forEach((hora) => {
-            let option = document.createElement('option')
-            option.text = hora
-            option.value = hora
-            select.append(option)
-        })
+    }
+</script>
+
+<script>
+    window.DefaultSelectedValue = (id, hora) => {
+        console.log(hora)
+        let select = document.getElementById(id);
+
+        if (select != null) {
+            select.value=hora
+        }
     }
 </script>

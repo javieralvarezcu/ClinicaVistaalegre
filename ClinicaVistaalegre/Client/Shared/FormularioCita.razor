@@ -21,7 +21,7 @@
             Fecha y Hora
         </label>
         <div class="col-sm-10">
-            <InputDate onblur="@OnBlurHoras" id="Fecha" class="form-control" placeholder="Fecha"
+            <InputDate onblur="@OnBlurFecha" id="Fecha" class="form-control" placeholder="Fecha"
                        @bind-Value="@_fechaCita" />
         </div>
         <ValidationMessage For="() => this._fechaCita"></ValidationMessage>
@@ -31,7 +31,7 @@
             Hora
         </label>
         <div class="col-sm-10">
-            <select id="Hora" class="form-control" placeholder="Hora" <!--value="@_horaCita"--> >
+            <select id="Hora" onchange="@OnChangeSelect" class="form-control" placeholder="Hora">
                 @*<option value="">---</option>*@
             </select>
         </div>
@@ -41,7 +41,7 @@
             Medico
         </label>
         <div class="col-sm-10">
-            <InputSelect onblur="@OnBlurHoras" id="Medico" class="form-control" placeholder="Medico" @bind-Value="@Cita.MedicoId">
+            <InputSelect id="Medico" onblur="@OnBlurFecha" class="form-control" placeholder="Medico" @bind-Value="@Cita.MedicoId">
                 <option value="---">---</option>
                 @if(medicos!=null){
                     foreach (Medico m in medicos)
@@ -89,9 +89,19 @@
         set { horaCita = value; }
     }
 
+    public void OnChangeSelect(ChangeEventArgs args)
+    {
+        int hora;
+        int minutos;
+        Int32.TryParse(args.Value.ToString().Split(":")[0], out hora);
+        Int32.TryParse(args.Value.ToString().Split(":")[1], out minutos);
+        _horaCita = new DateTime().AddHours(hora).AddMinutes(minutos);
+    }
+
     protected override async Task OnInitializedAsync()
     {
-        Cita.FechaHora = DateTime.Now;
+        _fechaCita = DateTime.Now.AddDays(1);
+        Cita.MedicoId = "";
         medicos = await Http.GetFromJsonAsync<List<Medico>>("api/Medicos");
         base.OnInitializedAsync();
         GetClaimsPrincipalData();
@@ -122,11 +132,12 @@
         }
     }
 
-    private async void OnBlurHoras()
+    private async void OnBlurFecha()
     {
+        Console.WriteLine("medico"+Cita.MedicoId);
         if (_fechaCita > DateTime.Now)
         {
-            if(Cita.MedicoId!="---" || Cita.MedicoId != "")
+            if(!Cita.MedicoId.Equals(""))
             {
                 horas = await getHoras(Cita.MedicoId, _fechaCita);
             }
@@ -141,7 +152,7 @@
     private async void OnValidSubmit()
     {
         cita.PacienteId = _userId;
-        cita.FechaHora = fechaCita.AddHours(horaCita.Hour).AddMinutes(horaCita.Minute);
+        cita.FechaHora = fechaCita.AddHours(_horaCita.Hour).AddMinutes(_horaCita.Minute);
         CitaChanged.InvokeAsync(cita);
     } 
 

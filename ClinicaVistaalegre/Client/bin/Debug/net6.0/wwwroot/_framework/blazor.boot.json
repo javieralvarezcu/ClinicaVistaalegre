@@ -247,14 +247,14 @@
       "netstandard.dll": "sha256-klcvWVyHimPfDxg6W1A076EKpCB5ySxjtc7sxJEsGgE=",
       "System.Private.CoreLib.dll": "sha256-Y8kdbfPQ0YoYLGbOgzRmoVsnuMYNlA1hvLvDWFTtzrk=",
       "ClinicaVistaalegre.Shared.dll": "sha256-kgwfVuW+bdB1+lgHI4JKOBMqsDSIAUyGpmfxeazIXNY=",
-      "ClinicaVistaalegre.Client.dll": "sha256-CQphynl+rm4ShkNZhKasM7j1MVlZoPBeofSO5xBBjUc="
+      "ClinicaVistaalegre.Client.dll": "sha256-qTUadpzQtEWadAxX9Nbraiy\/VMn3rQLzZiWrKweLUzc="
     },
     "extensions": null,
     "lazyAssembly": null,
     "libraryInitializers": null,
     "pdb": {
       "ClinicaVistaalegre.Shared.pdb": "sha256-M46\/TAP7KEqa3ItSkIY8OAWS6WuCR0zkBhuGNyos\/FI=",
-      "ClinicaVistaalegre.Client.pdb": "sha256-yJwG3MH7oDLK3neLF2QPIKnuryZicHAlcCdOudXMckk="
+      "ClinicaVistaalegre.Client.pdb": "sha256-55SG+qdJDg29P5f\/\/18xPR24VCu2roK4DYOi0wFT53s="
     },
     "runtime": {
       "dotnet.6.0.3.2fobt7o02i.js": "sha256-pRmcHKZN4T\/YbX9dj6ITT4sNtkJ9w07OLcwl4645nPg=",

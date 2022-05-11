@@ -246,15 +246,15 @@
       "mscorlib.dll": "sha256-Q4A\/043fz702a7DDbm+JAtMHV3jKAZ9k8khztTMKp2M=",
       "netstandard.dll": "sha256-W9cwgVmBZsddVw3WVFMC5Gya92UufvbVTNR4+u7pnR0=",
       "System.Private.CoreLib.dll": "sha256-KVnZkFos\/ML\/3S2isVijfmFZXO4zEQeCga6BZvGdTbY=",
-      "ClinicaVistaalegre.Shared.dll": "sha256-iI\/jv5vd0Uag4PA6WdMRMZ3U3pQYK\/dlQddp3vkyspk=",
-      "ClinicaVistaalegre.Client.dll": "sha256-4Vvaa8yWVP\/YaFwOGoYxMJMvFuAF5ehKZKYPn6kP+E0="
+      "ClinicaVistaalegre.Shared.dll": "sha256-AzUZIxTITfQP4tiCyWZjAG8OvSJWP07SEl1n3dSXliY=",
+      "ClinicaVistaalegre.Client.dll": "sha256-VLXufcDeoPyvVZ16klaKiQ3384rqL3uvCQaWHbwq2pk="
     },
     "extensions": null,
     "lazyAssembly": null,
     "libraryInitializers": null,
     "pdb": {
-      "ClinicaVistaalegre.Shared.pdb": "sha256-ZBYPmfoFX1sx4131\/cIG5b2FexOnCXu+pMrgjP9SvHI=",
-      "ClinicaVistaalegre.Client.pdb": "sha256-N6553EUpbY8TXf0FBRqyuX1aam6QnMA2KykWX9dYMck="
+      "ClinicaVistaalegre.Shared.pdb": "sha256-1rhvAq6zoZFnEbzJa2C5R7vq+JnyWf+JYRT7UiIizMM=",
+      "ClinicaVistaalegre.Client.pdb": "sha256-3S\/+kbCe77A5aVYZHaiiZRxVDnRuZkocdQAPbgR0ar0="
     },
     "runtime": {
       "dotnet.6.0.4.1av0dekkhc.js": "sha256-WYno\/cK5MDsl5yi4T\/\/QgUskbBfhLL77i+c0uKzO9+c=",

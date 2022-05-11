@@ -39,15 +39,38 @@ else if (citas.Count == 0)
         <tbody>
             @foreach (var cita in citas)
             {
-                <tr>
-                    <td>
-                        <a class="btn btn-info" href="updatecitas/@cita.Id">Editar</a>
+                @switch (cita.Estado)
+                {
+                    case "Cancelada":
+                        rowClass = "table-secondary";
+                        break;
+                    case "Pendiente":
+                        rowClass="table-info";
+                        break;
+                    default:
+                        rowClass = "";
+                        break;
+                }
+
+                <tr class="@rowClass">
+                    <td class="align-middle">
+                        @if(cita.Estado.Equals("Cancelada")){
+                            <a class="btn btn-dark" disabled>Cancelar</a>
+                        }else{
+                            <a class="btn btn-dark" @onclick="(() => CancelarCita(cita.Id))">Cancelar</a>
+                        }
                         <a class="btn btn-light" @onclick="(() => BorrarCita(cita.Id))">Borrar</a>
                     </td>
-                    <td>@cita.Motivo</td>
-                    <td>@cita.Paciente.Apellidos</td>
-                    <td>@cita.FechaHora</td>
-                    <td>@cita.Estado</td>
+                    <td class="align-middle">@cita.Motivo</td>
+                    <td class="align-middle">@cita.Paciente.Apellidos</td>
+                    <td class="align-middle">@cita.FechaHora</td>
+                    <td class="align-middle">
+                        @if(cita.Estado.Equals("Pendiente")){
+                            <a class="btn btn-info" @onclick="(() => AceptarCita(cita.Id))">@cita.Estado</a>
+                        }else{
+                            @cita.Estado
+                        }
+                    </td>
                 </tr>
             }
         </tbody>
@@ -59,6 +82,7 @@ else if (citas.Count == 0)
     private string _userId;
     private IEnumerable<Claim> _claims = Enumerable.Empty<Claim>();
     private List<Cita>? citas;
+    private string rowClass = "";
 
     protected override async Task OnInitializedAsync()
     {
@@ -73,6 +97,32 @@ else if (citas.Count == 0)
         if (await JS.InvokeAsync<bool>("confirm", confirmacion))
         {
             await Http.DeleteAsync($"api/Citas/{CitaId}");
+            citas = await getCitas();
+        }
+    }
+
+    private async Task CancelarCita(int CitaId)
+    {
+        var citaCancelada = citas.First(x => x.Id == CitaId);
+        citaCancelada.Estado = "Cancelada";
+        //citaAceptada.Paciente = null;
+        string confirmacion = $"¿Deseas cancelar la cita con motivo:\n{citaCancelada.Motivo}?";
+        if (await JS.InvokeAsync<bool>("confirm", confirmacion))
+        {
+            await Http.PutAsJsonAsync($"api/Citas/{CitaId}", citaCancelada);
+            citas = await getCitas();
+        }
+    }
+
+    private async Task AceptarCita(int CitaId)
+    {
+        var citaAceptada = citas.First(x => x.Id == CitaId);
+        citaAceptada.Estado = "Aceptada";
+        //citaAceptada.Paciente = null;
+        string confirmacion = $"¿Deseas aceptar la cita con motivo:\n{citaAceptada.Motivo}?";
+        if (await JS.InvokeAsync<bool>("confirm", confirmacion))
+        {
+            await Http.PutAsJsonAsync($"api/Citas/{CitaId}", citaAceptada);
             citas = await getCitas();
         }
     }

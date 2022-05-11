@@ -33,6 +33,14 @@ namespace ClinicaVistaalegre.Server.Controllers
             return response.Where(x => x.PacienteId==id).ToList();
         }
 
+        // GET: api/CitasByMedico/asdfg-qwerty-zxcvbn
+        [Route("ByMedico/{id}")]
+        public async Task<ActionResult<List<Cita>>> GetCitasByMedico(string id)
+        {
+            var response = await _context.Citas.ToListAsync();
+            return response.Where(x => x.MedicoId == id).OrderBy(x => x.FechaHora).ToList();
+        }
+
         [Route("HorasByMedico/{medicoId}/{pacienteId}/{date}")]
         public async Task<ActionResult<List<DateTime>>> GetHorasByMedico(string medicoId, string pacienteId, string date)
         {

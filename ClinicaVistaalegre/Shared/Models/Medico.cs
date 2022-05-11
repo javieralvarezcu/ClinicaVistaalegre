@@ -14,8 +14,8 @@ namespace ClinicaVistaalegre.Shared.Models
         public string Especialidad { get; set; }
 
         [JsonProperty(Required = Required.AllowNull)]
-        public List<Cita> Citas { get; set; }
+        public List<Cita>? Citas { get; set; }
         [JsonProperty(Required = Required.AllowNull)]
-        public List<Mensaje> Mensajes { get; set; }
+        public List<Mensaje>? Mensajes { get; set; }
     }
 }

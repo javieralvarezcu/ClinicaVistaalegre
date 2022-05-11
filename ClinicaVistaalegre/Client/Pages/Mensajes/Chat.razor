@@ -1,4 +1,4 @@
-﻿@page "/chat/{destinatarioId:string}"
+﻿@page "/chat/{destinatarioId}"
 @using ClinicaVistaalegre.Shared.Models
 @using Microsoft.AspNetCore.Authorization
 @using Microsoft.AspNetCore.Components.WebAssembly.Authentication
@@ -65,8 +65,8 @@ else if (mensajes.Count == 0)
 
     protected override async Task OnInitializedAsync()
     {
-        GetClaimsPrincipalData();
-        mensajes = await getCitas();
+        await GetClaimsPrincipalData();
+        mensajes = await getConversaciones();
     }
 
     private async Task GetClaimsPrincipalData()
@@ -89,7 +89,7 @@ else if (mensajes.Count == 0)
         }
     }
 
-    private async Task<List<Mensaje>> getCitas()
+    private async Task<List<Mensaje>> getConversaciones()
     {
         List<Mensaje> mensajes = new List<Mensaje>();
         try

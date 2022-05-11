@@ -50,15 +50,44 @@ namespace ClinicaVistaalegre.Server.Controllers
         {
             List<Conversacion> conversaciones = new List<Conversacion>();
             List<Mensaje> mensajes = new List<Mensaje>();
-            if(_context.Medicos.Where(x => x.Id == userId).ToList().Any())
+            if(!_context.Medicos.Where(x => x.Id == userId).ToList().Any())
             {
                 mensajes = _context.Mensajes.Where(x => x.PacienteId == userId).ToList();
+                //Paciente paciente = await Http.GetFromJsonAsync<Paciente>($"api/Pacientes/{userId}");
+                foreach (var mensaje in mensajes)
+                {
+                    if (conversaciones.Where(x => x.destinatarioId == mensaje.PacienteId).ToList().Any())
+                    {
+                        conversaciones.Add(new Conversacion()
+                        {
+                            destinatarioId = mensaje.MedicoId,
+                            //Apellidos = paciente.Apellidos,
+                            Apellidos = mensaje.PacienteId,
+                            ContenidoUltimoMensaje = mensaje.Contenido,
+                            FechaUltimoMensaje = mensaje.FechaHora
+                        });
+                    }
+                }
             }
             else
             {
                 mensajes = _context.Mensajes.Where(x => x.MedicoId == userId).ToList();
+                //Medico medico = await Http.GetFromJsonAsync<Medico>($"api/Medicos/{userId}");
+                foreach (var mensaje in mensajes)
+                {
+                    if (!conversaciones.Where(x => x.destinatarioId == mensaje.MedicoId).ToList().Any())
+                    {
+                        conversaciones.Add(new Conversacion()
+                        {
+                            destinatarioId = mensaje.PacienteId,
+                            //Apellidos = medico.Apellidos,
+                            Apellidos = mensaje.MedicoId,
+                            ContenidoUltimoMensaje = mensaje.Contenido,
+                            FechaUltimoMensaje = mensaje.FechaHora
+                        });
+                    }
+                }
             }
-            
 
             return conversaciones;
         }

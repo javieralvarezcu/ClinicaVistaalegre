@@ -20,7 +20,5 @@ namespace ClinicaVistaalegre.Shared.Models
 
         public string Contenido { get; set; }
         public DateTime FechaHora { get; set; }
-
-
     }
 }

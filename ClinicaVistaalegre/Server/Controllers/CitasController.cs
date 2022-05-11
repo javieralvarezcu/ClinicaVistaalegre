@@ -52,7 +52,7 @@ namespace ClinicaVistaalegre.Server.Controllers
 
             foreach(var hora in horas)
             {
-                horasDelDia.Remove(hora);
+                horasDelDia.Remove(new DateTime().AddHours(hora.Hour).AddMinutes(hora.Minute));
             }
 
             return horasDelDia;

@@ -46,7 +46,7 @@
                 @if(medicos!=null){
                     foreach (Medico m in medicos)
                 {
-                    <option value="@m.Id">@m.Apellidos</option>
+                    <option value="@m.Id">@m.Apellidos - @m.Especialidad.ToUpper()</option>
                 }
                 }
             </InputSelect>

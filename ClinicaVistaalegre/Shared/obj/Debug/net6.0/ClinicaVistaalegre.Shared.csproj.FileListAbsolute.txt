@@ -22,3 +22,15 @@ C:\Users\santanitaxx1050\Desktop\ClinicaVistaalegre\ClinicaVistaalegre\Shared\ob
 C:\Users\santanitaxx1050\Desktop\ClinicaVistaalegre\ClinicaVistaalegre\Shared\obj\Debug\net6.0\refint\ClinicaVistaalegre.Shared.dll
 C:\Users\santanitaxx1050\Desktop\ClinicaVistaalegre\ClinicaVistaalegre\Shared\obj\Debug\net6.0\ClinicaVistaalegre.Shared.pdb
 C:\Users\santanitaxx1050\Desktop\ClinicaVistaalegre\ClinicaVistaalegre\Shared\obj\Debug\net6.0\ref\ClinicaVistaalegre.Shared.dll
+C:\Users\JAVIER.ALVAREZCUEV\ClinicaVistaalegre\ClinicaVistaalegre\Shared\bin\Debug\net6.0\ClinicaVistaalegre.Shared.deps.json
+C:\Users\JAVIER.ALVAREZCUEV\ClinicaVistaalegre\ClinicaVistaalegre\Shared\bin\Debug\net6.0\ClinicaVistaalegre.Shared.dll
+C:\Users\JAVIER.ALVAREZCUEV\ClinicaVistaalegre\ClinicaVistaalegre\Shared\bin\Debug\net6.0\ClinicaVistaalegre.Shared.pdb
+C:\Users\JAVIER.ALVAREZCUEV\ClinicaVistaalegre\ClinicaVistaalegre\Shared\obj\Debug\net6.0\ClinicaVistaalegre.Shared.csproj.AssemblyReference.cache
+C:\Users\JAVIER.ALVAREZCUEV\ClinicaVistaalegre\ClinicaVistaalegre\Shared\obj\Debug\net6.0\ClinicaVistaalegre.Shared.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\JAVIER.ALVAREZCUEV\ClinicaVistaalegre\ClinicaVistaalegre\Shared\obj\Debug\net6.0\ClinicaVistaalegre.Shared.AssemblyInfoInputs.cache
+C:\Users\JAVIER.ALVAREZCUEV\ClinicaVistaalegre\ClinicaVistaalegre\Shared\obj\Debug\net6.0\ClinicaVistaalegre.Shared.AssemblyInfo.cs
+C:\Users\JAVIER.ALVAREZCUEV\ClinicaVistaalegre\ClinicaVistaalegre\Shared\obj\Debug\net6.0\ClinicaVistaalegre.Shared.csproj.CoreCompileInputs.cache
+C:\Users\JAVIER.ALVAREZCUEV\ClinicaVistaalegre\ClinicaVistaalegre\Shared\obj\Debug\net6.0\ClinicaVistaalegre.Shared.dll
+C:\Users\JAVIER.ALVAREZCUEV\ClinicaVistaalegre\ClinicaVistaalegre\Shared\obj\Debug\net6.0\refint\ClinicaVistaalegre.Shared.dll
+C:\Users\JAVIER.ALVAREZCUEV\ClinicaVistaalegre\ClinicaVistaalegre\Shared\obj\Debug\net6.0\ClinicaVistaalegre.Shared.pdb
+C:\Users\JAVIER.ALVAREZCUEV\ClinicaVistaalegre\ClinicaVistaalegre\Shared\obj\Debug\net6.0\ref\ClinicaVistaalegre.Shared.dll

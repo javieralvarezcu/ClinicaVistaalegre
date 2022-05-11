@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\santanitaxx1050\\Desktop\\ClinicaVistaalegre\\ClinicaVistaalegre\\Server\\ClinicaVistaalegre.Server.csproj": {}
+    "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Server\\ClinicaVistaalegre.Server.csproj": {}
   },
   "projects": {
-    "C:\\Users\\santanitaxx1050\\Desktop\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\ClinicaVistaalegre.Client.csproj": {
+    "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\ClinicaVistaalegre.Client.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\santanitaxx1050\\Desktop\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\ClinicaVistaalegre.Client.csproj",
+        "projectUniqueName": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\ClinicaVistaalegre.Client.csproj",
         "projectName": "ClinicaVistaalegre.Client",
-        "projectPath": "C:\\Users\\santanitaxx1050\\Desktop\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\ClinicaVistaalegre.Client.csproj",
-        "packagesPath": "C:\\Users\\santanitaxx1050\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\santanitaxx1050\\Desktop\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\obj\\",
+        "projectPath": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\ClinicaVistaalegre.Client.csproj",
+        "packagesPath": "C:\\Users\\JAVIER.ALVAREZCUEV\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\santanitaxx1050\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\JAVIER.ALVAREZCUEV\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -32,8 +28,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\santanitaxx1050\\Desktop\\ClinicaVistaalegre\\ClinicaVistaalegre\\Shared\\ClinicaVistaalegre.Shared.csproj": {
-                "projectPath": "C:\\Users\\santanitaxx1050\\Desktop\\ClinicaVistaalegre\\ClinicaVistaalegre\\Shared\\ClinicaVistaalegre.Shared.csproj"
+              "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Shared\\ClinicaVistaalegre.Shared.csproj": {
+                "projectPath": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Shared\\ClinicaVistaalegre.Shared.csproj"
               }
             }
           }
@@ -83,7 +79,7 @@
           "downloadDependencies": [
             {
               "name": "Microsoft.NETCore.App.Runtime.Mono.browser-wasm",
-              "version": "[6.0.3, 6.0.3]"
+              "version": "[6.0.4, 6.0.4]"
             }
           ],
           "frameworkReferences": {
@@ -91,7 +87,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300-preview.22204.3\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
         }
       },
       "runtimes": {
@@ -100,21 +96,17 @@
         }
       }
     },
-    "C:\\Users\\santanitaxx1050\\Desktop\\ClinicaVistaalegre\\ClinicaVistaalegre\\Server\\ClinicaVistaalegre.Server.csproj": {
+    "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Server\\ClinicaVistaalegre.Server.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\santanitaxx1050\\Desktop\\ClinicaVistaalegre\\ClinicaVistaalegre\\Server\\ClinicaVistaalegre.Server.csproj",
+        "projectUniqueName": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Server\\ClinicaVistaalegre.Server.csproj",
         "projectName": "ClinicaVistaalegre.Server",
-        "projectPath": "C:\\Users\\santanitaxx1050\\Desktop\\ClinicaVistaalegre\\ClinicaVistaalegre\\Server\\ClinicaVistaalegre.Server.csproj",
-        "packagesPath": "C:\\Users\\santanitaxx1050\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\santanitaxx1050\\Desktop\\ClinicaVistaalegre\\ClinicaVistaalegre\\Server\\obj\\",
+        "projectPath": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Server\\ClinicaVistaalegre.Server.csproj",
+        "packagesPath": "C:\\Users\\JAVIER.ALVAREZCUEV\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Server\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\santanitaxx1050\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\JAVIER.ALVAREZCUEV\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -128,11 +120,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\santanitaxx1050\\Desktop\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\ClinicaVistaalegre.Client.csproj": {
-                "projectPath": "C:\\Users\\santanitaxx1050\\Desktop\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\ClinicaVistaalegre.Client.csproj"
+              "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\ClinicaVistaalegre.Client.csproj": {
+                "projectPath": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\ClinicaVistaalegre.Client.csproj"
               },
-              "C:\\Users\\santanitaxx1050\\Desktop\\ClinicaVistaalegre\\ClinicaVistaalegre\\Shared\\ClinicaVistaalegre.Shared.csproj": {
-                "projectPath": "C:\\Users\\santanitaxx1050\\Desktop\\ClinicaVistaalegre\\ClinicaVistaalegre\\Shared\\ClinicaVistaalegre.Shared.csproj"
+              "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Shared\\ClinicaVistaalegre.Shared.csproj": {
+                "projectPath": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Shared\\ClinicaVistaalegre.Shared.csproj"
               }
             }
           }
@@ -169,17 +161,17 @@
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[6.0.4, )"
+              "version": "[6.0.5, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[6.0.4, )"
+              "version": "[6.0.5, )"
             },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
-              "version": "[6.0.3, )"
+              "version": "[6.0.4, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
@@ -204,25 +196,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300-preview.22204.3\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\santanitaxx1050\\Desktop\\ClinicaVistaalegre\\ClinicaVistaalegre\\Shared\\ClinicaVistaalegre.Shared.csproj": {
+    "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Shared\\ClinicaVistaalegre.Shared.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\santanitaxx1050\\Desktop\\ClinicaVistaalegre\\ClinicaVistaalegre\\Shared\\ClinicaVistaalegre.Shared.csproj",
+        "projectUniqueName": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Shared\\ClinicaVistaalegre.Shared.csproj",
         "projectName": "ClinicaVistaalegre.Shared",
-        "projectPath": "C:\\Users\\santanitaxx1050\\Desktop\\ClinicaVistaalegre\\ClinicaVistaalegre\\Shared\\ClinicaVistaalegre.Shared.csproj",
-        "packagesPath": "C:\\Users\\santanitaxx1050\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\santanitaxx1050\\Desktop\\ClinicaVistaalegre\\ClinicaVistaalegre\\Shared\\obj\\",
+        "projectPath": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Shared\\ClinicaVistaalegre.Shared.csproj",
+        "packagesPath": "C:\\Users\\JAVIER.ALVAREZCUEV\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Shared\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\santanitaxx1050\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\JAVIER.ALVAREZCUEV\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -268,7 +256,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300-preview.22204.3\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }

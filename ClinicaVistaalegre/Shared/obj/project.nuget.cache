@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "4YXro4mnqtL5c5SnqdrKvyrG9kuvI5z0cp2nRXcdxZsWLhgua7Q+px/9X6AOAML+rnEj/iyavZm3j0vj9cHAbQ==",
+  "dgSpecHash": "RaVLTnEpHcLt7gF8pwERg8k89iz6tDvRx3jP8FFvQo9S4p9+SoaheHoGarBZtC/hi6YsjiXgsZ9+qwEPMtxKGw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\santanitaxx1050\\Desktop\\ClinicaVistaalegre\\ClinicaVistaalegre\\Shared\\ClinicaVistaalegre.Shared.csproj",
+  "projectFilePath": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Shared\\ClinicaVistaalegre.Shared.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\santanitaxx1050\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+    "C:\\Users\\JAVIER.ALVAREZCUEV\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
   ],
   "logs": []
 }

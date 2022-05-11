@@ -54,6 +54,14 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/JAVIER.ALVAREZCUEV/ClinicaVistaalegre/ClinicaVistaalegre/Client/Pages/Mensajes/Chat.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTWVuc2FqZXNcQ2hhdC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/JAVIER.ALVAREZCUEV/ClinicaVistaalegre/ClinicaVistaalegre/Client/Pages/Mensajes/FetchConversaciones.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTWVuc2FqZXNcRmV0Y2hDb252ZXJzYWNpb25lcy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/JAVIER.ALVAREZCUEV/ClinicaVistaalegre/ClinicaVistaalegre/Client/Shared/FormularioCita.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXEZvcm11bGFyaW9DaXRhLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 

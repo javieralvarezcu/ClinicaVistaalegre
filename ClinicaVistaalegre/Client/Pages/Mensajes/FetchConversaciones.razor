@@ -1,0 +1,110 @@
+﻿@page "/fetchconversaciones"
+@using ClinicaVistaalegre.Shared.Models
+@using Microsoft.AspNetCore.Authorization
+@using Microsoft.AspNetCore.Components.WebAssembly.Authentication
+@using ClinicaVistaalegre.Shared
+@using System.Security.Claims
+@attribute [Authorize]
+@inject HttpClient Http
+@inject IJSRuntime JS
+@inject AuthenticationStateProvider AuthenticationStateProvider
+
+<PageTitle>Citas</PageTitle>
+
+<h1>Listar citas</h1>
+
+<div>
+    <a class="btn btn-outline-info" href="creaconversaciones">Nueva cita</a>
+</div>
+
+@if (conversaciones == null)
+{
+    <p><em>Cargando...</em></p>
+}
+else if (conversaciones.Count == 0)
+{
+    <text>No hay citas</text>
+}else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Contacto</th>
+                <th>Último mensaje</th>
+                <th>Fecha del último mensaje</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var cita in conversaciones)
+            {
+                <tr>
+                    <td class="align-middle">
+                        <a class="btn btn-info" href="updatecitas/@cita.Id">Editar</a>
+                        <a class="btn btn-light" @onclick="(() => BorrarCita(cita.Id))">Borrar</a>
+                    </td>
+                    <td class="align-middle">@cita.Motivo</td>
+                    <td class="align-middle">@cita.Medico.Apellidos</td>
+                    <td class="align-middle">@cita.FechaHora</td>
+                    <td class="align-middle">@cita.Estado</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private string _authMessage;       
+    private string _userId;
+    private IEnumerable<Claim> _claims = Enumerable.Empty<Claim>();
+    private List<Conversacion>? conversaciones;
+
+    protected override async Task OnInitializedAsync()
+    {
+        GetClaimsPrincipalData();
+        conversaciones = await getCitas();
+    }
+
+    private async Task BorrarCita(int CitaId)
+    {
+        var citaBorrada = conversaciones.First(x => x.Id == CitaId);
+        string confirmacion = $"¿Deseas borrar la cita con motivo:\n{citaBorrada.Motivo}?";
+        if (await JS.InvokeAsync<bool>("confirm", confirmacion))
+        {
+            await Http.DeleteAsync($"api/Citas/{CitaId}");
+            conversaciones = await getCitas();
+        }
+    }
+
+    private async Task GetClaimsPrincipalData()
+    {
+        var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+        var user = authState.User;
+
+            _authMessage = $"{user.Identity.Name} is authenticated.";
+            _claims = user.Claims;
+            _userId = user.FindFirst(c => c.Type == "sub")?.Value;
+    }
+
+    private async Task<List<Cita>> getCitas()
+    {
+        List<Cita> _citas = new List<Cita>();
+        try
+        {
+            _citas = await Http.GetFromJsonAsync<List<Cita>>($"api/Citas/ByPaciente/{_userId}");
+
+            foreach(var cita in _citas)
+            {
+                if (cita.Medico == null)
+                {
+                    cita.Medico= await Http.GetFromJsonAsync<Medico>($"api/Medicos/{cita.MedicoId}");
+                }
+            }
+        }
+        catch (AccessTokenNotAvailableException exception)
+        {
+            exception.Redirect();
+        }
+
+        return _citas;
+    }
+}

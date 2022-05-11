@@ -1,0 +1,113 @@
+﻿@page "/chat/{destinatarioId:string}"
+@using ClinicaVistaalegre.Shared.Models
+@using Microsoft.AspNetCore.Authorization
+@using Microsoft.AspNetCore.Components.WebAssembly.Authentication
+@using ClinicaVistaalegre.Shared
+@using System.Security.Claims
+@attribute [Authorize]
+@inject HttpClient Http
+@inject IJSRuntime JS
+@inject AuthenticationStateProvider AuthenticationStateProvider
+
+<PageTitle>Chat</PageTitle>
+
+<h1>Chat</h1>
+
+<div>
+    <a class="btn btn-outline-info" href="creacitas">Nueva cita</a>
+</div>
+
+@if (mensajes == null)
+{
+    <p><em>Cargando...</em></p>
+}
+else if (mensajes.Count == 0)
+{
+    <text>No hay mensajes</text>
+}else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Fecha Hora</th>
+                <th>Tú</th>
+                <th>Contacto</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var mensaje in mensajes)
+            {
+                <tr>
+                    <td class="align-middle">@mensaje.FechaHora</td>
+                    <td class="align-middle">@mensaje.Contenido</td>
+                    <AuthorizeView Roles="Paciente">
+                    <td class="align-middle">@mensaje.Medico.Apellidos</td>
+                    </AuthorizeView>
+                    <AuthorizeView Roles="Medico">
+                    <td class="align-middle">@mensaje.Paciente.Apellidos</td>
+                    </AuthorizeView>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    [Parameter] public string destinatarioId { get; set; }
+
+    private string _authMessage;       
+    private string _userId;
+    private IEnumerable<Claim> _claims = Enumerable.Empty<Claim>();
+    ClaimsPrincipal user;
+    private List<Mensaje>? mensajes;
+    private Medico medico;
+    private Paciente paciente;
+
+    protected override async Task OnInitializedAsync()
+    {
+        GetClaimsPrincipalData();
+        mensajes = await getCitas();
+    }
+
+    private async Task GetClaimsPrincipalData()
+    {
+        var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+        user = authState.User;
+
+        _authMessage = $"{user.Identity.Name} is authenticated.";
+        _claims = user.Claims;
+        _userId = user.FindFirst(c => c.Type == "sub")?.Value;
+        if (user.IsInRole("Medico"))
+        {
+            medico = await Http.GetFromJsonAsync<Medico>($"api/Medicos/{_userId}");
+            paciente = await Http.GetFromJsonAsync<Paciente>($"api/Pacientes/{destinatarioId}");
+        }
+        else
+        {
+            paciente = await Http.GetFromJsonAsync<Paciente>($"api/Pacientes/{_userId}");
+            medico = await Http.GetFromJsonAsync<Medico>($"api/Medicos/{destinatarioId}");
+        }
+    }
+
+    private async Task<List<Mensaje>> getCitas()
+    {
+        List<Mensaje> mensajes = new List<Mensaje>();
+        try
+        {
+
+            mensajes = await Http.GetFromJsonAsync<List<Mensaje>>($"api/Mensajes/Paciente/{paciente.Id}/Medico/{medico.Id}");
+
+            foreach(var mensaje in mensajes)
+            {
+                mensaje.Paciente = paciente;
+                mensaje.Medico = medico;
+            }
+        }
+        catch (AccessTokenNotAvailableException exception)
+        {
+            exception.Redirect();
+        }
+
+        return mensajes;
+    }
+}

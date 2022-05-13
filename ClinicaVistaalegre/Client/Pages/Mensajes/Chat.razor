@@ -14,42 +14,61 @@
 <h1>Chat</h1>
 
 <div>
-    <a class="btn btn-outline-info" href="creacitas">Nueva cita</a>
+    <a class="btn btn-outline-info text-end" onclick="@OnClickActualizar">Comprobar si hay nuevos mensajes</a>
 </div>
 
 @if (mensajes == null)
 {
     <p><em>Cargando...</em></p>
-}
-else if (mensajes.Count == 0)
-{
-    <text>No hay mensajes</text>
 }else
 {
     <table class="table">
         <thead>
             <tr>
-                <th>Fecha Hora</th>
                 <th>Tú</th>
-                <th>Contacto</th>
+                <AuthorizeView Roles="Medico">
+                    <th class="text-end">@paciente.Apellidos</th>
+                </AuthorizeView>
+                <AuthorizeView Roles="Paciente">
+                    <th class="text-end">@medico.Apellidos</th>
+                </AuthorizeView>
+                <th class="text-end">Fecha Hora</th>
             </tr>
         </thead>
         <tbody>
             @foreach (var mensaje in mensajes)
             {
+
                 <tr>
-                    <td class="align-middle">@mensaje.FechaHora</td>
-                    <td class="align-middle">@mensaje.Contenido</td>
-                    <AuthorizeView Roles="Paciente">
-                    <td class="align-middle">@mensaje.Medico.Apellidos</td>
-                    </AuthorizeView>
-                    <AuthorizeView Roles="Medico">
-                    <td class="align-middle">@mensaje.Paciente.Apellidos</td>
-                    </AuthorizeView>
+                        @if (mensaje.Emisor.Equals(_userId))
+                        {
+                            <td class="align-middle">@mensaje.Contenido</td>
+                            <td class="align-middle text-end"></td>
+                        }
+                        else
+                        {
+                            <td class="align-middle"></td>
+                            <td class="align-middle text-end">@mensaje.Contenido</td>
+                        }
+                        <td class="align-middle text-end">@mensaje.FechaHora</td>
                 </tr>
             }
         </tbody>
     </table>
+
+        <EditForm Model="@mensaje" OnValidSubmit="Enviar">
+        <div class="form-group row">
+        <label for="Contenido" class="col-sm-2 col-form-label">
+            Nuevo mensaje:
+        </label>
+        <div class="col-sm-10">
+            <InputText id="Contenido" class="form-control" placeholder="Contenido"
+                       @bind-Value="mensaje.Contenido" />
+        </div>
+        <ValidationMessage For="() => this.mensaje.Contenido"></ValidationMessage>
+       <button type="submit" class="btn btn-info">Enviar</button>
+    </div>
+    </EditForm>
 }
 
 @code {
@@ -58,26 +77,28 @@ else if (mensajes.Count == 0)
     private string _authMessage;       
     private string _userId;
     private IEnumerable<Claim> _claims = Enumerable.Empty<Claim>();
-    ClaimsPrincipal user;
+    ClaimsPrincipal _user;
     private List<Mensaje>? mensajes;
     private Medico medico;
     private Paciente paciente;
+    Mensaje mensaje = new Mensaje();
 
     protected override async Task OnInitializedAsync()
     {
+        mensaje = new Mensaje();
         await GetClaimsPrincipalData();
-        mensajes = await getConversaciones();
+        mensajes = await getMensajes();
     }
 
     private async Task GetClaimsPrincipalData()
     {
         var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
-        user = authState.User;
+        _user = authState.User;
 
-        _authMessage = $"{user.Identity.Name} is authenticated.";
-        _claims = user.Claims;
-        _userId = user.FindFirst(c => c.Type == "sub")?.Value;
-        if (user.IsInRole("Medico"))
+        _authMessage = $"{_user.Identity.Name} is authenticated.";
+        _claims = _user.Claims;
+        _userId = _user.FindFirst(c => c.Type == "sub")?.Value;
+        if (_user.IsInRole("Medico"))
         {
             medico = await Http.GetFromJsonAsync<Medico>($"api/Medicos/{_userId}");
             paciente = await Http.GetFromJsonAsync<Paciente>($"api/Pacientes/{destinatarioId}");
@@ -89,7 +110,35 @@ else if (mensajes.Count == 0)
         }
     }
 
-    private async Task<List<Mensaje>> getConversaciones()
+    private async void OnClickActualizar()
+    {
+        mensajes = await getMensajes();
+    }
+
+    private async void Enviar()
+    {
+        if (mensaje.Contenido != null)
+        {
+            if(!mensaje.Contenido.Trim().Equals(""))
+            {
+                mensaje.FechaHora = DateTime.Now;
+                mensaje.MedicoId = medico.Id;
+                mensaje.PacienteId = paciente.Id;
+                mensaje.Emisor = _userId;
+                await Http.PostAsJsonAsync<Mensaje>("api/Mensajes", mensaje);
+                mensaje = new Mensaje();
+                mensajes = await getMensajes();
+            }
+        }
+        
+    }
+
+    private void OnChangeInput(ChangeEventArgs args)
+    {
+            mensaje.Contenido = args.Value.ToString();
+    }
+
+    private async Task<List<Mensaje>> getMensajes()
     {
         List<Mensaje> mensajes = new List<Mensaje>();
         try

@@ -41,8 +41,8 @@ namespace ClinicaVistaalegre.Server.Controllers
             {
                 return NotFound();
             }
-            var mensajes = _context.Mensajes.Where(x => x.PacienteId == pacienteId).Where(x => x.MedicoId == medicoId);
-            return await _context.Mensajes.ToListAsync();
+            var mensajes = _context.Mensajes.Where(x => x.PacienteId == pacienteId && x.MedicoId == medicoId);
+            return await mensajes.ToListAsync();
         }
 
         [Route("ConversacionesByUser/{userId}")]
@@ -56,16 +56,16 @@ namespace ClinicaVistaalegre.Server.Controllers
                 //Paciente paciente = await Http.GetFromJsonAsync<Paciente>($"api/Pacientes/{userId}");
                 foreach (var mensaje in mensajes)
                 {
-                    if (conversaciones.Where(x => x.destinatarioId == mensaje.PacienteId).ToList().Any())
+                    var conversacion = new Conversacion()
                     {
-                        conversaciones.Add(new Conversacion()
-                        {
-                            destinatarioId = mensaje.MedicoId,
-                            //Apellidos = paciente.Apellidos,
-                            Apellidos = mensaje.PacienteId,
-                            ContenidoUltimoMensaje = mensaje.Contenido,
-                            FechaUltimoMensaje = mensaje.FechaHora
-                        });
+                        destinatarioId = mensaje.MedicoId,
+                        //Apellidos = mensaje.Medico.Apellidos,
+                        ContenidoPrimerMensaje = mensaje.Contenido,
+                        FechaUltimoMensaje = mensaje.FechaHora
+                    };
+                    if (!conversaciones.Contains(conversacion))
+                    {
+                        conversaciones.Add(conversacion);
                     }
                 }
             }
@@ -75,16 +75,16 @@ namespace ClinicaVistaalegre.Server.Controllers
                 //Medico medico = await Http.GetFromJsonAsync<Medico>($"api/Medicos/{userId}");
                 foreach (var mensaje in mensajes)
                 {
-                    if (!conversaciones.Where(x => x.destinatarioId == mensaje.MedicoId).ToList().Any())
+                    var conversacion = new Conversacion()
                     {
-                        conversaciones.Add(new Conversacion()
-                        {
-                            destinatarioId = mensaje.PacienteId,
-                            //Apellidos = medico.Apellidos,
-                            Apellidos = mensaje.MedicoId,
-                            ContenidoUltimoMensaje = mensaje.Contenido,
+                        destinatarioId = mensaje.PacienteId,
+                            //Apellidos = mensaje.Paciente.Apellidos,
+                            ContenidoPrimerMensaje = mensaje.Contenido,
                             FechaUltimoMensaje = mensaje.FechaHora
-                        });
+                    };
+                    if (!conversaciones.Contains(conversacion))
+                    {
+                        conversaciones.Add(conversacion);
                     }
                 }
             }

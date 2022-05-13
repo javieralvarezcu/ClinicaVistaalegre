@@ -44,11 +44,11 @@ namespace ClinicaVistaalegre.Server.Data
 
             modelBuilder.Entity<Mensaje>()
                 .HasKey(c => new {
-                    c.PacienteId,
-                    c.MedicoId
+                    c.Id
                 });
 
             modelBuilder.Entity<ApplicationUser>().Property(e => e.Apellidos);
+            modelBuilder.Ignore<Conversacion>();
         }
 
         public DbSet<Cita> Citas { get; set; }

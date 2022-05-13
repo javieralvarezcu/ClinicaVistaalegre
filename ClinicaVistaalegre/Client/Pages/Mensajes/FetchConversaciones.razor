@@ -9,12 +9,26 @@
 @inject IJSRuntime JS
 @inject AuthenticationStateProvider AuthenticationStateProvider
 
-<PageTitle>Citas</PageTitle>
+<PageTitle>Chat</PageTitle>
 
-<h1>Listar citas</h1>
+<h1>Conversaciones</h1>
 
 <div>
-    <a class="btn btn-outline-info" href="creaconversaciones">Nueva cita</a>
+    <!--<button class="btn btn-outline-info" href="chat/@destinatarioId" disabled="@ButtonIsDisabled">Nueva conversacion</button>-->
+    <a class="btn btn-outline-info" href="chat/@destinatarioId" style="@(destinatarioId.Equals("---") ? "pointer-events: none" : "")">Nueva conversacion</a>
+    <select id="Medico" onload="@OnChangeDestinatario" onchange="@OnChangeDestinatario" class="form-control" placeholder="Medico">
+                
+                @if(destinatarios!=null){
+                    foreach (var destinatario in destinatarios)
+                {
+                <option value="@destinatario.Key">@destinatario.Value</option>
+            }
+        }
+        else
+        {
+            <option value="---">No hay contactos disponibles</option>
+        }
+    </select>
 </div>
 
 @if (conversaciones == null)
@@ -23,15 +37,17 @@
 }
 else if (conversaciones.Count == 0)
 {
-    <text>No hay citas</text>
+    <br />
+    <text>No hay conversaciones</text>
 }else
 {
     <table class="table">
         <thead>
             <tr>
+                <th></th>
                 <th>Contacto</th>
-                <th>Último mensaje</th>
-                <th>Fecha del último mensaje</th>
+                <th>Primer mensaje</th>
+                <th>Fecha</th>
             </tr>
         </thead>
         <tbody>
@@ -43,7 +59,7 @@ else if (conversaciones.Count == 0)
                         <a class="btn btn-light" @onclick="(() => BorrarConversacion(conversacion.destinatarioId))">Borrar</a>
                     </td>
                     <td class="align-middle">@conversacion.Apellidos</td>
-                    <td class="align-middle">@conversacion.ContenidoUltimoMensaje</td>
+                    <td class="align-middle">@conversacion.ContenidoPrimerMensaje</td>
                     <td class="align-middle">@conversacion.FechaUltimoMensaje</td>
                 </tr>
             }
@@ -57,11 +73,28 @@ else if (conversaciones.Count == 0)
     private IEnumerable<Claim> _claims = Enumerable.Empty<Claim>();
     private ClaimsPrincipal user;
     private List<Conversacion>? conversaciones;
+    private Dictionary<string, string> destinatarios;
+    private string destinatarioId = "---";
+    private string ButtonIsDisabled = "true";
 
     protected override async Task OnInitializedAsync()
     {
         GetClaimsPrincipalData();
         conversaciones = await getConversaciones();
+        destinatarios = await getDestinatarios();
+    }
+
+    private async void OnChangeDestinatario(ChangeEventArgs args)
+    {
+        if (!args.Value.ToString().Equals("---"))
+        {
+            ButtonIsDisabled = "false";
+            destinatarioId = args.Value.ToString();
+        }
+        else
+        {
+            ButtonIsDisabled = "true";
+        }
     }
 
     private async Task BorrarConversacion(string destinatarioId)
@@ -86,9 +119,9 @@ else if (conversaciones.Count == 0)
         var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
         user = authState.User;
 
-            _authMessage = $"{user.Identity.Name} is authenticated.";
-            _claims = user.Claims;
-            _userId = user.FindFirst(c => c.Type == "sub")?.Value;
+        _authMessage = $"{user.Identity.Name} is authenticated.";
+        _claims = user.Claims;
+        _userId = user.FindFirst(c => c.Type == "sub")?.Value;
     }
 
     private async Task<List<Conversacion>> getConversaciones()
@@ -97,6 +130,19 @@ else if (conversaciones.Count == 0)
         try
         {
             _conversaciones = await Http.GetFromJsonAsync<List<Conversacion>>($"api/Mensajes/ConversacionesByUser/{_userId}");
+            foreach(var conversacion in _conversaciones)
+            {
+                if (user.IsInRole("Medico"))
+                {
+                    var paciente = await Http.GetFromJsonAsync<Paciente>($"api/Pacientes/{conversacion.destinatarioId}");
+                    conversacion.Apellidos= paciente.Apellidos;
+                }
+                else
+                {
+                    var medico = await Http.GetFromJsonAsync<Medico>($"api/Medicos/{conversacion.destinatarioId}");
+                    conversacion.Apellidos= medico.Apellidos;
+                }
+            }
         }
         catch (AccessTokenNotAvailableException exception)
         {
@@ -104,5 +150,35 @@ else if (conversaciones.Count == 0)
         }
 
         return _conversaciones;
+    }
+
+    private async Task<Dictionary<string,string>> getDestinatarios()
+    {
+        Dictionary<string,string> _destinatarios = new Dictionary<string,string>();
+        try
+        {
+            if (user.IsInRole("Medico"))
+            {
+                var pacientes = await Http.GetFromJsonAsync<List<Paciente>>($"api/Pacientes");
+                foreach(var paciente in pacientes)
+                {
+                    _destinatarios.Add(paciente.Id, paciente.Apellidos);
+                }
+            }
+            else
+            {
+                    var medicos = await Http.GetFromJsonAsync<List<Medico>>($"api/Medicos");
+                foreach(var medico in medicos)
+                {
+                    _destinatarios.Add(medico.Id, medico.Apellidos);
+                }
+            }
+        }
+        catch (AccessTokenNotAvailableException exception)
+        {
+            exception.Redirect();
+        }
+
+        return _destinatarios;
     }
 }

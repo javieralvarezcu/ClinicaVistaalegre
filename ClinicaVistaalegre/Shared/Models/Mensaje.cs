@@ -1,16 +1,12 @@
 ﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ClinicaVistaalegre.Shared.Models
 {
     public class Mensaje
     {
+        [Key]
+        public int Id { get; set; }
         public string PacienteId { get; set; }
         [JsonProperty(Required = Required.AllowNull)]
         public Paciente? Paciente { get; set; }
@@ -20,5 +16,16 @@ namespace ClinicaVistaalegre.Shared.Models
 
         public string Contenido { get; set; }
         public DateTime FechaHora { get; set; }
+
+        public string Emisor { get; set; }
+
+        public override bool Equals(object? obj)
+        {
+            return obj is Mensaje mensaje &&
+                   PacienteId == mensaje.PacienteId &&
+                   MedicoId == mensaje.MedicoId &&
+                   Contenido == mensaje.Contenido &&
+                   FechaHora == mensaje.FechaHora;
+        }
     }
 }

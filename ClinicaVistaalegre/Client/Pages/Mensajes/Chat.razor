@@ -2,11 +2,9 @@
 @using ClinicaVistaalegre.Shared.Models
 @using Microsoft.AspNetCore.Authorization
 @using Microsoft.AspNetCore.Components.WebAssembly.Authentication
-@using ClinicaVistaalegre.Shared
 @using System.Security.Claims
 @attribute [Authorize]
 @inject HttpClient Http
-@inject IJSRuntime JS
 @inject AuthenticationStateProvider AuthenticationStateProvider
 
 <PageTitle>Chat</PageTitle>
@@ -20,26 +18,27 @@
 @if (mensajes == null)
 {
     <p><em>Cargando...</em></p>
-}else
+}
+else
 {
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Tú</th>
-                <AuthorizeView Roles="Medico">
-                    <th class="text-end">@paciente.Apellidos</th>
-                </AuthorizeView>
-                <AuthorizeView Roles="Paciente">
-                    <th class="text-end">@medico.Apellidos</th>
-                </AuthorizeView>
-                <th class="text-end">Fecha Hora</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var mensaje in mensajes)
-            {
-
+    <div class="table-responsive">
+        <table class="table" id="job-table">
+            <thead>
                 <tr>
+                    <th>Tú</th>
+                    <AuthorizeView Roles="Medico">
+                        <th class="text-end">@paciente.Apellidos</th>
+                    </AuthorizeView>
+                    <AuthorizeView Roles="Paciente">
+                        <th class="text-end">@medico.Apellidos</th>
+                    </AuthorizeView>
+                    <th class="text-end"> </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var mensaje in mensajes)
+                {
+                    <tr>
                         @if (mensaje.Emisor.Equals(_userId))
                         {
                             <td class="align-middle">@mensaje.Contenido</td>
@@ -50,31 +49,32 @@
                             <td class="align-middle"></td>
                             <td class="align-middle text-end">@mensaje.Contenido</td>
                         }
-                        <td class="align-middle text-end">@mensaje.FechaHora</td>
-                </tr>
-            }
-        </tbody>
-    </table>
-
-        <EditForm Model="@mensaje" OnValidSubmit="Enviar">
-        <div class="form-group row">
-        <label for="Contenido" class="col-sm-2 col-form-label">
-            Nuevo mensaje:
-        </label>
-        <div class="col-sm-10">
-            <InputText id="Contenido" class="form-control" placeholder="Contenido"
-                       @bind-Value="mensaje.Contenido" />
-        </div>
-        <ValidationMessage For="() => this.mensaje.Contenido"></ValidationMessage>
-       <button type="submit" class="btn btn-info">Enviar</button>
+                        <td class="align-middle text-end" style="width: 15%">@mensaje.FechaHora</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
     </div>
+
+    <EditForm Model="@mensaje" OnValidSubmit="Enviar">
+        <div class="form-group row">
+            <div class="my-3 d-flex flex-row justify-content-between">
+                <div class="col-sm-10">
+                    <InputText id="Contenido" class="form-control" placeholder="Contenido"
+                           @bind-Value="mensaje.Contenido" />
+                </div>
+                <ValidationMessage For="() => this.mensaje.Contenido"></ValidationMessage>
+            <button type="submit" class="btn btn-info">Enviar</button>
+            </div>
+        </div>
     </EditForm>
+
 }
 
 @code {
     [Parameter] public string destinatarioId { get; set; }
 
-    private string _authMessage;       
+    private string _authMessage;
     private string _userId;
     private IEnumerable<Claim> _claims = Enumerable.Empty<Claim>();
     ClaimsPrincipal _user;
@@ -119,7 +119,7 @@
     {
         if (mensaje.Contenido != null)
         {
-            if(!mensaje.Contenido.Trim().Equals(""))
+            if (!mensaje.Contenido.Trim().Equals(""))
             {
                 mensaje.FechaHora = DateTime.Now;
                 mensaje.MedicoId = medico.Id;
@@ -130,12 +130,12 @@
                 mensajes = await getMensajes();
             }
         }
-        
+
     }
 
     private void OnChangeInput(ChangeEventArgs args)
     {
-            mensaje.Contenido = args.Value.ToString();
+        mensaje.Contenido = args.Value.ToString();
     }
 
     private async Task<List<Mensaje>> getMensajes()
@@ -146,7 +146,7 @@
 
             mensajes = await Http.GetFromJsonAsync<List<Mensaje>>($"api/Mensajes/Paciente/{paciente.Id}/Medico/{medico.Id}");
 
-            foreach(var mensaje in mensajes)
+            foreach (var mensaje in mensajes)
             {
                 mensaje.Paciente = paciente;
                 mensaje.Medico = medico;

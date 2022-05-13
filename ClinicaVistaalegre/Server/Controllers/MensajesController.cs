@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ClinicaVistaalegre.Server.Data;
 using ClinicaVistaalegre.Shared.Models;
@@ -43,6 +38,21 @@ namespace ClinicaVistaalegre.Server.Controllers
             }
             var mensajes = _context.Mensajes.Where(x => x.PacienteId == pacienteId && x.MedicoId == medicoId);
             return await mensajes.ToListAsync();
+        }
+
+        [HttpDelete("Paciente/{pacienteId}/Medico/{medicoId}")]
+        public async Task<IActionResult> DeleteMensajesPacienteMedico(string pacienteId, string medicoId)
+        {
+            if (_context.Mensajes != null)
+            {
+                var mensajes = _context.Mensajes.Where(x => x.PacienteId == pacienteId && x.MedicoId == medicoId);
+                foreach(var mensaje in mensajes)
+                {
+                    _context.Mensajes.Remove(mensaje);
+                }
+                await _context.SaveChangesAsync();
+            }
+            return NoContent();
         }
 
         [Route("ConversacionesByUser/{userId}")]

@@ -24,7 +24,8 @@
 else if (citas.Count == 0)
 {
     <text>No hay citas</text>
-}else
+}
+else
 {
     <table class="table">
         <thead>
@@ -55,14 +56,13 @@ else if (citas.Count == 0)
 }
 
 @code {
-    private string _authMessage;       
     private string _userId;
-    private IEnumerable<Claim> _claims = Enumerable.Empty<Claim>();
     private List<Cita>? citas;
 
     protected override async Task OnInitializedAsync()
     {
         GetClaimsPrincipalData();
+
         citas = await getCitas();
     }
 
@@ -81,10 +81,7 @@ else if (citas.Count == 0)
     {
         var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
         var user = authState.User;
-
-            _authMessage = $"{user.Identity.Name} is authenticated.";
-            _claims = user.Claims;
-            _userId = user.FindFirst(c => c.Type == "sub")?.Value;
+        _userId = user.FindFirst(c => c.Type == "sub")?.Value;
     }
 
     private async Task<List<Cita>> getCitas()
@@ -94,11 +91,11 @@ else if (citas.Count == 0)
         {
             _citas = await Http.GetFromJsonAsync<List<Cita>>($"api/Citas/ByPaciente/{_userId}");
 
-            foreach(var cita in _citas)
+            foreach (var cita in _citas)
             {
                 if (cita.Medico == null)
                 {
-                    cita.Medico= await Http.GetFromJsonAsync<Medico>($"api/Medicos/{cita.MedicoId}");
+                    cita.Medico = await Http.GetFromJsonAsync<Medico>($"api/Medicos/{cita.MedicoId}");
                 }
             }
         }

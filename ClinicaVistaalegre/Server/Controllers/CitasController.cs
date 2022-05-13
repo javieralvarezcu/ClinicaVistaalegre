@@ -48,7 +48,7 @@ namespace ClinicaVistaalegre.Server.Controllers
             List<Cita> citasDiaMedico = response.Where(d => d.FechaHora.ToString("dd-MM-yyyy") == date && d.MedicoId==medicoId)
                 .ToList();
             var horas = citasDiaMedico
-                .Where(d => d.Estado=="Aceptada" || d.PacienteId==pacienteId)
+                .Where(d => d.Estado!="Cancelada" && d.PacienteId==pacienteId)
                 .Select(d => d.FechaHora).ToList();
             List<DateTime> horasDelDia = new List<DateTime>();
             DateTime tempHora = new DateTime().AddHours(8);

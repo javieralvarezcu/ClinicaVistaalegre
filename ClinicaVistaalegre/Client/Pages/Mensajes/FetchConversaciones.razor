@@ -13,8 +13,7 @@
 
 <h1>Conversaciones</h1>
 
-<div>
-    <!--<button class="btn btn-outline-info" href="chat/@destinatarioId" disabled="@ButtonIsDisabled">Nueva conversacion</button>-->
+<div class="row my-3 d-flex flex-row justify-content-between">
     <a class="btn btn-outline-info" href="chat/@destinatarioId" style="@(destinatarioId.Equals("---") ? "pointer-events: none" : "")">Nueva conversacion</a>
     <select id="Medico" onload="@OnChangeDestinatario" onchange="@OnChangeDestinatario" class="form-control" placeholder="Medico">
                 

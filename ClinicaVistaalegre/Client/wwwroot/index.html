@@ -45,13 +45,14 @@
     }
 </script>
 
-<script>
+<script defer>
     window.DefaultSelectedValue = (id, hora) => {
         console.log(hora)
         let select = document.getElementById(id);
 
         if (select != null) {
-            select.value=hora
+            select.text = hora
+            select.value = hora
         }
     }
 </script>

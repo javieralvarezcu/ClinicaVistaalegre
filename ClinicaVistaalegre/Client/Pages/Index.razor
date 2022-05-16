@@ -2,5 +2,48 @@
 
 <PageTitle>Inicio</PageTitle>
 
-<h1>Clínica Vistaalegre</h1>
+<div class="jumbotron">
+    <div class="container">
+        <h1 class="display-3">Clínica Vistaalegre</h1>
+        <p>Esta aplicación web desarrollada en .NET 6 está destinada a ser el programa de gestión de citas de una clínica cualquiera. Está planteado de manera que el aumento de dimensión de sus capacidades sea fácil e intuitivo, pudiendo cumplir las expectativas de cualquier clínica que quiera usarlo</p>
+        <p><a class="btn btn-primary btn-lg" href="https://github.com/javieralvarezcu" role="button">GitHub del creador &raquo;</a></p>
+    </div>
+</div>
 
+<div class="container">
+    <div class="row">
+
+        <AuthorizeView Roles="Paciente">
+            <div class="col">
+                <h2>Citas</h2>
+                <p>Pide, explora o cancela citas con el médico que desees según su especialidad. Podrás pedir cita según la disponibilidad de los médicos.</p>
+                <p><a class="btn btn-secondary" href="fetchcitas" role="button">Ir a Citas &raquo;</a></p>
+            </div>
+            <div class="col">
+                <h2>Chat</h2>
+                <p>Inicia conversaciones con los médicos que desees para, por ejemplo, obtener feedback extra de un médico con el que tuviste cita o para cuadrar una hora que os venga bien a los dos.</p>
+                <p><a class="btn btn-secondary" href="fetchconversaciones" role="button">Ir a Chat &raquo;</a></p>
+            </div>
+        </AuthorizeView>
+        <AuthorizeView Roles="Medico">
+            <div class="col">
+                <h2>Citas</h2>
+                <p>Acepta, explora o cancela citas con el paciente que desees.</p>
+                <p><a class="btn btn-secondary" href="fetchcitasmedico" role="button">Ir a Citas &raquo;</a></p>
+            </div>
+            <div class="col">
+                <h2>Chat</h2>
+                <p>Inicia conversaciones con los pacientes que desees para, por ejemplo, dar feedback extra de un paciente con el que tuviste cita o para cuadrar una hora que os venga bien a los dos. Incluso para comentarle que no puedes aceptarle su cita</p>
+                <p><a class="btn btn-secondary" href="fetchconversaciones" role="button">Ir a Chat &raquo;</a></p>
+            </div>
+        </AuthorizeView>
+        <AuthorizeView>
+            <NotAuthorized>
+                Inicia sesión o regístrate para acceder al contenido completo de esta aplicación.
+            </NotAuthorized>
+        </AuthorizeView>
+    </div>
+
+    <hr>
+
+</div>

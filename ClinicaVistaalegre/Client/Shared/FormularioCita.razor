@@ -27,6 +27,24 @@
         <ValidationMessage For="() => this._fechaCita"></ValidationMessage>
     </div>
     <div class="form-group row">
+        <label for="MedicoId" class="col-sm-2 col-form-label">
+            Medico
+        </label>
+        <div class="col-sm-10">
+            <InputSelect id="Medico" onblur="@OnBlurFecha" class="form-control" placeholder="Medico" @bind-Value="@Cita.MedicoId">
+                <option value="---">---</option>
+                @if (medicos != null)
+                {
+                    foreach (Medico m in medicos)
+                    {
+                        <option value="@m.Id">@m.Apellidos - @m.Especialidad.ToUpper()</option>
+                    }
+                }
+            </InputSelect>
+        </div>
+        <ValidationMessage For="() => this.Cita.MedicoId"></ValidationMessage>
+    </div>
+    <div class="form-group row">
         <label for="Hora" class="col-sm-2 col-form-label">
             Hora
         </label>
@@ -36,24 +54,6 @@
             </select>
         </div>
     </div>
-    <div class="form-group row">
-        <label for="MedicoId" class="col-sm-2 col-form-label">
-            Medico
-        </label>
-        <div class="col-sm-10">
-            <InputSelect id="Medico" onblur="@OnBlurFecha" class="form-control" placeholder="Medico" @bind-Value="@Cita.MedicoId">
-                <option value="---">---</option>
-                @if(medicos!=null){
-                    foreach (Medico m in medicos)
-                {
-                    <option value="@m.Id">@m.Apellidos - @m.Especialidad.ToUpper()</option>
-                }
-                }
-            </InputSelect>
-        </div>
-        <ValidationMessage For="() => this.Cita.MedicoId"></ValidationMessage>
-    </div>
-
     <button type="submit" class="btn btn-success">@TextoBoton</button>
     @*<DataAnnotationsValidator/>*@
 
@@ -61,8 +61,8 @@
 
 @code {
 
-    private string _authMessage;       
-    private string _userId="";
+    private string _authMessage;
+    private string _userId = "";
     private IEnumerable<Claim> _claims = Enumerable.Empty<Claim>();
 
     [Parameter] public String TextoBoton { get; set; } = "Guardar";
@@ -101,7 +101,7 @@
     protected override async Task OnInitializedAsync()
     {
         _fechaCita = DateTime.Now.AddDays(1);
-        Cita.MedicoId = "";
+        //Cita.MedicoId = "";
         medicos = await Http.GetFromJsonAsync<List<Medico>>("api/Medicos");
         base.OnInitializedAsync();
     }
@@ -116,15 +116,15 @@
             stringDates[i] = $"{list[i].Hour}:{list[i].Minute}";
         }
 
-            await JsRuntime.InvokeAsync<object>(
-            "NewSelectValue",
-            "Hora",
-            stringDates);
+        await JsRuntime.InvokeAsync<object>(
+        "NewSelectValue",
+        "Hora",
+        stringDates);
 
-            await JsRuntime.InvokeAsync<object>(
-            "DefaultSelectedValue",
-            "Hora",
-            $"{cita.FechaHora.Hour}:{cita.FechaHora.Minute}");
+        await JsRuntime.InvokeAsync<object>(
+        "DefaultSelectedValue",
+        "Hora",
+        $"{cita.FechaHora.Hour}:{cita.FechaHora.Minute}");
 
         return list;
     }
@@ -132,12 +132,12 @@
     protected async override void OnParametersSet()
     {
         await GetClaimsPrincipalData();
-        if (cita != Cita )
+        if (cita != Cita)
         {
             cita = Cita;
         }
 
-        if(cita.FechaHora != new DateTime() && !cita.MedicoId.Equals(""))
+        if (cita.FechaHora != new DateTime() && !cita.MedicoId.Equals(""))
         {
             _fechaCita = cita.FechaHora;
 
@@ -151,7 +151,7 @@
     {
         if (_fechaCita > DateTime.Now)
         {
-            if(!Cita.MedicoId.Equals(""))
+            if (!Cita.MedicoId.Equals(""))
             {
                 horas = await getHoras(Cita.MedicoId, _fechaCita);
             }
@@ -173,16 +173,16 @@
             _horaCita.Hour,
             _horaCita.Minute, 0
     );
-        CitaChanged.InvokeAsync(cita);
-    } 
+        await CitaChanged.InvokeAsync(cita);
+    }
 
     private async Task GetClaimsPrincipalData()
     {
         var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
         var user = authState.User;
 
-            _authMessage = $"{user.Identity.Name} is authenticated.";
-            _claims = user.Claims;
-            _userId = user.FindFirst(c => c.Type == "sub")?.Value;
+        _authMessage = $"{user.Identity.Name} is authenticated.";
+        _claims = user.Claims;
+        _userId = user.FindFirst(c => c.Type == "sub")?.Value;
     }
 }

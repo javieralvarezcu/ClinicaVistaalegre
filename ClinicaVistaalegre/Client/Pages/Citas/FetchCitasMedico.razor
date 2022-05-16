@@ -35,20 +35,20 @@ else if (citas.Count == 0)
             {
                 @switch (cita.Estado)
                 {
-                    case "Cancelada":
+                    case "Cancelada": case "Pasada":
                         rowClass = "table-secondary";
                         break;
                     case "Pendiente":
-                        rowClass="table-info";
+                        rowClass="";
                         break;
                     default:
-                        rowClass = "";
+                        rowClass = "table-info";
                         break;
                 }
 
                 <tr class="@rowClass">
                     <td class="align-middle">
-                        @if(cita.Estado.Equals("Cancelada")){
+                        @if(cita.Estado.Equals("Cancelada")||cita.Estado.Equals("Pasada")){
                             <a class="btn btn-dark" disabled>Cancelar</a>
                         }else{
                             <a class="btn btn-dark" @onclick="(() => CancelarCita(cita.Id))">Cancelar</a>

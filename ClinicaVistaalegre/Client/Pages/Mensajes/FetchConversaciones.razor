@@ -1,13 +1,4 @@
 ﻿@page "/fetchconversaciones"
-@using ClinicaVistaalegre.Shared.Models
-@using Microsoft.AspNetCore.Authorization
-@using Microsoft.AspNetCore.Components.WebAssembly.Authentication
-@using ClinicaVistaalegre.Shared
-@using System.Security.Claims
-@attribute [Authorize]
-@inject HttpClient Http
-@inject IJSRuntime JS
-@inject AuthenticationStateProvider AuthenticationStateProvider
 
 <PageTitle>Chat</PageTitle>
 
@@ -169,7 +160,7 @@ else if (conversaciones.Count == 0)
                     var medicos = await Http.GetFromJsonAsync<List<Medico>>($"api/Medicos");
                 foreach(var medico in medicos)
                 {
-                    _destinatarios.Add(medico.Id, medico.Apellidos);
+                    _destinatarios.Add(medico.Id, $"{medico.Apellidos} - {medico.Especialidad.ToUpper()}+");
                 }
             }
         }

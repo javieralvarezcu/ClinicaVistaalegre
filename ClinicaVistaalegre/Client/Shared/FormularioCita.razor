@@ -1,9 +1,6 @@
-﻿@using ClinicaVistaalegre.Shared.Models
-@using System.Security.Claims
-@inject IJSRuntime JsRuntime
-@inject HttpClient Http
-@page "/claims/formularioCita"
-@inject AuthenticationStateProvider AuthenticationStateProvider
+﻿@page "/claims/formularioCita"
+@using CurrieTechnologies.Razor.SweetAlert2
+@inject SweetAlertService Swal;
 
 <EditForm Model="@Cita" OnValidSubmit="@OnValidSubmit">
     <div class="form-group row">
@@ -14,7 +11,7 @@
             <InputText id="Motivo" class="form-control" placeholder="Motivo"
                        @bind-Value="Cita.Motivo" />
         </div>
-        <ValidationMessage For="() => this.Cita.Motivo"></ValidationMessage>
+        <ValidationMessage For="() => this.Cita.Motivo">Inserte un motivo</ValidationMessage>
     </div>
     <div class="form-group row">
         <label for="Fecha" class="col-sm-2 col-form-label">
@@ -24,7 +21,16 @@
             <InputDate onblur="@OnBlurFecha" id="Fecha" class="form-control" placeholder="Fecha"
                        @bind-Value="@_fechaCita" />
         </div>
-        <ValidationMessage For="() => this._fechaCita"></ValidationMessage>
+        <ValidationMessage For="() => this._fechaCita">Inserte una fecha válida</ValidationMessage>
+    </div>
+    <div class="form-group row">
+        <label for="Hora" class="col-sm-2 col-form-label">
+            Hora
+        </label>
+        <div class="col-sm-10">
+            <select id="Hora" style="@(horas.Count()==0 ? "pointer-events: none" : "")" onchange="@OnChangeSelect" class="form-control" placeholder="Hora">
+            </select>
+        </div>
     </div>
     <div class="form-group row">
         <label for="MedicoId" class="col-sm-2 col-form-label">
@@ -33,36 +39,25 @@
         <div class="col-sm-10">
             <InputSelect id="Medico" onblur="@OnBlurFecha" class="form-control" placeholder="Medico" @bind-Value="@Cita.MedicoId">
                 <option value="---">---</option>
-                @if (medicos != null)
-                {
+                @if(medicos!=null){
                     foreach (Medico m in medicos)
-                    {
-                        <option value="@m.Id">@m.Apellidos - @m.Especialidad.ToUpper()</option>
-                    }
+                {
+                    <option value="@m.Id">@m.Apellidos - @m.Especialidad.ToUpper()</option>
+                }
                 }
             </InputSelect>
         </div>
-        <ValidationMessage For="() => this.Cita.MedicoId"></ValidationMessage>
+        <ValidationMessage For="() => this.Cita.MedicoId">Seleccione un médico</ValidationMessage>
     </div>
-    <div class="form-group row">
-        <label for="Hora" class="col-sm-2 col-form-label">
-            Hora
-        </label>
-        <div class="col-sm-10">
-            <select id="Hora" onchange="@OnChangeSelect" class="form-control" placeholder="Hora">
-                @*<option value="">---</option>*@
-            </select>
-        </div>
-    </div>
+
     <button type="submit" class="btn btn-success">@TextoBoton</button>
-    @*<DataAnnotationsValidator/>*@
 
 </EditForm>
 
 @code {
 
-    private string _authMessage;
-    private string _userId = "";
+    private string _authMessage;       
+    private string _userId="";
     private IEnumerable<Claim> _claims = Enumerable.Empty<Claim>();
 
     [Parameter] public String TextoBoton { get; set; } = "Guardar";
@@ -70,7 +65,7 @@
     [Parameter] public EventCallback<Cita> CitaChanged { get; set; }
     private Cita cita;
     private List<Medico>? medicos;
-    private List<DateTime>? horas;
+    private List<DateTime>? horas = new List<DateTime>();
 
     private DateTime fechaCita;
     public DateTime _fechaCita
@@ -101,7 +96,7 @@
     protected override async Task OnInitializedAsync()
     {
         _fechaCita = DateTime.Now.AddDays(1);
-        //Cita.MedicoId = "";
+        Cita.MedicoId = "";
         medicos = await Http.GetFromJsonAsync<List<Medico>>("api/Medicos");
         base.OnInitializedAsync();
     }
@@ -116,28 +111,33 @@
             stringDates[i] = $"{list[i].Hour}:{list[i].Minute}";
         }
 
-        await JsRuntime.InvokeAsync<object>(
+        rellenaSelect(stringDates);
+
+        return list;
+    }
+
+    public async void rellenaSelect(string[] stringDates)
+    {
+        await JS.InvokeAsync<object>(
         "NewSelectValue",
         "Hora",
         stringDates);
 
-        await JsRuntime.InvokeAsync<object>(
+        await JS.InvokeAsync<object>(
         "DefaultSelectedValue",
         "Hora",
         $"{cita.FechaHora.Hour}:{cita.FechaHora.Minute}");
-
-        return list;
     }
 
     protected async override void OnParametersSet()
     {
         await GetClaimsPrincipalData();
-        if (cita != Cita)
+        if (cita != Cita )
         {
             cita = Cita;
         }
 
-        if (cita.FechaHora != new DateTime() && !cita.MedicoId.Equals(""))
+        if(cita.FechaHora != new DateTime() && !cita.MedicoId.Equals(""))
         {
             _fechaCita = cita.FechaHora;
 
@@ -151,21 +151,31 @@
     {
         if (_fechaCita > DateTime.Now)
         {
-            if (!Cita.MedicoId.Equals(""))
+            if(!Cita.MedicoId.Equals(""))
             {
                 horas = await getHoras(Cita.MedicoId, _fechaCita);
             }
         }
         else
         {
-            string error = "Inserta una fecha posterior al día de hoy";
-            await JsRuntime.InvokeAsync<bool>("confirm", error);
+            horas = new List<DateTime>();
+            rellenaSelect(new string[1]);
+            await Swal.FireAsync("Error de fecha", "Inserta una fecha posterior al día de hoy", "error");
         }
     }
 
     private async void OnValidSubmit()
     {
-        cita.PacienteId = _userId;
+        if (fechaCita < DateTime.Now)
+        {
+            await Swal.FireAsync("Error de fecha", "Inserta una fecha posterior al día de hoy", "error");
+        }else if (cita.Motivo.Equals(""))
+        {
+            await Swal.FireAsync("Error de motivo", "Inserta un motivo", "error");
+        }
+        else
+        {
+            cita.PacienteId = _userId;
         cita.FechaHora = new DateTime(
             fechaCita.Year,
             fechaCita.Month,
@@ -173,16 +183,18 @@
             _horaCita.Hour,
             _horaCita.Minute, 0
     );
-        await CitaChanged.InvokeAsync(cita);
-    }
+        CitaChanged.InvokeAsync(cita);
+        }
+        
+    } 
 
     private async Task GetClaimsPrincipalData()
     {
         var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
         var user = authState.User;
 
-        _authMessage = $"{user.Identity.Name} is authenticated.";
-        _claims = user.Claims;
-        _userId = user.FindFirst(c => c.Type == "sub")?.Value;
+            _authMessage = $"{user.Identity.Name} is authenticated.";
+            _claims = user.Claims;
+            _userId = user.FindFirst(c => c.Type == "sub")?.Value;
     }
 }

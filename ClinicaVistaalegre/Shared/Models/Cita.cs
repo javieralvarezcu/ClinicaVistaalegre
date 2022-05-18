@@ -21,7 +21,7 @@ namespace ClinicaVistaalegre.Shared.Models
         [JsonProperty(Required = Required.AllowNull)]
         public Medico? Medico { get; set; }
 
-        public string? Motivo { get; set; }
+        public string Motivo { get; set; }
         [CitaDateValidation]
         public DateTime FechaHora { get; set; }
         public string Estado { get; set; } = "Pendiente";

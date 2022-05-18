@@ -25,6 +25,8 @@
 
 </html>
 
+<script src="_content/CurrieTechnologies.Razor.SweetAlert2/sweetAlert2.min.js"></script>
+
 <script defer>
     window.NewSelectValue = (id, horas) => {
         let select = document.getElementById(id);
@@ -45,13 +47,14 @@
     }
 </script>
 
-<script>
+<script defer>
     window.DefaultSelectedValue = (id, hora) => {
         console.log(hora)
         let select = document.getElementById(id);
 
         if (select != null) {
-            select.value=hora
+            select.text = hora
+            select.value = hora
         }
     }
 </script>

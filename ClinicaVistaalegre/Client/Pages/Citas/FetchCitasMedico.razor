@@ -1,13 +1,4 @@
 ﻿@page "/fetchcitasmedico"
-@using ClinicaVistaalegre.Shared.Models
-@using Microsoft.AspNetCore.Authorization
-@using Microsoft.AspNetCore.Components.WebAssembly.Authentication
-@using ClinicaVistaalegre.Shared
-@using System.Security.Claims
-@attribute [Authorize]
-@inject HttpClient Http
-@inject IJSRuntime JS
-@inject AuthenticationStateProvider AuthenticationStateProvider
 
 <PageTitle>Citas</PageTitle>
 
@@ -35,20 +26,20 @@ else if (citas.Count == 0)
             {
                 @switch (cita.Estado)
                 {
-                    case "Cancelada":
+                    case "Cancelada": case "Pasada":
                         rowClass = "table-secondary";
                         break;
                     case "Pendiente":
-                        rowClass="table-info";
+                        rowClass="";
                         break;
                     default:
-                        rowClass = "";
+                        rowClass = "table-info";
                         break;
                 }
 
                 <tr class="@rowClass">
                     <td class="align-middle">
-                        @if(cita.Estado.Equals("Cancelada")){
+                        @if(cita.Estado.Equals("Cancelada")||cita.Estado.Equals("Pasada")){
                             <a class="btn btn-dark" disabled>Cancelar</a>
                         }else{
                             <a class="btn btn-dark" @onclick="(() => CancelarCita(cita.Id))">Cancelar</a>
@@ -88,10 +79,35 @@ else if (citas.Count == 0)
     {
         var citaBorrada = citas.First(x => x.Id == CitaId);
         string confirmacion = $"¿Deseas borrar la cita con motivo:\n{citaBorrada.Motivo}?";
-        if (await JS.InvokeAsync<bool>("confirm", confirmacion))
+
+        SweetAlertResult result = await Swal.FireAsync(new SweetAlertOptions
+            {
+                Title = confirmacion,
+                Text = "No será posible recuperar el registro una vez borrado",
+                Icon = SweetAlertIcon.Warning,
+                ShowCancelButton = true,
+                ConfirmButtonText = "Sí, borrar",
+                CancelButtonText = "No, volver"
+            });
+
+        if (!string.IsNullOrEmpty(result.Value))
         {
-            await Http.DeleteAsync($"api/Citas/{CitaId}");
+            await Swal.FireAsync(
+              "Borrada",
+              "su cita se ha borrado.",
+              SweetAlertIcon.Success
+              );
+              await Http.DeleteAsync($"api/Citas/{CitaId}");
             citas = await getCitas();
+
+        }
+        else if (result.Dismiss == DismissReason.Cancel)
+        {
+            await Swal.FireAsync(
+              "Cancelada",
+              "Operación de borrado candelada. Su cita sigue en vigor.",
+              SweetAlertIcon.Error
+              );
         }
     }
 

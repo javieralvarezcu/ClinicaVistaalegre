@@ -922,3 +922,4 @@ C:\Users\JAVIER.ALVAREZCUEV\ClinicaVistaalegre\ClinicaVistaalegre\Server\obj\Deb
 C:\Users\JAVIER.ALVAREZCUEV\ClinicaVistaalegre\ClinicaVistaalegre\Server\obj\Debug\net6.0\ClinicaVistaalegre.Server.pdb
 C:\Users\JAVIER.ALVAREZCUEV\ClinicaVistaalegre\ClinicaVistaalegre\Server\obj\Debug\net6.0\ClinicaVistaalegre.Server.genruntimeconfig.cache
 C:\Users\JAVIER.ALVAREZCUEV\ClinicaVistaalegre\ClinicaVistaalegre\Server\obj\Debug\net6.0\ref\ClinicaVistaalegre.Server.dll
+C:\Users\JAVIER.ALVAREZCUEV\ClinicaVistaalegre\ClinicaVistaalegre\Server\bin\Debug\net6.0\CurrieTechnologies.Razor.SweetAlert2.dll

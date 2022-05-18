@@ -22,6 +22,13 @@ namespace ClinicaVistaalegre.Server.Controllers
         public async Task<ActionResult<IEnumerable<Cita>>> GetCitas()
         {
             var response = await _context.Citas.ToListAsync();
+            foreach (var cita in response)
+            {
+                if (cita.FechaHora < DateTime.Now)
+                {
+                    cita.Estado = "Pasada";
+                }
+            }
             return response;
         }
 
@@ -30,6 +37,13 @@ namespace ClinicaVistaalegre.Server.Controllers
         public async Task<ActionResult<List<Cita>>> GetCitasByPaciente(string id)
         {
             var response = await _context.Citas.ToListAsync();
+            foreach (var cita in response)
+            {
+                if (cita.FechaHora < DateTime.Now)
+                {
+                    cita.Estado = "Pasada";
+                }
+            }
             return response.Where(x => x.PacienteId==id).ToList();
         }
 
@@ -38,6 +52,13 @@ namespace ClinicaVistaalegre.Server.Controllers
         public async Task<ActionResult<List<Cita>>> GetCitasByMedico(string id)
         {
             var response = await _context.Citas.ToListAsync();
+            foreach(var cita in response)
+            {
+                if (cita.FechaHora < DateTime.Now)
+                {
+                    cita.Estado = "Pasada";
+                }
+            }
             return response.Where(x => x.MedicoId == id).OrderBy(x => x.FechaHora).ToList();
         }
 

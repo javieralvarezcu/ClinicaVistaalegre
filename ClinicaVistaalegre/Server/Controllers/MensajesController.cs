@@ -63,13 +63,11 @@ namespace ClinicaVistaalegre.Server.Controllers
             if(!_context.Medicos.Where(x => x.Id == userId).ToList().Any())
             {
                 mensajes = _context.Mensajes.Where(x => x.PacienteId == userId).ToList();
-                //Paciente paciente = await Http.GetFromJsonAsync<Paciente>($"api/Pacientes/{userId}");
                 foreach (var mensaje in mensajes)
                 {
                     var conversacion = new Conversacion()
                     {
                         destinatarioId = mensaje.MedicoId,
-                        //Apellidos = mensaje.Medico.Apellidos,
                         ContenidoPrimerMensaje = mensaje.Contenido,
                         FechaUltimoMensaje = mensaje.FechaHora
                     };
@@ -82,13 +80,11 @@ namespace ClinicaVistaalegre.Server.Controllers
             else
             {
                 mensajes = _context.Mensajes.Where(x => x.MedicoId == userId).ToList();
-                //Medico medico = await Http.GetFromJsonAsync<Medico>($"api/Medicos/{userId}");
                 foreach (var mensaje in mensajes)
                 {
                     var conversacion = new Conversacion()
                     {
                         destinatarioId = mensaje.PacienteId,
-                            //Apellidos = mensaje.Paciente.Apellidos,
                             ContenidoPrimerMensaje = mensaje.Contenido,
                             FechaUltimoMensaje = mensaje.FechaHora
                     };

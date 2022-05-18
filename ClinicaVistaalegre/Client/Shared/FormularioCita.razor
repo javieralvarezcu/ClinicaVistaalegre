@@ -1,6 +1,9 @@
-﻿@page "/claims/formularioCita"
-@using CurrieTechnologies.Razor.SweetAlert2
-@inject SweetAlertService Swal;
+﻿@using ClinicaVistaalegre.Shared.Models
+@using System.Security.Claims
+@inject IJSRuntime JsRuntime
+@inject HttpClient Http
+@page "/claims/formularioCita"
+@inject AuthenticationStateProvider AuthenticationStateProvider
 
 <EditForm Model="@Cita" OnValidSubmit="@OnValidSubmit">
     <div class="form-group row">
@@ -11,7 +14,7 @@
             <InputText id="Motivo" class="form-control" placeholder="Motivo"
                        @bind-Value="Cita.Motivo" />
         </div>
-        <ValidationMessage For="() => this.Cita.Motivo">Inserte un motivo</ValidationMessage>
+        <ValidationMessage For="() => this.Cita.Motivo"></ValidationMessage>
     </div>
     <div class="form-group row">
         <label for="Fecha" class="col-sm-2 col-form-label">
@@ -21,14 +24,15 @@
             <InputDate onblur="@OnBlurFecha" id="Fecha" class="form-control" placeholder="Fecha"
                        @bind-Value="@_fechaCita" />
         </div>
-        <ValidationMessage For="() => this._fechaCita">Inserte una fecha válida</ValidationMessage>
+        <ValidationMessage For="() => this._fechaCita"></ValidationMessage>
     </div>
     <div class="form-group row">
         <label for="Hora" class="col-sm-2 col-form-label">
             Hora
         </label>
         <div class="col-sm-10">
-            <select id="Hora" style="@(horas.Count()==0 ? "pointer-events: none" : "")" onchange="@OnChangeSelect" class="form-control" placeholder="Hora">
+            <select id="Hora" onchange="@OnChangeSelect" class="form-control" placeholder="Hora">
+                @*<option value="">---</option>*@
             </select>
         </div>
     </div>
@@ -47,10 +51,11 @@
                 }
             </InputSelect>
         </div>
-        <ValidationMessage For="() => this.Cita.MedicoId">Seleccione un médico</ValidationMessage>
+        <ValidationMessage For="() => this.Cita.MedicoId"></ValidationMessage>
     </div>
 
     <button type="submit" class="btn btn-success">@TextoBoton</button>
+    @*<DataAnnotationsValidator/>*@
 
 </EditForm>
 
@@ -65,7 +70,7 @@
     [Parameter] public EventCallback<Cita> CitaChanged { get; set; }
     private Cita cita;
     private List<Medico>? medicos;
-    private List<DateTime>? horas = new List<DateTime>();
+    private List<DateTime>? horas;
 
     private DateTime fechaCita;
     public DateTime _fechaCita
@@ -111,22 +116,17 @@
             stringDates[i] = $"{list[i].Hour}:{list[i].Minute}";
         }
 
-        rellenaSelect(stringDates);
+            await JsRuntime.InvokeAsync<object>(
+            "NewSelectValue",
+            "Hora",
+            stringDates);
+
+            await JsRuntime.InvokeAsync<object>(
+            "DefaultSelectedValue",
+            "Hora",
+            $"{cita.FechaHora.Hour}:{cita.FechaHora.Minute}");
 
         return list;
-    }
-
-    public async void rellenaSelect(string[] stringDates)
-    {
-        await JS.InvokeAsync<object>(
-        "NewSelectValue",
-        "Hora",
-        stringDates);
-
-        await JS.InvokeAsync<object>(
-        "DefaultSelectedValue",
-        "Hora",
-        $"{cita.FechaHora.Hour}:{cita.FechaHora.Minute}");
     }
 
     protected async override void OnParametersSet()
@@ -158,24 +158,14 @@
         }
         else
         {
-            horas = new List<DateTime>();
-            rellenaSelect(new string[1]);
-            await Swal.FireAsync("Error de fecha", "Inserta una fecha posterior al día de hoy", "error");
+            string error = "Inserta una fecha posterior al día de hoy";
+            await JsRuntime.InvokeAsync<bool>("confirm", error);
         }
     }
 
     private async void OnValidSubmit()
     {
-        if (fechaCita < DateTime.Now)
-        {
-            await Swal.FireAsync("Error de fecha", "Inserta una fecha posterior al día de hoy", "error");
-        }else if (cita.Motivo.Equals(""))
-        {
-            await Swal.FireAsync("Error de motivo", "Inserta un motivo", "error");
-        }
-        else
-        {
-            cita.PacienteId = _userId;
+        cita.PacienteId = _userId;
         cita.FechaHora = new DateTime(
             fechaCita.Year,
             fechaCita.Month,
@@ -184,8 +174,6 @@
             _horaCita.Minute, 0
     );
         CitaChanged.InvokeAsync(cita);
-        }
-        
     } 
 
     private async Task GetClaimsPrincipalData()

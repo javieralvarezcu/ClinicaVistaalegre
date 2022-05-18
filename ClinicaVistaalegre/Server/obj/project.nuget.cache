@@ -1,11 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "ZwUXuwRZkkxrgAYO1l7EDubo/3BgV6JqDXiQu3mJLTN/HbcmirFspH/Ls1zUWfWeEy4PjrbfFln9SJ3JuXncaA==",
+  "dgSpecHash": "zEcArlpEtluOw0XGaUy0khuJVpRTVTg8cdvxQC/KXtA/tvZ2glGkpUiZHrhCFqdeZj2YHnMhZ6VFMRrEsP/tfw==",
   "success": true,
   "projectFilePath": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Server\\ClinicaVistaalegre.Server.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\JAVIER.ALVAREZCUEV\\.nuget\\packages\\automapper\\10.0.0\\automapper.10.0.0.nupkg.sha512",
-    "C:\\Users\\JAVIER.ALVAREZCUEV\\.nuget\\packages\\currietechnologies.razor.sweetalert2\\5.2.1\\currietechnologies.razor.sweetalert2.5.2.1.nupkg.sha512",
     "C:\\Users\\JAVIER.ALVAREZCUEV\\.nuget\\packages\\duende.identityserver\\5.2.0\\duende.identityserver.5.2.0.nupkg.sha512",
     "C:\\Users\\JAVIER.ALVAREZCUEV\\.nuget\\packages\\duende.identityserver.aspnetidentity\\5.2.0\\duende.identityserver.aspnetidentity.5.2.0.nupkg.sha512",
     "C:\\Users\\JAVIER.ALVAREZCUEV\\.nuget\\packages\\duende.identityserver.entityframework\\5.2.0\\duende.identityserver.entityframework.5.2.0.nupkg.sha512",

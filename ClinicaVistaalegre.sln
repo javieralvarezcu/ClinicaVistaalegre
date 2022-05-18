@@ -1,13 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.2.32408.312
+VisualStudioVersion = 17.1.32421.90
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClinicaVistaalegre.Server", "ClinicaVistaalegre\Server\ClinicaVistaalegre.Server.csproj", "{E7A48B0A-A753-4122-8819-47C033CE674A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClinicaVistaalegre.Server", "ClinicaVistaalegre\Server\ClinicaVistaalegre.Server.csproj", "{298E8029-7C12-475A-AD1A-31C6BA68A3C4}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClinicaVistaalegre.Client", "ClinicaVistaalegre\Client\ClinicaVistaalegre.Client.csproj", "{5C14CAF9-C905-4950-8D0A-A11E99B71543}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClinicaVistaalegre.Client", "ClinicaVistaalegre\Client\ClinicaVistaalegre.Client.csproj", "{CF8BB4AA-19B7-4EFD-AA30-F6FEC34C906B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClinicaVistaalegre.Shared", "ClinicaVistaalegre\Shared\ClinicaVistaalegre.Shared.csproj", "{2B31E72B-535D-4E5D-9869-E261FB3ECE56}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClinicaVistaalegre.Shared", "ClinicaVistaalegre\Shared\ClinicaVistaalegre.Shared.csproj", "{519F8EEF-14F8-4598-9141-81732E5F8C1C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,23 +15,23 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{E7A48B0A-A753-4122-8819-47C033CE674A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E7A48B0A-A753-4122-8819-47C033CE674A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E7A48B0A-A753-4122-8819-47C033CE674A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E7A48B0A-A753-4122-8819-47C033CE674A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5C14CAF9-C905-4950-8D0A-A11E99B71543}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5C14CAF9-C905-4950-8D0A-A11E99B71543}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5C14CAF9-C905-4950-8D0A-A11E99B71543}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5C14CAF9-C905-4950-8D0A-A11E99B71543}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2B31E72B-535D-4E5D-9869-E261FB3ECE56}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2B31E72B-535D-4E5D-9869-E261FB3ECE56}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2B31E72B-535D-4E5D-9869-E261FB3ECE56}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2B31E72B-535D-4E5D-9869-E261FB3ECE56}.Release|Any CPU.Build.0 = Release|Any CPU
+		{298E8029-7C12-475A-AD1A-31C6BA68A3C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{298E8029-7C12-475A-AD1A-31C6BA68A3C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{298E8029-7C12-475A-AD1A-31C6BA68A3C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{298E8029-7C12-475A-AD1A-31C6BA68A3C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF8BB4AA-19B7-4EFD-AA30-F6FEC34C906B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF8BB4AA-19B7-4EFD-AA30-F6FEC34C906B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF8BB4AA-19B7-4EFD-AA30-F6FEC34C906B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF8BB4AA-19B7-4EFD-AA30-F6FEC34C906B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{519F8EEF-14F8-4598-9141-81732E5F8C1C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{519F8EEF-14F8-4598-9141-81732E5F8C1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{519F8EEF-14F8-4598-9141-81732E5F8C1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{519F8EEF-14F8-4598-9141-81732E5F8C1C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {B48A650D-7F2E-4A83-AEDD-C3FB1FF95FCE}
+		SolutionGuid = {42E023C8-A4ED-41F5-A102-834D2D9C00BD}
 	EndGlobalSection
 EndGlobal

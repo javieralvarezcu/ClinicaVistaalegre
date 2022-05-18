@@ -36,18 +36,6 @@
           }
         }
       },
-      "CurrieTechnologies.Razor.SweetAlert2/5.2.1": {
-        "dependencies": {
-          "Microsoft.AspNetCore.Components": "6.0.3",
-          "Microsoft.AspNetCore.Components.Web": "6.0.3"
-        },
-        "runtime": {
-          "lib/net6.0/CurrieTechnologies.Razor.SweetAlert2.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0"
-          }
-        }
-      },
       "Duende.IdentityServer/5.2.0": {
         "dependencies": {
           "Duende.IdentityServer.Storage": "5.2.0",
@@ -2704,10 +2692,8 @@
       "ClinicaVistaalegre.Client/1.0.0": {
         "dependencies": {
           "ClinicaVistaalegre.Shared": "1.0.0",
-          "CurrieTechnologies.Razor.SweetAlert2": "5.2.1",
           "Microsoft.AspNetCore.Components.WebAssembly": "6.0.3",
           "Microsoft.AspNetCore.Components.WebAssembly.Authentication": "6.0.3",
-          "Microsoft.EntityFrameworkCore.SqlServer": "6.0.5",
           "Microsoft.Extensions.Http": "6.0.0",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "6.0.4"
         },
@@ -2737,13 +2723,6 @@
       "sha512": "sha512-T09NoqMZBqw0/JEauXulxnmmerl0Zj03e0r6VCcJ0LURWBIaYxZPPoiDv8bHf5Y4x2xcXJp4JPXoCaeOMJfHEA==",
       "path": "automapper/10.0.0",
       "hashPath": "automapper.10.0.0.nupkg.sha512"
-    },
-    "CurrieTechnologies.Razor.SweetAlert2/5.2.1": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-REbLxClBvC++Z4w4v6brPXEOc2872wMAxE2/NB7QU7xIOyqoMYhf5qrpHKQKTSysHVPNwodJY30Y/ibKWv16Bg==",
-      "path": "currietechnologies.razor.sweetalert2/5.2.1",
-      "hashPath": "currietechnologies.razor.sweetalert2.5.2.1.nupkg.sha512"
     },
     "Duende.IdentityServer/5.2.0": {
       "type": "package",

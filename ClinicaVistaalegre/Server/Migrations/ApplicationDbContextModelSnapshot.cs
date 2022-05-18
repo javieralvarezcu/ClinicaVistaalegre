@@ -119,6 +119,7 @@ namespace ClinicaVistaalegre.Server.Migrations
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Motivo")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("PacienteId")

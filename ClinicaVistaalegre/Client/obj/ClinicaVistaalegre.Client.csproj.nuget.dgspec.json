@@ -44,10 +44,6 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
-            "CurrieTechnologies.Razor.SweetAlert2": {
-              "target": "Package",
-              "version": "[5.2.1, )"
-            },
             "Microsoft.AspNetCore.Components.WebAssembly": {
               "target": "Package",
               "version": "[6.0.3, )"
@@ -61,23 +57,13 @@
               "target": "Package",
               "version": "[6.0.3, )"
             },
-            "Microsoft.EntityFrameworkCore.SqlServer": {
-              "target": "Package",
-              "version": "[6.0.0, )"
-            },
-            "Microsoft.EntityFrameworkCore.Tools": {
-              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[6.0.0, )"
-            },
             "Microsoft.Extensions.Http": {
               "target": "Package",
               "version": "[6.0.0, )"
             },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
-              "version": "[6.0.4, )"
+              "version": "[6.0.3, )"
             }
           },
           "imports": [

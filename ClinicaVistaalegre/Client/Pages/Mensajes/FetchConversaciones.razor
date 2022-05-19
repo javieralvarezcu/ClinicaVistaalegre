@@ -9,10 +9,13 @@
 <div class="row my-3 d-flex flex-row justify-content-between">
     <a class="btn btn-outline-info" href="chat/@destinatarioId" style="@(destinatarioId.Equals("---") ? "pointer-events: none" : "")">Nueva conversacion</a>
     <select id="Medico" onload="@OnChangeDestinatario" onchange="@OnChangeDestinatario" class="form-control" placeholder="Medico">
-                <option value="---">Seleccione un contacto para iniciar una conversación</option>
-                @if(destinatarios!=null){
-                    foreach (var destinatario in destinatarios)
-                {
+        <option value="---">Seleccione un contacto para iniciar una conversación</option>
+        @if   (destinatarios   !=   null)
+        
+        
+        {
+            foreach (var destinatario in destinatarios)
+            {
                 <option value="@destinatario.Key">@destinatario.Value</option>
             }
         }
@@ -25,13 +28,19 @@
 
 @if (conversaciones == null)
 {
-    <p><em>Cargando...</em></p>
+    <div class="d-flex flex-row">
+        <div class="p-2 spinner-border text-info" role="status" />
+        <div class="p-2">Cargando conversaciones...</div>
+    </div>
 }
 else if (conversaciones.Count == 0)
 {
     <br />
     <text>No hay conversaciones</text>
-}else
+}
+
+
+else
 {
     <table class="table">
         <thead>
@@ -60,33 +69,22 @@ else if (conversaciones.Count == 0)
 }
 
 @code {
-    private string _authMessage;       
     private string _userId;
-    private IEnumerable<Claim> _claims = Enumerable.Empty<Claim>();
     private ClaimsPrincipal user;
     private List<Conversacion>? conversaciones;
     private Dictionary<string, string> destinatarios;
     private string destinatarioId = "---";
-    private string ButtonIsDisabled = "true";
 
     protected override async Task OnInitializedAsync()
     {
-        GetClaimsPrincipalData();
+        await GetClaimsPrincipalData();
         conversaciones = await getConversaciones();
         destinatarios = await getDestinatarios();
     }
 
     private async void OnChangeDestinatario(ChangeEventArgs args)
     {
-        if (!args.Value.ToString().Equals("---"))
-        {
-            ButtonIsDisabled = "false";
-            destinatarioId = args.Value.ToString();
-        }
-        else
-        {
-            ButtonIsDisabled = "true";
-        }
+        destinatarioId = args.Value.ToString();
     }
 
     private async Task BorrarConversacion(string destinatarioId)
@@ -111,8 +109,6 @@ else if (conversaciones.Count == 0)
         var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
         user = authState.User;
 
-        _authMessage = $"{user.Identity.Name} is authenticated.";
-        _claims = user.Claims;
         _userId = user.FindFirst(c => c.Type == "sub")?.Value;
     }
 
@@ -122,17 +118,17 @@ else if (conversaciones.Count == 0)
         try
         {
             _conversaciones = await Http.GetFromJsonAsync<List<Conversacion>>($"api/Mensajes/ConversacionesByUser/{_userId}");
-            foreach(var conversacion in _conversaciones)
+            foreach   (var conversacion in _conversaciones)
             {
                 if (user.IsInRole("Medico"))
                 {
                     var paciente = await Http.GetFromJsonAsync<Paciente>($"api/Pacientes/{conversacion.destinatarioId}");
-                    conversacion.Apellidos= paciente.Apellidos;
+                    conversacion.Apellidos   = paciente.Apellidos;
                 }
                 else
                 {
                     var medico = await Http.GetFromJsonAsync<Medico>($"api/Medicos/{conversacion.destinatarioId}");
-                    conversacion.Apellidos= medico.Apellidos;
+                    conversacion.Apellidos   = medico.Apellidos;
                 }
             }
         }
@@ -144,23 +140,23 @@ else if (conversaciones.Count == 0)
         return _conversaciones;
     }
 
-    private async Task<Dictionary<string,string>> getDestinatarios()
+    private async Task<Dictionary<string,   string>> getDestinatarios()
     {
-        Dictionary<string,string> _destinatarios = new Dictionary<string,string>();
+        Dictionary<string,   string> _destinatarios = new Dictionary<string,   string>();
         try
         {
             if (user.IsInRole("Medico"))
             {
                 var pacientes = await Http.GetFromJsonAsync<List<Paciente>>($"api/Pacientes");
-                foreach(var paciente in pacientes)
+                foreach   (var paciente in pacientes)
                 {
                     _destinatarios.Add(paciente.Id, paciente.Apellidos);
                 }
             }
             else
             {
-                    var medicos = await Http.GetFromJsonAsync<List<Medico>>($"api/Medicos");
-                foreach(var medico in medicos)
+                var medicos = await Http.GetFromJsonAsync<List<Medico>>($"api/Medicos");
+                foreach   (var medico in medicos)
                 {
                     _destinatarios.Add(medico.Id, $"{medico.Apellidos} - {medico.Especialidad.ToUpper()}+");
                 }

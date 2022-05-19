@@ -28,7 +28,7 @@
             Hora
         </label>
         <div class="col-sm-10">
-            <select id="Hora" style="@(horas.Count()==0 ? "pointer-events: none" : "")" onchange="@OnChangeSelect" class="form-control" placeholder="Hora">
+            <select id="Hora" style="@(horas.Count()==0 || Cita.MedicoId.Equals("") ? "pointer-events: none" : "")" onchange="@OnChangeSelect" class="form-control" placeholder="Hora">
             </select>
         </div>
     </div>
@@ -38,7 +38,7 @@
         </label>
         <div class="col-sm-10">
             <InputSelect id="Medico" onblur="@OnBlurFecha" class="form-control" placeholder="Medico" @bind-Value="@Cita.MedicoId">
-                <option value="---">---</option>
+                <option value="">---</option>
                 @if(medicos!=null){
                     foreach (Medico m in medicos)
                 {

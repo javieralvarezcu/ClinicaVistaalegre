@@ -12,7 +12,10 @@
 </head>
 
 <body>
-    <div id="app">Loading...</div>
+
+    <div class="d-flex" id="app">
+        <div class="spinner-border text-info" role="status"/>
+    </div>
 
     <div id="blazor-error-ui">
         Un error inesperado ha ocurrido.
@@ -36,7 +39,7 @@
             for (i = L; i >= 0; i--) {
                 select.remove(i);
             }
-            
+
             horas.forEach((hora) => {
                 let option = document.createElement('option')
                 option.text = hora

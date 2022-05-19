@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "CawkDYcGYAFNwAN04NfYtWGuZZpckga2tgScXWstqOw=",
+  "Hash": "edA5sXwXBecYSeyfOC57pGO8Ao+kbESz9HExIBeutZg=",
   "Source": "ClinicaVistaalegre.Server",
   "BasePath": "_content/ClinicaVistaalegre.Server",
   "Mode": "Default",
@@ -2236,7 +2236,7 @@
       "AssetTraitValue": "runtime",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\JAVIER.ALVAREZCUEV\\.nuget\\packages\\microsoft.visualstudio.web.codegeneration.design\\6.0.3\\lib\\net6.0\\dotnet-aspnet-codegenerator-design.dll"
+      "OriginalItemSpec": "C:\\Users\\JAVIER.ALVAREZCUEV\\.nuget\\packages\\microsoft.visualstudio.web.codegeneration.design\\6.0.4\\lib\\net6.0\\dotnet-aspnet-codegenerator-design.dll"
     },
     {
       "Identity": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\es\\Microsoft.CodeAnalysis.CSharp.Features.resources.dll",
@@ -2661,7 +2661,7 @@
       "AssetTraitValue": "runtime",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\JAVIER.ALVAREZCUEV\\.nuget\\packages\\humanizer.core\\2.2.0\\lib\\netstandard1.0\\Humanizer.dll"
+      "OriginalItemSpec": "C:\\Users\\JAVIER.ALVAREZCUEV\\.nuget\\packages\\humanizer.core\\2.8.26\\lib\\netstandard2.0\\Humanizer.dll"
     },
     {
       "Identity": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\icudt.dat",
@@ -3820,6 +3820,23 @@
       "OriginalItemSpec": "C:\\Users\\JAVIER.ALVAREZCUEV\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\6.0.4\\runtimes\\browser-wasm\\lib\\net6.0\\Microsoft.CSharp.dll"
     },
     {
+      "Identity": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.Data.SqlClient.dll",
+      "SourceId": "ClinicaVistaalegre.Client",
+      "SourceType": "Project",
+      "ContentRoot": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.Data.SqlClient.dll",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "BlazorWebAssemblyResource",
+      "AssetTraitValue": "runtime",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\JAVIER.ALVAREZCUEV\\.nuget\\packages\\microsoft.data.sqlclient\\2.1.4\\lib\\netcoreapp3.1\\Microsoft.Data.SqlClient.dll"
+    },
+    {
       "Identity": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.DiaSymReader.dll",
       "SourceId": "ClinicaVistaalegre.Client",
       "SourceType": "Project",
@@ -3851,7 +3868,126 @@
       "AssetTraitValue": "runtime",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\JAVIER.ALVAREZCUEV\\.nuget\\packages\\microsoft.dotnet.scaffolding.shared\\6.0.3\\lib\\net6.0\\Microsoft.DotNet.Scaffolding.Shared.dll"
+      "OriginalItemSpec": "C:\\Users\\JAVIER.ALVAREZCUEV\\.nuget\\packages\\microsoft.dotnet.scaffolding.shared\\6.0.4\\lib\\net6.0\\Microsoft.DotNet.Scaffolding.Shared.dll"
+    },
+    {
+      "Identity": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.EntityFrameworkCore.Abstractions.dll",
+      "SourceId": "ClinicaVistaalegre.Client",
+      "SourceType": "Project",
+      "ContentRoot": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.EntityFrameworkCore.Abstractions.dll",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "BlazorWebAssemblyResource",
+      "AssetTraitValue": "runtime",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\JAVIER.ALVAREZCUEV\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\6.0.0\\lib\\net6.0\\Microsoft.EntityFrameworkCore.Abstractions.dll"
+    },
+    {
+      "Identity": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.EntityFrameworkCore.Design.dll",
+      "SourceId": "ClinicaVistaalegre.Client",
+      "SourceType": "Project",
+      "ContentRoot": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.EntityFrameworkCore.Design.dll",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "BlazorWebAssemblyResource",
+      "AssetTraitValue": "runtime",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "false",
+      "OriginalItemSpec": "C:\\Users\\JAVIER.ALVAREZCUEV\\.nuget\\packages\\microsoft.entityframeworkcore.design\\6.0.0\\lib\\net6.0\\Microsoft.EntityFrameworkCore.Design.dll"
+    },
+    {
+      "Identity": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.EntityFrameworkCore.dll",
+      "SourceId": "ClinicaVistaalegre.Client",
+      "SourceType": "Project",
+      "ContentRoot": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.EntityFrameworkCore.dll",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "BlazorWebAssemblyResource",
+      "AssetTraitValue": "runtime",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\JAVIER.ALVAREZCUEV\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.0\\lib\\net6.0\\Microsoft.EntityFrameworkCore.dll"
+    },
+    {
+      "Identity": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.EntityFrameworkCore.Relational.dll",
+      "SourceId": "ClinicaVistaalegre.Client",
+      "SourceType": "Project",
+      "ContentRoot": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.EntityFrameworkCore.Relational.dll",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "BlazorWebAssemblyResource",
+      "AssetTraitValue": "runtime",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\JAVIER.ALVAREZCUEV\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\6.0.0\\lib\\net6.0\\Microsoft.EntityFrameworkCore.Relational.dll"
+    },
+    {
+      "Identity": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.EntityFrameworkCore.SqlServer.dll",
+      "SourceId": "ClinicaVistaalegre.Client",
+      "SourceType": "Project",
+      "ContentRoot": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.EntityFrameworkCore.SqlServer.dll",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "BlazorWebAssemblyResource",
+      "AssetTraitValue": "runtime",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\JAVIER.ALVAREZCUEV\\.nuget\\packages\\microsoft.entityframeworkcore.sqlserver\\6.0.0\\lib\\net6.0\\Microsoft.EntityFrameworkCore.SqlServer.dll"
+    },
+    {
+      "Identity": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.Extensions.Caching.Abstractions.dll",
+      "SourceId": "ClinicaVistaalegre.Client",
+      "SourceType": "Project",
+      "ContentRoot": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.Extensions.Caching.Abstractions.dll",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "BlazorWebAssemblyResource",
+      "AssetTraitValue": "runtime",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\JAVIER.ALVAREZCUEV\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\6.0.0\\lib\\netstandard2.0\\Microsoft.Extensions.Caching.Abstractions.dll"
+    },
+    {
+      "Identity": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.Extensions.Caching.Memory.dll",
+      "SourceId": "ClinicaVistaalegre.Client",
+      "SourceType": "Project",
+      "ContentRoot": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.Extensions.Caching.Memory.dll",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "BlazorWebAssemblyResource",
+      "AssetTraitValue": "runtime",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\JAVIER.ALVAREZCUEV\\.nuget\\packages\\microsoft.extensions.caching.memory\\6.0.0\\lib\\netstandard2.0\\Microsoft.Extensions.Caching.Memory.dll"
     },
     {
       "Identity": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.Extensions.Configuration.Abstractions.dll",
@@ -4109,6 +4245,108 @@
       "OriginalItemSpec": "C:\\Users\\JAVIER.ALVAREZCUEV\\.nuget\\packages\\microsoft.extensions.primitives\\6.0.0\\lib\\net6.0\\Microsoft.Extensions.Primitives.dll"
     },
     {
+      "Identity": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.Identity.Client.dll",
+      "SourceId": "ClinicaVistaalegre.Client",
+      "SourceType": "Project",
+      "ContentRoot": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.Identity.Client.dll",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "BlazorWebAssemblyResource",
+      "AssetTraitValue": "runtime",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\JAVIER.ALVAREZCUEV\\.nuget\\packages\\microsoft.identity.client\\4.21.1\\lib\\netcoreapp2.1\\Microsoft.Identity.Client.dll"
+    },
+    {
+      "Identity": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.IdentityModel.JsonWebTokens.dll",
+      "SourceId": "ClinicaVistaalegre.Client",
+      "SourceType": "Project",
+      "ContentRoot": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.IdentityModel.JsonWebTokens.dll",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "BlazorWebAssemblyResource",
+      "AssetTraitValue": "runtime",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\JAVIER.ALVAREZCUEV\\.nuget\\packages\\microsoft.identitymodel.jsonwebtokens\\6.8.0\\lib\\netstandard2.0\\Microsoft.IdentityModel.JsonWebTokens.dll"
+    },
+    {
+      "Identity": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.IdentityModel.Logging.dll",
+      "SourceId": "ClinicaVistaalegre.Client",
+      "SourceType": "Project",
+      "ContentRoot": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.IdentityModel.Logging.dll",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "BlazorWebAssemblyResource",
+      "AssetTraitValue": "runtime",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\JAVIER.ALVAREZCUEV\\.nuget\\packages\\microsoft.identitymodel.logging\\6.8.0\\lib\\netstandard2.0\\Microsoft.IdentityModel.Logging.dll"
+    },
+    {
+      "Identity": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.IdentityModel.Protocols.dll",
+      "SourceId": "ClinicaVistaalegre.Client",
+      "SourceType": "Project",
+      "ContentRoot": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.IdentityModel.Protocols.dll",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "BlazorWebAssemblyResource",
+      "AssetTraitValue": "runtime",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\JAVIER.ALVAREZCUEV\\.nuget\\packages\\microsoft.identitymodel.protocols\\6.8.0\\lib\\netstandard2.0\\Microsoft.IdentityModel.Protocols.dll"
+    },
+    {
+      "Identity": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll",
+      "SourceId": "ClinicaVistaalegre.Client",
+      "SourceType": "Project",
+      "ContentRoot": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "BlazorWebAssemblyResource",
+      "AssetTraitValue": "runtime",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\JAVIER.ALVAREZCUEV\\.nuget\\packages\\microsoft.identitymodel.protocols.openidconnect\\6.8.0\\lib\\netstandard2.0\\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll"
+    },
+    {
+      "Identity": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.IdentityModel.Tokens.dll",
+      "SourceId": "ClinicaVistaalegre.Client",
+      "SourceType": "Project",
+      "ContentRoot": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.IdentityModel.Tokens.dll",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "BlazorWebAssemblyResource",
+      "AssetTraitValue": "runtime",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\JAVIER.ALVAREZCUEV\\.nuget\\packages\\microsoft.identitymodel.tokens\\6.8.0\\lib\\netstandard2.0\\Microsoft.IdentityModel.Tokens.dll"
+    },
+    {
       "Identity": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.JSInterop.dll",
       "SourceId": "ClinicaVistaalegre.Client",
       "SourceType": "Project",
@@ -4208,7 +4446,7 @@
       "AssetTraitValue": "runtime",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\JAVIER.ALVAREZCUEV\\.nuget\\packages\\microsoft.visualstudio.web.codegeneration.core\\6.0.3\\lib\\net6.0\\Microsoft.VisualStudio.Web.CodeGeneration.Core.dll"
+      "OriginalItemSpec": "C:\\Users\\JAVIER.ALVAREZCUEV\\.nuget\\packages\\microsoft.visualstudio.web.codegeneration.core\\6.0.4\\lib\\net6.0\\Microsoft.VisualStudio.Web.CodeGeneration.Core.dll"
     },
     {
       "Identity": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.VisualStudio.Web.CodeGeneration.dll",
@@ -4225,7 +4463,7 @@
       "AssetTraitValue": "runtime",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\JAVIER.ALVAREZCUEV\\.nuget\\packages\\microsoft.visualstudio.web.codegeneration\\6.0.3\\lib\\net6.0\\Microsoft.VisualStudio.Web.CodeGeneration.dll"
+      "OriginalItemSpec": "C:\\Users\\JAVIER.ALVAREZCUEV\\.nuget\\packages\\microsoft.visualstudio.web.codegeneration\\6.0.4\\lib\\net6.0\\Microsoft.VisualStudio.Web.CodeGeneration.dll"
     },
     {
       "Identity": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore.dll",
@@ -4242,7 +4480,7 @@
       "AssetTraitValue": "runtime",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\JAVIER.ALVAREZCUEV\\.nuget\\packages\\microsoft.visualstudio.web.codegeneration.entityframeworkcore\\6.0.3\\lib\\net6.0\\Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore.dll"
+      "OriginalItemSpec": "C:\\Users\\JAVIER.ALVAREZCUEV\\.nuget\\packages\\microsoft.visualstudio.web.codegeneration.entityframeworkcore\\6.0.4\\lib\\net6.0\\Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore.dll"
     },
     {
       "Identity": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.VisualStudio.Web.CodeGeneration.Templating.dll",
@@ -4259,7 +4497,7 @@
       "AssetTraitValue": "runtime",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\JAVIER.ALVAREZCUEV\\.nuget\\packages\\microsoft.visualstudio.web.codegeneration.templating\\6.0.3\\lib\\net6.0\\Microsoft.VisualStudio.Web.CodeGeneration.Templating.dll"
+      "OriginalItemSpec": "C:\\Users\\JAVIER.ALVAREZCUEV\\.nuget\\packages\\microsoft.visualstudio.web.codegeneration.templating\\6.0.4\\lib\\net6.0\\Microsoft.VisualStudio.Web.CodeGeneration.Templating.dll"
     },
     {
       "Identity": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll",
@@ -4276,7 +4514,7 @@
       "AssetTraitValue": "runtime",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\JAVIER.ALVAREZCUEV\\.nuget\\packages\\microsoft.visualstudio.web.codegeneration.utils\\6.0.3\\lib\\net6.0\\Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll"
+      "OriginalItemSpec": "C:\\Users\\JAVIER.ALVAREZCUEV\\.nuget\\packages\\microsoft.visualstudio.web.codegeneration.utils\\6.0.4\\lib\\net6.0\\Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll"
     },
     {
       "Identity": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll",
@@ -4293,7 +4531,7 @@
       "AssetTraitValue": "runtime",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\JAVIER.ALVAREZCUEV\\.nuget\\packages\\microsoft.visualstudio.web.codegenerators.mvc\\6.0.3\\lib\\net6.0\\Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll"
+      "OriginalItemSpec": "C:\\Users\\JAVIER.ALVAREZCUEV\\.nuget\\packages\\microsoft.visualstudio.web.codegenerators.mvc\\6.0.4\\lib\\net6.0\\Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll"
     },
     {
       "Identity": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.Win32.Primitives.dll",
@@ -4328,6 +4566,23 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\JAVIER.ALVAREZCUEV\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\6.0.4\\runtimes\\browser-wasm\\lib\\net6.0\\Microsoft.Win32.Registry.dll"
+    },
+    {
+      "Identity": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.Win32.SystemEvents.dll",
+      "SourceId": "ClinicaVistaalegre.Client",
+      "SourceType": "Project",
+      "ContentRoot": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.Win32.SystemEvents.dll",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "BlazorWebAssemblyResource",
+      "AssetTraitValue": "runtime",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\JAVIER.ALVAREZCUEV\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\lib\\netstandard2.0\\Microsoft.Win32.SystemEvents.dll"
     },
     {
       "Identity": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\mscorlib.dll",
@@ -5452,6 +5707,23 @@
       "OriginalItemSpec": "C:\\Users\\JAVIER.ALVAREZCUEV\\.nuget\\packages\\system.composition.typedparts\\1.0.31\\lib\\netstandard1.0\\System.Composition.TypedParts.dll"
     },
     {
+      "Identity": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\System.Configuration.ConfigurationManager.dll",
+      "SourceId": "ClinicaVistaalegre.Client",
+      "SourceType": "Project",
+      "ContentRoot": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/System.Configuration.ConfigurationManager.dll",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "BlazorWebAssemblyResource",
+      "AssetTraitValue": "runtime",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\JAVIER.ALVAREZCUEV\\.nuget\\packages\\system.configuration.configurationmanager\\4.7.0\\lib\\netstandard2.0\\System.Configuration.ConfigurationManager.dll"
+    },
+    {
       "Identity": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\System.Configuration.dll",
       "SourceId": "ClinicaVistaalegre.Client",
       "SourceType": "Project",
@@ -5741,6 +6013,23 @@
       "OriginalItemSpec": "C:\\Users\\JAVIER.ALVAREZCUEV\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\6.0.4\\runtimes\\browser-wasm\\lib\\net6.0\\System.dll"
     },
     {
+      "Identity": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\System.Drawing.Common.dll",
+      "SourceId": "ClinicaVistaalegre.Client",
+      "SourceType": "Project",
+      "ContentRoot": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/System.Drawing.Common.dll",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "BlazorWebAssemblyResource",
+      "AssetTraitValue": "runtime",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\JAVIER.ALVAREZCUEV\\.nuget\\packages\\system.drawing.common\\4.7.0\\lib\\netstandard2.0\\System.Drawing.Common.dll"
+    },
+    {
       "Identity": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\System.Drawing.dll",
       "SourceId": "ClinicaVistaalegre.Client",
       "SourceType": "Project",
@@ -5858,6 +6147,23 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\JAVIER.ALVAREZCUEV\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\6.0.4\\runtimes\\browser-wasm\\lib\\net6.0\\System.Globalization.Extensions.dll"
+    },
+    {
+      "Identity": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\System.IdentityModel.Tokens.Jwt.dll",
+      "SourceId": "ClinicaVistaalegre.Client",
+      "SourceType": "Project",
+      "ContentRoot": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/System.IdentityModel.Tokens.Jwt.dll",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "BlazorWebAssemblyResource",
+      "AssetTraitValue": "runtime",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\JAVIER.ALVAREZCUEV\\.nuget\\packages\\system.identitymodel.tokens.jwt\\6.8.0\\lib\\netstandard2.0\\System.IdentityModel.Tokens.Jwt.dll"
     },
     {
       "Identity": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\System.IO.Compression.Brotli.dll",
@@ -6897,6 +7203,23 @@
       "OriginalItemSpec": "C:\\Users\\JAVIER.ALVAREZCUEV\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\6.0.4\\runtimes\\browser-wasm\\lib\\net6.0\\System.Resources.Writer.dll"
     },
     {
+      "Identity": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\System.Runtime.Caching.dll",
+      "SourceId": "ClinicaVistaalegre.Client",
+      "SourceType": "Project",
+      "ContentRoot": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/System.Runtime.Caching.dll",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "BlazorWebAssemblyResource",
+      "AssetTraitValue": "runtime",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\JAVIER.ALVAREZCUEV\\.nuget\\packages\\system.runtime.caching\\4.7.0\\lib\\netstandard2.0\\System.Runtime.Caching.dll"
+    },
+    {
       "Identity": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\System.Runtime.CompilerServices.Unsafe.dll",
       "SourceId": "ClinicaVistaalegre.Client",
       "SourceType": "Project",
@@ -7356,6 +7679,23 @@
       "OriginalItemSpec": "C:\\Users\\JAVIER.ALVAREZCUEV\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\6.0.4\\runtimes\\browser-wasm\\lib\\net6.0\\System.Security.dll"
     },
     {
+      "Identity": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\System.Security.Permissions.dll",
+      "SourceId": "ClinicaVistaalegre.Client",
+      "SourceType": "Project",
+      "ContentRoot": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/System.Security.Permissions.dll",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "BlazorWebAssemblyResource",
+      "AssetTraitValue": "runtime",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\JAVIER.ALVAREZCUEV\\.nuget\\packages\\system.security.permissions\\4.7.0\\lib\\netcoreapp3.0\\System.Security.Permissions.dll"
+    },
+    {
       "Identity": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\System.Security.Principal.dll",
       "SourceId": "ClinicaVistaalegre.Client",
       "SourceType": "Project",
@@ -7813,6 +8153,23 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\JAVIER.ALVAREZCUEV\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\6.0.4\\runtimes\\browser-wasm\\lib\\net6.0\\System.Windows.dll"
+    },
+    {
+      "Identity": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\System.Windows.Extensions.dll",
+      "SourceId": "ClinicaVistaalegre.Client",
+      "SourceType": "Project",
+      "ContentRoot": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/System.Windows.Extensions.dll",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "BlazorWebAssemblyResource",
+      "AssetTraitValue": "runtime",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\JAVIER.ALVAREZCUEV\\.nuget\\packages\\system.windows.extensions\\4.7.0\\lib\\netcoreapp3.0\\System.Windows.Extensions.dll"
     },
     {
       "Identity": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\System.Xml.dll",
@@ -9430,23 +9787,6 @@
       "OriginalItemSpec": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.Extensions.Configuration.Abstractions.dll"
     },
     {
-      "Identity": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\obj\\Debug\\net6.0\\build-gz\\5CH7AFn9.gz",
-      "SourceId": "ClinicaVistaalegre.Client",
-      "SourceType": "Project",
-      "ContentRoot": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\",
-      "BasePath": "/",
-      "RelativePath": "_framework/Microsoft.VisualStudio.Web.CodeGeneration.Templating.dll.gz",
-      "AssetKind": "Build",
-      "AssetMode": "All",
-      "AssetRole": "Alternative",
-      "RelatedAsset": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.VisualStudio.Web.CodeGeneration.Templating.dll",
-      "AssetTraitName": "Content-Encoding",
-      "AssetTraitValue": "gzip",
-      "CopyToOutputDirectory": "PreserveNewest",
-      "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.VisualStudio.Web.CodeGeneration.Templating.dll"
-    },
-    {
       "Identity": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\obj\\Debug\\net6.0\\build-gz\\5LooIaKi.gz",
       "SourceId": "ClinicaVistaalegre.Client",
       "SourceType": "Project",
@@ -9498,6 +9838,40 @@
       "OriginalItemSpec": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\tr\\Microsoft.CodeAnalysis.CSharp.Features.resources.dll"
     },
     {
+      "Identity": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\obj\\Debug\\net6.0\\build-gz\\5Zeq1ngD.gz",
+      "SourceId": "ClinicaVistaalegre.Client",
+      "SourceType": "Project",
+      "ContentRoot": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "RelatedAsset": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll"
+    },
+    {
+      "Identity": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\obj\\Debug\\net6.0\\build-gz\\6+8iQugJ.gz",
+      "SourceId": "ClinicaVistaalegre.Client",
+      "SourceType": "Project",
+      "ContentRoot": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.EntityFrameworkCore.dll.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "RelatedAsset": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.EntityFrameworkCore.dll",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.EntityFrameworkCore.dll"
+    },
+    {
       "Identity": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\obj\\Debug\\net6.0\\build-gz\\63zk2Epi.gz",
       "SourceId": "ClinicaVistaalegre.Client",
       "SourceType": "Project",
@@ -9547,6 +9921,23 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\System.Runtime.Serialization.dll"
+    },
+    {
+      "Identity": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\obj\\Debug\\net6.0\\build-gz\\6xh81uyS.gz",
+      "SourceId": "ClinicaVistaalegre.Client",
+      "SourceType": "Project",
+      "ContentRoot": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.IdentityModel.JsonWebTokens.dll.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "RelatedAsset": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.IdentityModel.JsonWebTokens.dll",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.IdentityModel.JsonWebTokens.dll"
     },
     {
       "Identity": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\obj\\Debug\\net6.0\\build-gz\\6Zcj4X+p.gz",
@@ -9649,6 +10040,23 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\zh-Hans\\Microsoft.CodeAnalysis.Scripting.resources.dll"
+    },
+    {
+      "Identity": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\obj\\Debug\\net6.0\\build-gz\\7WiUIDln.gz",
+      "SourceId": "ClinicaVistaalegre.Client",
+      "SourceType": "Project",
+      "ContentRoot": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.EntityFrameworkCore.Design.dll.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "RelatedAsset": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.EntityFrameworkCore.Design.dll",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "false",
+      "OriginalItemSpec": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.EntityFrameworkCore.Design.dll"
     },
     {
       "Identity": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\obj\\Debug\\net6.0\\build-gz\\7wWqHL9k.gz",
@@ -10042,6 +10450,23 @@
       "OriginalItemSpec": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\System.Composition.AttributedModel.dll"
     },
     {
+      "Identity": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\obj\\Debug\\net6.0\\build-gz\\acD1bNAL.gz",
+      "SourceId": "ClinicaVistaalegre.Client",
+      "SourceType": "Project",
+      "ContentRoot": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.DotNet.Scaffolding.Shared.dll.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "RelatedAsset": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.DotNet.Scaffolding.Shared.dll",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.DotNet.Scaffolding.Shared.dll"
+    },
+    {
       "Identity": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\obj\\Debug\\net6.0\\build-gz\\aCILPEPB.gz",
       "SourceId": "ClinicaVistaalegre.Client",
       "SourceType": "Project",
@@ -10057,23 +10482,6 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\System.Net.WebSockets.dll"
-    },
-    {
-      "Identity": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\obj\\Debug\\net6.0\\build-gz\\aCSrnkSZ.gz",
-      "SourceId": "ClinicaVistaalegre.Client",
-      "SourceType": "Project",
-      "ContentRoot": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\",
-      "BasePath": "/",
-      "RelativePath": "_framework/Microsoft.VisualStudio.Web.CodeGeneration.dll.gz",
-      "AssetKind": "Build",
-      "AssetMode": "All",
-      "AssetRole": "Alternative",
-      "RelatedAsset": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.VisualStudio.Web.CodeGeneration.dll",
-      "AssetTraitName": "Content-Encoding",
-      "AssetTraitValue": "gzip",
-      "CopyToOutputDirectory": "PreserveNewest",
-      "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.VisualStudio.Web.CodeGeneration.dll"
     },
     {
       "Identity": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\obj\\Debug\\net6.0\\build-gz\\AD5NCxjQ.gz",
@@ -10110,6 +10518,23 @@
       "OriginalItemSpec": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.CodeAnalysis.CSharp.Scripting.dll"
     },
     {
+      "Identity": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\obj\\Debug\\net6.0\\build-gz\\AHcdObHL.gz",
+      "SourceId": "ClinicaVistaalegre.Client",
+      "SourceType": "Project",
+      "ContentRoot": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Humanizer.dll.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "RelatedAsset": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Humanizer.dll",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Humanizer.dll"
+    },
+    {
       "Identity": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\obj\\Debug\\net6.0\\build-gz\\AihsY61r.gz",
       "SourceId": "ClinicaVistaalegre.Client",
       "SourceType": "Project",
@@ -10125,6 +10550,23 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\System.Threading.ThreadPool.dll"
+    },
+    {
+      "Identity": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\obj\\Debug\\net6.0\\build-gz\\AjPtdYP2.gz",
+      "SourceId": "ClinicaVistaalegre.Client",
+      "SourceType": "Project",
+      "ContentRoot": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.Extensions.Caching.Abstractions.dll.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "RelatedAsset": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.Extensions.Caching.Abstractions.dll",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.Extensions.Caching.Abstractions.dll"
     },
     {
       "Identity": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\obj\\Debug\\net6.0\\build-gz\\AkbMxNHu.gz",
@@ -10246,6 +10688,23 @@
       "OriginalItemSpec": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\System.Composition.Hosting.dll"
     },
     {
+      "Identity": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\obj\\Debug\\net6.0\\build-gz\\BAXOzWO3.gz",
+      "SourceId": "ClinicaVistaalegre.Client",
+      "SourceType": "Project",
+      "ContentRoot": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.IdentityModel.Logging.dll.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "RelatedAsset": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.IdentityModel.Logging.dll",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.IdentityModel.Logging.dll"
+    },
+    {
       "Identity": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\obj\\Debug\\net6.0\\build-gz\\BBPFty4q.gz",
       "SourceId": "ClinicaVistaalegre.Client",
       "SourceType": "Project",
@@ -10295,6 +10754,23 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\zh-Hant\\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll"
+    },
+    {
+      "Identity": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\obj\\Debug\\net6.0\\build-gz\\bGmZyAT9.gz",
+      "SourceId": "ClinicaVistaalegre.Client",
+      "SourceType": "Project",
+      "ContentRoot": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/dotnet-aspnet-codegenerator-design.dll.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "RelatedAsset": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\dotnet-aspnet-codegenerator-design.dll",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\dotnet-aspnet-codegenerator-design.dll"
     },
     {
       "Identity": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\obj\\Debug\\net6.0\\build-gz\\BIJhj24+.gz",
@@ -10450,6 +10926,23 @@
       "OriginalItemSpec": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\de\\Microsoft.CodeAnalysis.VisualBasic.Features.resources.dll"
     },
     {
+      "Identity": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\obj\\Debug\\net6.0\\build-gz\\CPLXGQI7.gz",
+      "SourceId": "ClinicaVistaalegre.Client",
+      "SourceType": "Project",
+      "ContentRoot": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/System.Security.Permissions.dll.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "RelatedAsset": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\System.Security.Permissions.dll",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\System.Security.Permissions.dll"
+    },
+    {
       "Identity": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\obj\\Debug\\net6.0\\build-gz\\cq22+Nv3.gz",
       "SourceId": "ClinicaVistaalegre.Client",
       "SourceType": "Project",
@@ -10518,6 +11011,40 @@
       "OriginalItemSpec": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\dotnet.timezones.blat"
     },
     {
+      "Identity": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\obj\\Debug\\net6.0\\build-gz\\Cv1cOBT+.gz",
+      "SourceId": "ClinicaVistaalegre.Client",
+      "SourceType": "Project",
+      "ContentRoot": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.Win32.SystemEvents.dll.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "RelatedAsset": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.Win32.SystemEvents.dll",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.Win32.SystemEvents.dll"
+    },
+    {
+      "Identity": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\obj\\Debug\\net6.0\\build-gz\\CvKoplse.gz",
+      "SourceId": "ClinicaVistaalegre.Client",
+      "SourceType": "Project",
+      "ContentRoot": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/System.Runtime.Caching.dll.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "RelatedAsset": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\System.Runtime.Caching.dll",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\System.Runtime.Caching.dll"
+    },
+    {
       "Identity": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\obj\\Debug\\net6.0\\build-gz\\d4dprRpT.gz",
       "SourceId": "ClinicaVistaalegre.Client",
       "SourceType": "Project",
@@ -10535,21 +11062,21 @@
       "OriginalItemSpec": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\System.Windows.dll"
     },
     {
-      "Identity": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\obj\\Debug\\net6.0\\build-gz\\dBLOpSim.gz",
+      "Identity": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\obj\\Debug\\net6.0\\build-gz\\DaNQlNwQ.gz",
       "SourceId": "ClinicaVistaalegre.Client",
       "SourceType": "Project",
       "ContentRoot": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\",
       "BasePath": "/",
-      "RelativePath": "_framework/dotnet-aspnet-codegenerator-design.dll.gz",
+      "RelativePath": "_framework/Microsoft.IdentityModel.Protocols.dll.gz",
       "AssetKind": "Build",
       "AssetMode": "All",
       "AssetRole": "Alternative",
-      "RelatedAsset": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\dotnet-aspnet-codegenerator-design.dll",
+      "RelatedAsset": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.IdentityModel.Protocols.dll",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\dotnet-aspnet-codegenerator-design.dll"
+      "OriginalItemSpec": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.IdentityModel.Protocols.dll"
     },
     {
       "Identity": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\obj\\Debug\\net6.0\\build-gz\\DeVVECYb.gz",
@@ -10705,6 +11232,40 @@
       "OriginalItemSpec": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\System.ComponentModel.Primitives.dll"
     },
     {
+      "Identity": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\obj\\Debug\\net6.0\\build-gz\\dtEfc9iJ.gz",
+      "SourceId": "ClinicaVistaalegre.Client",
+      "SourceType": "Project",
+      "ContentRoot": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.VisualStudio.Web.CodeGeneration.Core.dll.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "RelatedAsset": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.VisualStudio.Web.CodeGeneration.Core.dll",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.VisualStudio.Web.CodeGeneration.Core.dll"
+    },
+    {
+      "Identity": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\obj\\Debug\\net6.0\\build-gz\\dWaTly+w.gz",
+      "SourceId": "ClinicaVistaalegre.Client",
+      "SourceType": "Project",
+      "ContentRoot": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.Data.SqlClient.dll.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "RelatedAsset": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.Data.SqlClient.dll",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.Data.SqlClient.dll"
+    },
+    {
       "Identity": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\obj\\Debug\\net6.0\\build-gz\\dycIx0Y6.gz",
       "SourceId": "ClinicaVistaalegre.Client",
       "SourceType": "Project",
@@ -10771,23 +11332,6 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\tr\\Microsoft.CodeAnalysis.resources.dll"
-    },
-    {
-      "Identity": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\obj\\Debug\\net6.0\\build-gz\\E5SY6TKp.gz",
-      "SourceId": "ClinicaVistaalegre.Client",
-      "SourceType": "Project",
-      "ContentRoot": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\",
-      "BasePath": "/",
-      "RelativePath": "_framework/Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll.gz",
-      "AssetKind": "Build",
-      "AssetMode": "All",
-      "AssetRole": "Alternative",
-      "RelatedAsset": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll",
-      "AssetTraitName": "Content-Encoding",
-      "AssetTraitValue": "gzip",
-      "CopyToOutputDirectory": "PreserveNewest",
-      "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll"
     },
     {
       "Identity": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\obj\\Debug\\net6.0\\build-gz\\E7nLf2i1.gz",
@@ -11485,6 +12029,23 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\it\\Microsoft.CodeAnalysis.VisualBasic.Workspaces.resources.dll"
+    },
+    {
+      "Identity": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\obj\\Debug\\net6.0\\build-gz\\HmyERpJo.gz",
+      "SourceId": "ClinicaVistaalegre.Client",
+      "SourceType": "Project",
+      "ContentRoot": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/System.Drawing.Common.dll.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "RelatedAsset": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\System.Drawing.Common.dll",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\System.Drawing.Common.dll"
     },
     {
       "Identity": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\obj\\Debug\\net6.0\\build-gz\\HnDLZOu2.gz",
@@ -12320,6 +12881,23 @@
       "OriginalItemSpec": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\de\\Microsoft.CodeAnalysis.VisualBasic.Workspaces.resources.dll"
     },
     {
+      "Identity": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\obj\\Debug\\net6.0\\build-gz\\LD6+XU+X.gz",
+      "SourceId": "ClinicaVistaalegre.Client",
+      "SourceType": "Project",
+      "ContentRoot": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/System.IdentityModel.Tokens.Jwt.dll.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "RelatedAsset": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\System.IdentityModel.Tokens.Jwt.dll",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\System.IdentityModel.Tokens.Jwt.dll"
+    },
+    {
       "Identity": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\obj\\Debug\\net6.0\\build-gz\\LdQ+bZ+L.gz",
       "SourceId": "ClinicaVistaalegre.Client",
       "SourceType": "Project",
@@ -12626,6 +13204,23 @@
       "OriginalItemSpec": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\System.Reflection.Primitives.dll"
     },
     {
+      "Identity": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\obj\\Debug\\net6.0\\build-gz\\m2M6RDj7.gz",
+      "SourceId": "ClinicaVistaalegre.Client",
+      "SourceType": "Project",
+      "ContentRoot": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/System.Configuration.ConfigurationManager.dll.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "RelatedAsset": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\System.Configuration.ConfigurationManager.dll",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\System.Configuration.ConfigurationManager.dll"
+    },
+    {
       "Identity": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\obj\\Debug\\net6.0\\build-gz\\mAiYVzET.gz",
       "SourceId": "ClinicaVistaalegre.Client",
       "SourceType": "Project",
@@ -12694,6 +13289,23 @@
       "OriginalItemSpec": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\System.Drawing.dll"
     },
     {
+      "Identity": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\obj\\Debug\\net6.0\\build-gz\\Mo1hDE1X.gz",
+      "SourceId": "ClinicaVistaalegre.Client",
+      "SourceType": "Project",
+      "ContentRoot": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.VisualStudio.Web.CodeGeneration.dll.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "RelatedAsset": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.VisualStudio.Web.CodeGeneration.dll",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.VisualStudio.Web.CodeGeneration.dll"
+    },
+    {
       "Identity": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\obj\\Debug\\net6.0\\build-gz\\Mrfo+H11.gz",
       "SourceId": "ClinicaVistaalegre.Client",
       "SourceType": "Project",
@@ -12760,6 +13372,23 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\System.Threading.Tasks.Parallel.dll"
+    },
+    {
+      "Identity": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\obj\\Debug\\net6.0\\build-gz\\NA8IGPjB.gz",
+      "SourceId": "ClinicaVistaalegre.Client",
+      "SourceType": "Project",
+      "ContentRoot": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.IdentityModel.Tokens.dll.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "RelatedAsset": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.IdentityModel.Tokens.dll",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.IdentityModel.Tokens.dll"
     },
     {
       "Identity": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\obj\\Debug\\net6.0\\build-gz\\nBqzOhWr.gz",
@@ -12845,6 +13474,23 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\es\\Microsoft.CodeAnalysis.CSharp.resources.dll"
+    },
+    {
+      "Identity": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\obj\\Debug\\net6.0\\build-gz\\nRRA7L52.gz",
+      "SourceId": "ClinicaVistaalegre.Client",
+      "SourceType": "Project",
+      "ContentRoot": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "RelatedAsset": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll"
     },
     {
       "Identity": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\obj\\Debug\\net6.0\\build-gz\\nsIoP+OJ.gz",
@@ -13083,6 +13729,23 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\System.Net.NetworkInformation.dll"
+    },
+    {
+      "Identity": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\obj\\Debug\\net6.0\\build-gz\\P+SkESTF.gz",
+      "SourceId": "ClinicaVistaalegre.Client",
+      "SourceType": "Project",
+      "ContentRoot": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.EntityFrameworkCore.Abstractions.dll.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "RelatedAsset": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.EntityFrameworkCore.Abstractions.dll",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.EntityFrameworkCore.Abstractions.dll"
     },
     {
       "Identity": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\obj\\Debug\\net6.0\\build-gz\\P86dLwxA.gz",
@@ -13527,6 +14190,23 @@
       "OriginalItemSpec": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\System.IO.Compression.dll"
     },
     {
+      "Identity": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\obj\\Debug\\net6.0\\build-gz\\QxvCeQPM.gz",
+      "SourceId": "ClinicaVistaalegre.Client",
+      "SourceType": "Project",
+      "ContentRoot": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.VisualStudio.Web.CodeGeneration.Templating.dll.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "RelatedAsset": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.VisualStudio.Web.CodeGeneration.Templating.dll",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.VisualStudio.Web.CodeGeneration.Templating.dll"
+    },
+    {
       "Identity": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\obj\\Debug\\net6.0\\build-gz\\RBrmYmVM.gz",
       "SourceId": "ClinicaVistaalegre.Client",
       "SourceType": "Project",
@@ -13576,6 +14256,23 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\cs\\Microsoft.CodeAnalysis.resources.dll"
+    },
+    {
+      "Identity": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\obj\\Debug\\net6.0\\build-gz\\rfN9ODfr.gz",
+      "SourceId": "ClinicaVistaalegre.Client",
+      "SourceType": "Project",
+      "ContentRoot": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore.dll.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "RelatedAsset": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore.dll",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore.dll"
     },
     {
       "Identity": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\obj\\Debug\\net6.0\\build-gz\\RjE4cNko.gz",
@@ -13763,6 +14460,23 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\cs\\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll"
+    },
+    {
+      "Identity": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\obj\\Debug\\net6.0\\build-gz\\s7igDWXk.gz",
+      "SourceId": "ClinicaVistaalegre.Client",
+      "SourceType": "Project",
+      "ContentRoot": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/System.Windows.Extensions.dll.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "RelatedAsset": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\System.Windows.Extensions.dll",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\System.Windows.Extensions.dll"
     },
     {
       "Identity": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\obj\\Debug\\net6.0\\build-gz\\s9+g6cFt.gz",
@@ -14003,6 +14717,23 @@
       "OriginalItemSpec": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\ja\\Microsoft.CodeAnalysis.VisualBasic.Features.resources.dll"
     },
     {
+      "Identity": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\obj\\Debug\\net6.0\\build-gz\\sU6jUGnB.gz",
+      "SourceId": "ClinicaVistaalegre.Client",
+      "SourceType": "Project",
+      "ContentRoot": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "RelatedAsset": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll"
+    },
+    {
       "Identity": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\obj\\Debug\\net6.0\\build-gz\\sxIqyVlj.gz",
       "SourceId": "ClinicaVistaalegre.Client",
       "SourceType": "Project",
@@ -14069,23 +14800,6 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\zh-Hant\\Microsoft.CodeAnalysis.CSharp.resources.dll"
-    },
-    {
-      "Identity": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\obj\\Debug\\net6.0\\build-gz\\T6C8S3lC.gz",
-      "SourceId": "ClinicaVistaalegre.Client",
-      "SourceType": "Project",
-      "ContentRoot": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\",
-      "BasePath": "/",
-      "RelativePath": "_framework/Microsoft.VisualStudio.Web.CodeGeneration.Core.dll.gz",
-      "AssetKind": "Build",
-      "AssetMode": "All",
-      "AssetRole": "Alternative",
-      "RelatedAsset": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.VisualStudio.Web.CodeGeneration.Core.dll",
-      "AssetTraitName": "Content-Encoding",
-      "AssetTraitValue": "gzip",
-      "CopyToOutputDirectory": "PreserveNewest",
-      "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.VisualStudio.Web.CodeGeneration.Core.dll"
     },
     {
       "Identity": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\obj\\Debug\\net6.0\\build-gz\\t9XndHQu.gz",
@@ -14188,6 +14902,23 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\pl\\Microsoft.CodeAnalysis.VisualBasic.resources.dll"
+    },
+    {
+      "Identity": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\obj\\Debug\\net6.0\\build-gz\\TpNRrd1f.gz",
+      "SourceId": "ClinicaVistaalegre.Client",
+      "SourceType": "Project",
+      "ContentRoot": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.Extensions.Caching.Memory.dll.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "RelatedAsset": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.Extensions.Caching.Memory.dll",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.Extensions.Caching.Memory.dll"
     },
     {
       "Identity": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\obj\\Debug\\net6.0\\build-gz\\tpnvJ8fy.gz",
@@ -14445,23 +15176,6 @@
       "OriginalItemSpec": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\cs\\Microsoft.CodeAnalysis.CSharp.resources.dll"
     },
     {
-      "Identity": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\obj\\Debug\\net6.0\\build-gz\\UpCaYWrl.gz",
-      "SourceId": "ClinicaVistaalegre.Client",
-      "SourceType": "Project",
-      "ContentRoot": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\",
-      "BasePath": "/",
-      "RelativePath": "_framework/Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore.dll.gz",
-      "AssetKind": "Build",
-      "AssetMode": "All",
-      "AssetRole": "Alternative",
-      "RelatedAsset": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore.dll",
-      "AssetTraitName": "Content-Encoding",
-      "AssetTraitValue": "gzip",
-      "CopyToOutputDirectory": "PreserveNewest",
-      "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore.dll"
-    },
-    {
       "Identity": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\obj\\Debug\\net6.0\\build-gz\\uUd7Az0u.gz",
       "SourceId": "ClinicaVistaalegre.Client",
       "SourceType": "Project",
@@ -14494,6 +15208,23 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\System.ComponentModel.Annotations.dll"
+    },
+    {
+      "Identity": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\obj\\Debug\\net6.0\\build-gz\\Uz4Anpbw.gz",
+      "SourceId": "ClinicaVistaalegre.Client",
+      "SourceType": "Project",
+      "ContentRoot": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.EntityFrameworkCore.SqlServer.dll.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "RelatedAsset": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.EntityFrameworkCore.SqlServer.dll",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.EntityFrameworkCore.SqlServer.dll"
     },
     {
       "Identity": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\obj\\Debug\\net6.0\\build-gz\\V+daz7MW.gz",
@@ -15074,23 +15805,6 @@
       "OriginalItemSpec": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.Win32.Primitives.dll"
     },
     {
-      "Identity": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\obj\\Debug\\net6.0\\build-gz\\xvZHnW+C.gz",
-      "SourceId": "ClinicaVistaalegre.Client",
-      "SourceType": "Project",
-      "ContentRoot": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\",
-      "BasePath": "/",
-      "RelativePath": "_framework/Microsoft.DotNet.Scaffolding.Shared.dll.gz",
-      "AssetKind": "Build",
-      "AssetMode": "All",
-      "AssetRole": "Alternative",
-      "RelatedAsset": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.DotNet.Scaffolding.Shared.dll",
-      "AssetTraitName": "Content-Encoding",
-      "AssetTraitValue": "gzip",
-      "CopyToOutputDirectory": "PreserveNewest",
-      "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.DotNet.Scaffolding.Shared.dll"
-    },
-    {
       "Identity": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\obj\\Debug\\net6.0\\build-gz\\XxdPP3C8.gz",
       "SourceId": "ClinicaVistaalegre.Client",
       "SourceType": "Project",
@@ -15329,23 +16043,6 @@
       "OriginalItemSpec": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\System.Net.Requests.dll"
     },
     {
-      "Identity": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\obj\\Debug\\net6.0\\build-gz\\z+L2VQcC.gz",
-      "SourceId": "ClinicaVistaalegre.Client",
-      "SourceType": "Project",
-      "ContentRoot": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\",
-      "BasePath": "/",
-      "RelativePath": "_framework/Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll.gz",
-      "AssetKind": "Build",
-      "AssetMode": "All",
-      "AssetRole": "Alternative",
-      "RelatedAsset": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll",
-      "AssetTraitName": "Content-Encoding",
-      "AssetTraitValue": "gzip",
-      "CopyToOutputDirectory": "PreserveNewest",
-      "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll"
-    },
-    {
       "Identity": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\obj\\Debug\\net6.0\\build-gz\\z9RO2rdv.gz",
       "SourceId": "ClinicaVistaalegre.Client",
       "SourceType": "Project",
@@ -15499,21 +16196,38 @@
       "OriginalItemSpec": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\NuGet.Configuration.dll"
     },
     {
-      "Identity": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\obj\\Debug\\net6.0\\build-gz\\ZyzaxSr6.gz",
+      "Identity": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\obj\\Debug\\net6.0\\build-gz\\ZOamLrqv.gz",
       "SourceId": "ClinicaVistaalegre.Client",
       "SourceType": "Project",
       "ContentRoot": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\",
       "BasePath": "/",
-      "RelativePath": "_framework/Humanizer.dll.gz",
+      "RelativePath": "_framework/Microsoft.EntityFrameworkCore.Relational.dll.gz",
       "AssetKind": "Build",
       "AssetMode": "All",
       "AssetRole": "Alternative",
-      "RelatedAsset": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Humanizer.dll",
+      "RelatedAsset": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.EntityFrameworkCore.Relational.dll",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Humanizer.dll"
+      "OriginalItemSpec": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.EntityFrameworkCore.Relational.dll"
+    },
+    {
+      "Identity": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\obj\\Debug\\net6.0\\build-gz\\ZX1cs6n9.gz",
+      "SourceId": "ClinicaVistaalegre.Client",
+      "SourceType": "Project",
+      "ContentRoot": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.Identity.Client.dll.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "RelatedAsset": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.Identity.Client.dll",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.Identity.Client.dll"
     },
     {
       "Identity": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\obj\\Debug\\net6.0\\build-gz\\zzEFIduu.gz",

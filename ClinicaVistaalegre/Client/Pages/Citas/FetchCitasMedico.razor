@@ -4,12 +4,16 @@
 
 @if (citas == null)
 {
-    <p><em>Cargando...</em></p>
+    <div class="d-flex flex-row">
+        <div class="p-2 spinner-border text-info" role="status" />
+        <div class="p-2">Cargando citas...</div>
+    </div>
 }
 else if (citas.Count == 0)
 {
     <text>No hay citas</text>
-}else
+}
+else
 {
     <table class="table">
         <thead>
@@ -26,11 +30,12 @@ else if (citas.Count == 0)
             {
                 @switch (cita.Estado)
                 {
-                    case "Cancelada": case "Pasada":
+                    case "Cancelada":
+                    case "Pasada":
                         rowClass = "table-secondary";
                         break;
                     case "Pendiente":
-                        rowClass="";
+                        rowClass = "";
                         break;
                     default:
                         rowClass = "table-info";
@@ -39,9 +44,12 @@ else if (citas.Count == 0)
 
                 <tr class="@rowClass">
                     <td class="align-middle">
-                        @if(cita.Estado.Equals("Cancelada")||cita.Estado.Equals("Pasada")){
+                        @if (cita.Estado.Equals("Cancelada") || cita.Estado.Equals("Pasada"))
+                        {
                             <a class="btn btn-dark" disabled>Cancelar</a>
-                        }else{
+                        }
+                        else
+                        {
                             <a class="btn btn-dark" @onclick="(() => CancelarCita(cita.Id))">Cancelar</a>
                         }
                         <a class="btn btn-light" @onclick="(() => BorrarCita(cita.Id))">Borrar</a>
@@ -50,9 +58,12 @@ else if (citas.Count == 0)
                     <td class="align-middle">@cita.Paciente.Apellidos</td>
                     <td class="align-middle">@cita.FechaHora</td>
                     <td class="align-middle">
-                        @if(cita.Estado.Equals("Pendiente")){
+                        @if (cita.Estado.Equals("Pendiente"))
+                        {
                             <a class="btn btn-info" @onclick="(() => AceptarCita(cita.Id))">@cita.Estado</a>
-                        }else{
+                        }
+                        else
+                        {
                             @cita.Estado
                         }
                     </td>
@@ -63,9 +74,7 @@ else if (citas.Count == 0)
 }
 
 @code {
-    private string _authMessage;       
     private string _userId;
-    private IEnumerable<Claim> _claims = Enumerable.Empty<Claim>();
     private List<Cita>? citas;
     private string rowClass = "";
 
@@ -97,7 +106,7 @@ else if (citas.Count == 0)
               "su cita se ha borrado.",
               SweetAlertIcon.Success
               );
-              await Http.DeleteAsync($"api/Citas/{CitaId}");
+            await Http.DeleteAsync($"api/Citas/{CitaId}");
             citas = await getCitas();
 
         }
@@ -142,9 +151,7 @@ else if (citas.Count == 0)
         var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
         var user = authState.User;
 
-            _authMessage = $"{user.Identity.Name} is authenticated.";
-            _claims = user.Claims;
-            _userId = user.FindFirst(c => c.Type == "sub")?.Value;
+        _userId = user.FindFirst(c => c.Type == "sub")?.Value;
     }
 
     private async Task<List<Cita>> getCitas()
@@ -154,11 +161,11 @@ else if (citas.Count == 0)
         {
             _citas = await Http.GetFromJsonAsync<List<Cita>>($"api/Citas/ByMedico/{_userId}");
 
-            foreach(var cita in _citas)
+            foreach (var cita in _citas)
             {
                 if (cita.Paciente == null)
                 {
-                    cita.Paciente= await Http.GetFromJsonAsync<Paciente>($"api/Pacientes/{cita.PacienteId}");
+                    cita.Paciente = await Http.GetFromJsonAsync<Paciente>($"api/Pacientes/{cita.PacienteId}");
                 }
             }
         }

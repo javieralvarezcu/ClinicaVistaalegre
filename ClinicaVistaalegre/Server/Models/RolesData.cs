@@ -14,7 +14,7 @@ namespace ClinicaVistaalegre.Server.Models
             {
                 var dbContext = serviceScope.ServiceProvider.GetService<ApplicationDbContext>();
 
-                if (dbContext.Database.GetPendingMigrations().Any())
+                if (dbContext!.Database.GetPendingMigrations().Any())
                 {
                     await dbContext.Database.MigrateAsync();
 

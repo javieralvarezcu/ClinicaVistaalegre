@@ -10,7 +10,10 @@
 
 @if (citas == null)
 {
-    <p><em>Cargando...</em></p>
+    <div class="d-flex flex-row">
+        <div class="p-2 spinner-border text-info" role="status" />
+        <div class="p-2">Cargando citas...</div>
+    </div>
 }
 else if (citas.Count == 0)
 {
@@ -94,7 +97,7 @@ else
               "su cita se ha borrado.",
               SweetAlertIcon.Success
               );
-              await Http.DeleteAsync($"api/Citas/{CitaId}");
+            await Http.DeleteAsync($"api/Citas/{CitaId}");
             citas = await getCitas();
 
         }

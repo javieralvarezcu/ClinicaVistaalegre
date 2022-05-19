@@ -12,6 +12,12 @@
                         <p role="alert">No estás autorizado para acceder a este recurso.</p>
                     }
                 </NotAuthorized>
+                <Authorizing>
+                    <div class="d-flex flex-row">
+                        <div class="p-2 spinner-border text-info" role="status" />
+                        <div class="p-2">Autorizando...</div>
+                    </div>
+                </Authorizing>
             </AuthorizeRouteView>
             <FocusOnNavigate RouteData="@routeData" Selector="h1" />
         </Found>

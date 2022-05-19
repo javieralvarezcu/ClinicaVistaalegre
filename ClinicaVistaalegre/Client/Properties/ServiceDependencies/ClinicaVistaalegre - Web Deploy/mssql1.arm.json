@@ -4,7 +4,7 @@
   "parameters": {
     "resourceGroupName": {
       "type": "string",
-      "defaultValue": "ClinicaVistaalegreRecursos",
+      "defaultValue": "ClinicaVistaalegreGroup",
       "metadata": {
         "_parameterType": "resourceGroup",
         "description": "Nombre del grupo de recursos del recurso. Se recomienda poner los recursos en el mismo grupo de recursos para mejorar el seguimiento."
@@ -12,7 +12,7 @@
     },
     "resourceGroupLocation": {
       "type": "string",
-      "defaultValue": "eastus",
+      "defaultValue": "westeurope",
       "metadata": {
         "_parameterType": "location",
         "description": "Ubicación del grupo de recursos. Los grupos de recursos podrían tener una ubicación distinta a la de los recursos."
@@ -36,7 +36,7 @@
     },
     {
       "type": "Microsoft.Resources/deployments",
-      "name": "[concat(parameters('resourceGroupName'), 'Deployment', uniqueString(concat('ClinicaVistaalegreDB', subscription().subscriptionId)))]",
+      "name": "[concat(parameters('resourceGroupName'), 'Deployment', uniqueString(concat('ClinicaVistaalegre', subscription().subscriptionId)))]",
       "resourceGroup": "[parameters('resourceGroupName')]",
       "apiVersion": "2019-10-01",
       "dependsOn": [
@@ -51,24 +51,23 @@
             {
               "kind": "v12.0",
               "location": "[parameters('resourceLocation')]",
-              "name": "clinicavistaalegreserver",
+              "name": "clinicavistaalegredbserver",
               "type": "Microsoft.Sql/servers",
               "apiVersion": "2017-10-01-preview"
             },
             {
               "sku": {
-                "name": "GP_Gen5",
-                "tier": "GeneralPurpose",
-                "family": "Gen5",
-                "capacity": 2
+                "name": "Basic",
+                "tier": "Basic",
+                "capacity": 5
               },
-              "kind": "v12.0,user,vcore",
+              "kind": "v12.0,user",
               "location": "[parameters('resourceLocation')]",
-              "name": "clinicavistaalegreserver/ClinicaVistaalegreDB",
+              "name": "clinicavistaalegredbserver/ClinicaVistaalegre",
               "type": "Microsoft.Sql/servers/databases",
               "apiVersion": "2017-10-01-preview",
               "dependsOn": [
-                "clinicavistaalegreserver"
+                "clinicavistaalegredbserver"
               ]
             }
           ]

@@ -13,6 +13,7 @@
     <SourceRoot Include="C:\Users\JAVIER.ALVAREZCUEV\.nuget\packages\" />
   </ItemGroup>
   <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <Import Project="$(NuGetPackageRoot)microsoft.entityframeworkcore.design\6.0.0\build\net6.0\Microsoft.EntityFrameworkCore.Design.props" Condition="Exists('$(NuGetPackageRoot)microsoft.entityframeworkcore.design\6.0.0\build\net6.0\Microsoft.EntityFrameworkCore.Design.props')" />
     <Import Project="$(NuGetPackageRoot)microsoft.aspnetcore.components.webassembly.authentication\6.0.3\buildTransitive\Microsoft.AspNetCore.Components.WebAssembly.Authentication.props" Condition="Exists('$(NuGetPackageRoot)microsoft.aspnetcore.components.webassembly.authentication\6.0.3\buildTransitive\Microsoft.AspNetCore.Components.WebAssembly.Authentication.props')" />
     <Import Project="$(NuGetPackageRoot)microsoft.aspnetcore.components.webassembly\6.0.3\build\net6.0\Microsoft.AspNetCore.Components.WebAssembly.props" Condition="Exists('$(NuGetPackageRoot)microsoft.aspnetcore.components.webassembly\6.0.3\build\net6.0\Microsoft.AspNetCore.Components.WebAssembly.props')" />
     <Import Project="$(NuGetPackageRoot)currietechnologies.razor.sweetalert2\5.2.1\buildTransitive\CurrieTechnologies.Razor.SweetAlert2.props" Condition="Exists('$(NuGetPackageRoot)currietechnologies.razor.sweetalert2\5.2.1\buildTransitive\CurrieTechnologies.Razor.SweetAlert2.props')" />
@@ -21,6 +22,7 @@
     <PkgMessagePackAnalyzer Condition=" '$(PkgMessagePackAnalyzer)' == '' ">C:\Users\JAVIER.ALVAREZCUEV\.nuget\packages\messagepackanalyzer\2.1.152</PkgMessagePackAnalyzer>
     <PkgMicrosoft_CodeAnalysis_Analyzers Condition=" '$(PkgMicrosoft_CodeAnalysis_Analyzers)' == '' ">C:\Users\JAVIER.ALVAREZCUEV\.nuget\packages\microsoft.codeanalysis.analyzers\3.3.2</PkgMicrosoft_CodeAnalysis_Analyzers>
     <PkgMicrosoft_CodeAnalysis_AnalyzerUtilities Condition=" '$(PkgMicrosoft_CodeAnalysis_AnalyzerUtilities)' == '' ">C:\Users\JAVIER.ALVAREZCUEV\.nuget\packages\microsoft.codeanalysis.analyzerutilities\3.3.0</PkgMicrosoft_CodeAnalysis_AnalyzerUtilities>
+    <PkgMicrosoft_EntityFrameworkCore_Tools Condition=" '$(PkgMicrosoft_EntityFrameworkCore_Tools)' == '' ">C:\Users\JAVIER.ALVAREZCUEV\.nuget\packages\microsoft.entityframeworkcore.tools\6.0.0</PkgMicrosoft_EntityFrameworkCore_Tools>
     <PkgMicrosoft_AspNetCore_Components_WebAssembly_DevServer Condition=" '$(PkgMicrosoft_AspNetCore_Components_WebAssembly_DevServer)' == '' ">C:\Users\JAVIER.ALVAREZCUEV\.nuget\packages\microsoft.aspnetcore.components.webassembly.devserver\6.0.3</PkgMicrosoft_AspNetCore_Components_WebAssembly_DevServer>
   </PropertyGroup>
 </Project>

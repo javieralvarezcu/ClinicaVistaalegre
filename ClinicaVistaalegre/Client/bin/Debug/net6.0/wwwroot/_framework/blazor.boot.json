@@ -7,6 +7,7 @@
   "linkerEnabled": false,
   "resources": {
     "assembly": {
+      "CurrieTechnologies.Razor.SweetAlert2.dll": "sha256-8HwUaDMEkcPtmuu0zyGHnRukgFxPtyrXdGJiQm3dEgU=",
       "Humanizer.dll": "sha256-QN\/2+uvMbiur43ADhTUJsgUOgG7fPF8UH7uF\/cDRvqc=",
       "MessagePack.dll": "sha256-EfqQSZ6cxlYiULJA7Bkbbvi9NH8YCtzA9VP86yl6ceE=",
       "MessagePack.Annotations.dll": "sha256-rrWYaH10iftyPfGqv++PWmoVV12xvDYwRI\/Yw0zts2w=",
@@ -247,14 +248,14 @@
       "netstandard.dll": "sha256-W9cwgVmBZsddVw3WVFMC5Gya92UufvbVTNR4+u7pnR0=",
       "System.Private.CoreLib.dll": "sha256-KVnZkFos\/ML\/3S2isVijfmFZXO4zEQeCga6BZvGdTbY=",
       "ClinicaVistaalegre.Shared.dll": "sha256-SsnpNXpQ7g6e4oiIoCiPYQBfOKgbo+1A2sPgyKIPZJE=",
-      "ClinicaVistaalegre.Client.dll": "sha256-SjPj++nqJa07tC7iEkvROlirjTF7lzBPzny6znbxFFQ="
+      "ClinicaVistaalegre.Client.dll": "sha256-9BhDTND\/lSvKiz0z703wrRoC8rc6FrgBnszccB3eQEM="
     },
     "extensions": null,
     "lazyAssembly": null,
     "libraryInitializers": null,
     "pdb": {
       "ClinicaVistaalegre.Shared.pdb": "sha256-mBOmA9bye2XZtuKzm444YOwSNcs2cFaQ9lAzYJdL5YI=",
-      "ClinicaVistaalegre.Client.pdb": "sha256-OKOBrwc6IhHV3TNO+S5mgLzDqUtlZeje2aME91RUJKc="
+      "ClinicaVistaalegre.Client.pdb": "sha256-C5nOz3ubyLjH89uQalgKQHXnNQuZ441oM7tnQL0uSQE="
     },
     "runtime": {
       "dotnet.6.0.4.1av0dekkhc.js": "sha256-WYno\/cK5MDsl5yi4T\/\/QgUskbBfhLL77i+c0uKzO9+c=",

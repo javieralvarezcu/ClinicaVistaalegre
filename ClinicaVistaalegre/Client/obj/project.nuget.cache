@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "Urze2OgSpHMQegUyZJgshWjs0JjMjtUncvgHYKdBPUou/IMpFafhdGXr2fVMYAyCWsrTa8LMkGBADKNsZUnkSQ==",
+  "dgSpecHash": "WRYbvQL1KfvVqLIYG5sKQVs8/sfVm6jk6niBGhwlN9JasCs8YoQocAXvFGWs0kD9wBP0tB9U1jkz3C5eAiQqBg==",
   "success": true,
   "projectFilePath": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\ClinicaVistaalegre.Client.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\JAVIER.ALVAREZCUEV\\.nuget\\packages\\currietechnologies.razor.sweetalert2\\5.2.1\\currietechnologies.razor.sweetalert2.5.2.1.nupkg.sha512",
     "C:\\Users\\JAVIER.ALVAREZCUEV\\.nuget\\packages\\humanizer.core\\2.2.0\\humanizer.core.2.2.0.nupkg.sha512",
     "C:\\Users\\JAVIER.ALVAREZCUEV\\.nuget\\packages\\messagepack\\2.1.152\\messagepack.2.1.152.nupkg.sha512",
     "C:\\Users\\JAVIER.ALVAREZCUEV\\.nuget\\packages\\messagepack.annotations\\2.1.152\\messagepack.annotations.2.1.152.nupkg.sha512",

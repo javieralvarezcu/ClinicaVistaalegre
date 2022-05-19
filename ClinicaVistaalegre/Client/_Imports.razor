@@ -9,3 +9,13 @@
 @using Microsoft.JSInterop
 @using ClinicaVistaalegre.Client
 @using ClinicaVistaalegre.Client.Shared
+@using ClinicaVistaalegre.Shared.Models
+@using Microsoft.AspNetCore.Authorization
+@using Microsoft.AspNetCore.Components.WebAssembly.Authentication
+@using ClinicaVistaalegre.Shared
+@using System.Security.Claims
+@inject HttpClient Http
+@inject IJSRuntime JS
+@using CurrieTechnologies.Razor.SweetAlert2
+@inject SweetAlertService Swal;
+@inject AuthenticationStateProvider AuthenticationStateProvider

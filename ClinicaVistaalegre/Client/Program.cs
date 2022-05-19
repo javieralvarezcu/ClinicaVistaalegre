@@ -1,5 +1,6 @@
 using ClinicaVistaalegre.Client;
 using ClinicaVistaalegre.Client.Services;
+using CurrieTechnologies.Razor.SweetAlert2;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Authentication;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
@@ -18,6 +19,7 @@ builder.Services.AddScoped(sp => sp.GetRequiredService<IHttpClientFactory>().Cre
 
 builder.Services.AddAuthorizationCore();
 builder.Services.AddApiAuthorization();
+builder.Services.AddSweetAlert2();
 
 builder.Services.TryAddEnumerable(
     ServiceDescriptor.Singleton<

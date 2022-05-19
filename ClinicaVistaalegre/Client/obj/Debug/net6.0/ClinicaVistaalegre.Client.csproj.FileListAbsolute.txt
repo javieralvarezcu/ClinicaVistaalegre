@@ -6586,3 +6586,7 @@ C:\Users\JAVIER.ALVAREZCUEV\Documents\ClinicaVistaalegre\ClinicaVistaalegre\Clie
 C:\Users\JAVIER.ALVAREZCUEV\Documents\ClinicaVistaalegre\ClinicaVistaalegre\Client\obj\Debug\net6.0\refint\ClinicaVistaalegre.Client.dll
 C:\Users\JAVIER.ALVAREZCUEV\Documents\ClinicaVistaalegre\ClinicaVistaalegre\Client\obj\Debug\net6.0\ClinicaVistaalegre.Client.pdb
 C:\Users\JAVIER.ALVAREZCUEV\Documents\ClinicaVistaalegre\ClinicaVistaalegre\Client\obj\Debug\net6.0\ref\ClinicaVistaalegre.Client.dll
+C:\Users\JAVIER.ALVAREZCUEV\ClinicaVistaalegre\ClinicaVistaalegre\Client\bin\Debug\net6.0\wwwroot\_framework\CurrieTechnologies.Razor.SweetAlert2.dll
+C:\Users\JAVIER.ALVAREZCUEV\ClinicaVistaalegre\ClinicaVistaalegre\Client\bin\Debug\net6.0\wwwroot\_framework\CurrieTechnologies.Razor.SweetAlert2.dll.gz
+C:\Users\JAVIER.ALVAREZCUEV\ClinicaVistaalegre\ClinicaVistaalegre\Client\bin\Debug\net6.0\CurrieTechnologies.Razor.SweetAlert2.dll
+C:\Users\JAVIER.ALVAREZCUEV\ClinicaVistaalegre\ClinicaVistaalegre\Client\obj\Debug\net6.0\build-gz\w9mt+eaA.gz

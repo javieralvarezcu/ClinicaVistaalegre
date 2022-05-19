@@ -1,4 +1,6 @@
 ﻿@page "/fetchconversaciones"
+@inject HttpClient Http
+
 
 <PageTitle>Chat</PageTitle>
 
@@ -7,7 +9,7 @@
 <div class="row my-3 d-flex flex-row justify-content-between">
     <a class="btn btn-outline-info" href="chat/@destinatarioId" style="@(destinatarioId.Equals("---") ? "pointer-events: none" : "")">Nueva conversacion</a>
     <select id="Medico" onload="@OnChangeDestinatario" onchange="@OnChangeDestinatario" class="form-control" placeholder="Medico">
-                
+                <option value="---">Seleccione un contacto para iniciar una conversación</option>
                 @if(destinatarios!=null){
                     foreach (var destinatario in destinatarios)
                 {

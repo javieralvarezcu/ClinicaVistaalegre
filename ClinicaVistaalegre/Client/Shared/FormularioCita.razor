@@ -1,6 +1,4 @@
 ﻿@page "/claims/formularioCita"
-@using CurrieTechnologies.Razor.SweetAlert2
-@inject SweetAlertService Swal;
 
 <EditForm Model="@Cita" OnValidSubmit="@OnValidSubmit">
     <div class="form-group row">
@@ -12,6 +10,24 @@
                        @bind-Value="Cita.Motivo" />
         </div>
         <ValidationMessage For="() => this.Cita.Motivo">Inserte un motivo</ValidationMessage>
+    </div>
+    <div class="form-group row">
+        <label for="MedicoId" class="col-sm-2 col-form-label">
+            Medico
+        </label>
+        <div class="col-sm-10">
+            <InputSelect id="Medico" onblur="@OnBlurFecha" class="form-control" placeholder="Medico" @bind-Value="@Cita.MedicoId">
+                <option value="">---</option>
+                @if (medicos != null)
+                {
+                    foreach (Medico m in medicos)
+                    {
+                        <option value="@m.Id">@m.Apellidos - @m.Especialidad.ToUpper()</option>
+                    }
+                }
+            </InputSelect>
+        </div>
+        <ValidationMessage For="() => this.Cita.MedicoId">Seleccione un médico</ValidationMessage>
     </div>
     <div class="form-group row">
         <label for="Fecha" class="col-sm-2 col-form-label">
@@ -32,33 +48,14 @@
             </select>
         </div>
     </div>
-    <div class="form-group row">
-        <label for="MedicoId" class="col-sm-2 col-form-label">
-            Medico
-        </label>
-        <div class="col-sm-10">
-            <InputSelect id="Medico" onblur="@OnBlurFecha" class="form-control" placeholder="Medico" @bind-Value="@Cita.MedicoId">
-                <option value="">---</option>
-                @if(medicos!=null){
-                    foreach (Medico m in medicos)
-                {
-                    <option value="@m.Id">@m.Apellidos - @m.Especialidad.ToUpper()</option>
-                }
-                }
-            </InputSelect>
-        </div>
-        <ValidationMessage For="() => this.Cita.MedicoId">Seleccione un médico</ValidationMessage>
-    </div>
 
-    <button type="submit" class="btn btn-success">@TextoBoton</button>
+    <button type="submit" class="btn btn-success" disabled="@isSubmitting">@TextoBoton</button>
 
 </EditForm>
 
 @code {
-
-    private string _authMessage;       
-    private string _userId="";
-    private IEnumerable<Claim> _claims = Enumerable.Empty<Claim>();
+    private string _userId = "";
+    bool isSubmitting;
 
     [Parameter] public String TextoBoton { get; set; } = "Guardar";
     [Parameter] public Cita Cita { get; set; }
@@ -67,22 +64,9 @@
     private List<Medico>? medicos;
     private List<DateTime>? horas = new List<DateTime>();
 
-    private DateTime fechaCita;
-    public DateTime _fechaCita
-    {
-        get { return fechaCita; }
-        set
-        {
-            fechaCita = value;
-        }
-    }
+    private DateTime _fechaCita;
 
-    private DateTime horaCita;
-    public DateTime _horaCita
-    {
-        get { return horaCita; }
-        set { horaCita = value; }
-    }
+    private DateTime _horaCita;
 
     public void OnChangeSelect(ChangeEventArgs args)
     {
@@ -98,7 +82,7 @@
         _fechaCita = DateTime.Now.AddDays(1);
         Cita.MedicoId = "";
         medicos = await Http.GetFromJsonAsync<List<Medico>>("api/Medicos");
-        base.OnInitializedAsync();
+        await base.OnInitializedAsync();
     }
 
     public async Task<List<DateTime>> getHoras(string medicoId, DateTime date)
@@ -122,22 +106,24 @@
         "NewSelectValue",
         "Hora",
         stringDates);
-
-        await JS.InvokeAsync<object>(
+        if (cita.FechaHora <= DateTime.Now.AddHours(1));
+        {
+            await JS.InvokeAsync<object>(
         "DefaultSelectedValue",
         "Hora",
         $"{cita.FechaHora.Hour}:{cita.FechaHora.Minute}");
+        }
     }
 
     protected async override void OnParametersSet()
     {
         await GetClaimsPrincipalData();
-        if (cita != Cita )
+        if (cita != Cita)
         {
             cita = Cita;
         }
 
-        if(cita.FechaHora != new DateTime() && !cita.MedicoId.Equals(""))
+        if (cita.FechaHora != new DateTime() && !cita.MedicoId.Equals(""))
         {
             _fechaCita = cita.FechaHora;
 
@@ -151,9 +137,15 @@
     {
         if (_fechaCita > DateTime.Now)
         {
-            if(!Cita.MedicoId.Equals(""))
+            if (!Cita.MedicoId.Equals(""))
             {
                 horas = await getHoras(Cita.MedicoId, _fechaCita);
+            }
+            else
+            {
+                await JS.InvokeAsync<object>(
+                    "SeleccionaMedicoValue",
+                    "Hora");
             }
         }
         else
@@ -166,35 +158,46 @@
 
     private async void OnValidSubmit()
     {
-        if (fechaCita < DateTime.Now)
+        if (isSubmitting)
+            return;
+
+        isSubmitting = true;
+        try
         {
-            await Swal.FireAsync("Error de fecha", "Inserta una fecha posterior al día de hoy", "error");
-        }else if (cita.Motivo.Equals(""))
-        {
-            await Swal.FireAsync("Error de motivo", "Inserta un motivo", "error");
+            if (_fechaCita < DateTime.Now)
+            {
+                await Swal.FireAsync("Error de fecha", "Inserta una fecha posterior al día de hoy", "error");
+            }
+            else if (cita.Motivo.Equals(""))
+            {
+                await Swal.FireAsync("Error de motivo", "Inserta un motivo", "error");
+            }
+            else
+            {
+                cita.PacienteId = _userId;
+                cita.FechaHora = new DateTime(
+                    _fechaCita.Year,
+                    _fechaCita.Month,
+                    _fechaCita.Day,
+                    _horaCita.Hour,
+                    _horaCita.Minute, 0
+            );
+                CitaChanged.InvokeAsync(cita);
+            }
+            await Task.Delay(200);
         }
-        else
+        finally
         {
-            cita.PacienteId = _userId;
-        cita.FechaHora = new DateTime(
-            fechaCita.Year,
-            fechaCita.Month,
-            fechaCita.Day,
-            _horaCita.Hour,
-            _horaCita.Minute, 0
-    );
-        CitaChanged.InvokeAsync(cita);
+            isSubmitting = false;
         }
-        
-    } 
+
+    }
 
     private async Task GetClaimsPrincipalData()
     {
         var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
         var user = authState.User;
 
-            _authMessage = $"{user.Identity.Name} is authenticated.";
-            _claims = user.Claims;
-            _userId = user.FindFirst(c => c.Type == "sub")?.Value;
+        _userId = user.FindFirst(c => c.Type == "sub")?.Value;
     }
 }

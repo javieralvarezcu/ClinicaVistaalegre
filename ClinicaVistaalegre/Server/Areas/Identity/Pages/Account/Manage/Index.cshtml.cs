@@ -8,6 +8,7 @@ using System.Text.Encodings.Web;
 using System.Threading.Tasks;
 using ClinicaVistaalegre.Server.Data;
 using ClinicaVistaalegre.Server.Models;
+using ClinicaVistaalegre.Shared.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
@@ -113,6 +114,17 @@ namespace ClinicaVistaalegre.Server.Areas.Identity.Pages.Account.Manage
         public async Task<IActionResult> OnPostAsync()
         {
             var user = await _userManager.GetUserAsync(User);
+            var userPaciente = new Paciente();
+            var userMedico = new Medico();
+            if (user.Especialidad.Equals("Paciente"))
+            {
+                userPaciente = _dbContext.Pacientes.Where(x => x.Id == user.Id).FirstOrDefault();
+            }
+            else
+            {
+                userMedico = _dbContext.Medicos.Where(x => x.Id == user.Id).FirstOrDefault();
+            }
+
             if (user == null)
             {
                 return NotFound($"Error al cargar usuario con id: '{_userManager.GetUserId(User)}'.");
@@ -141,6 +153,16 @@ namespace ClinicaVistaalegre.Server.Areas.Identity.Pages.Account.Manage
                 {
                     user.Apellidos = Input.Apellidos;
                     _dbContext.Update(user);
+                    if (user.Especialidad.Equals("Paciente"))
+                    {
+                        userPaciente.Apellidos = Input.Apellidos;
+                        _dbContext.Update(userPaciente);
+                    }
+                    else
+                    {
+                        userMedico.Apellidos = Input.Apellidos;
+                        _dbContext.Update(userMedico);
+                    }
                     _dbContext.SaveChanges();
                 }
                 catch (Exception e)
@@ -150,12 +172,16 @@ namespace ClinicaVistaalegre.Server.Areas.Identity.Pages.Account.Manage
                 }
             }
 
-            if(Input.Especialidad != user.Especialidad && user.Especialidad != "Paciente")
+            if (Input.Especialidad != user.Especialidad && user.Especialidad != "Paciente")
             {
                 try
                 {
                     user.Especialidad = Input.Especialidad;
                     _dbContext.Update(user);
+
+                    userMedico.Especialidad = Input.Especialidad;
+                    _dbContext.Update(userMedico);
+
                     _dbContext.SaveChanges();
                 }
                 catch (Exception e)
@@ -171,6 +197,11 @@ namespace ClinicaVistaalegre.Server.Areas.Identity.Pages.Account.Manage
                 {
                     user.FechaDeNacimiento = (DateTime)Input.FechaNacimiento;
                     _dbContext.Update(user);
+                    if (user.Especialidad.Equals("Paciente"))
+                    {
+                        userPaciente.FechaDeNacimiento = Input.FechaNacimiento;
+                        _dbContext.Update(userPaciente);
+                    }
                     _dbContext.SaveChanges();
                 }
                 catch (Exception e)
@@ -186,6 +217,11 @@ namespace ClinicaVistaalegre.Server.Areas.Identity.Pages.Account.Manage
                 {
                     user.Sexo = Input.Sexo;
                     _dbContext.Update(user);
+                    if (user.Especialidad.Equals("Paciente"))
+                    {
+                        userPaciente.Sexo = Input.Sexo;
+                        _dbContext.Update(userPaciente);
+                    }
                     _dbContext.SaveChanges();
                 }
                 catch (Exception e)

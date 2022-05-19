@@ -13,7 +13,7 @@
 
 <body>
 
-    <div class="d-flex" id="app">
+    <div id="app">
         <div class="spinner-border text-info" role="status"/>
     </div>
 
@@ -52,12 +52,36 @@
 
 <script defer>
     window.DefaultSelectedValue = (id, hora) => {
-        console.log(hora)
         let select = document.getElementById(id);
 
         if (select != null) {
-            select.text = hora
-            select.value = hora
+            select.remove(0);
+            let option = document.createElement('option')
+            option.text = hora
+            option.value = hora
+            select.append(option)
         }
+    }
+</script>
+
+<script defer>
+    window.SeleccionaMedicoValue = (id) => {
+        let select = document.getElementById(id);
+
+        if (select != null) {
+            select.remove(0);
+            let option = document.createElement('option')
+            option.text = 'Selecciona un médico'
+            option.value = ''
+            select.append(option)
+        }
+    }
+</script>
+
+<script defer>
+    window.scrollToEnd = (navId) => {
+        var elem = document.getElementById(navId);
+        if (elem != null) { elem.scrollTop = elem.scrollHeight;}
+        
     }
 </script>

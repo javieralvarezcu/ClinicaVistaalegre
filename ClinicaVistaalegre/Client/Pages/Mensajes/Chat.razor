@@ -3,28 +3,26 @@
 <PageTitle>Chat</PageTitle>
 
 <h1>Chat</h1>
-
-<div>
-    <a class="btn btn-outline-info text-end" onclick="@OnClickActualizar">Comprobar si hay nuevos mensajes</a>
-</div>
-
 @if (mensajes == null)
 {
-    <p><em>Cargando...</em></p>
+    <div class="d-flex flex-row">
+        <div class="p-2 spinner-border text-info" role="status" />
+        <div class="p-2">Cargando citas...</div>
+    </div>
 }
 else
 {
-    <div class="table-responsive">
+    <div class="table-responsive" id="table-div">
         <table class="table" id="job-table">
             <thead>
                 <tr>
-                    <th>Tú</th>
                     <AuthorizeView Roles="Medico">
-                        <th class="text-end">@paciente.Apellidos</th>
+                        <th>@paciente.Apellidos</th>
                     </AuthorizeView>
                     <AuthorizeView Roles="Paciente">
-                        <th class="text-end">@medico.Apellidos</th>
+                        <th>@medico.Apellidos</th>
                     </AuthorizeView>
+                    <th class="text-end">Tú</th>
                     <th class="text-end"> </th>
                 </tr>
             </thead>
@@ -34,13 +32,13 @@ else
                     <tr>
                         @if (mensaje.Emisor.Equals(_userId))
                         {
-                            <td class="align-middle">@mensaje.Contenido</td>
-                            <td class="align-middle text-end"></td>
+                            <td class="align-middle"></td>
+                            <td class="align-middle text-end">@mensaje.Contenido</td>
                         }
                         else
                         {
-                            <td class="align-middle"></td>
-                            <td class="align-middle text-end">@mensaje.Contenido</td>
+                            <td class="align-middle">@mensaje.Contenido</td>
+                            <td class="align-middle text-end"></td>
                         }
                         <td class="align-middle text-end" style="width: 15%">@mensaje.FechaHora</td>
                     </tr>
@@ -49,38 +47,51 @@ else
         </table>
     </div>
 
-    <EditForm Model="@mensaje" OnValidSubmit="Enviar">
+    <EditForm Model="@mensaje" OnValidSubmit="OnValidMensaje">
         <div class="form-group row">
             <div class="my-3 d-flex flex-row justify-content-between">
                 <div class="col-sm-10">
                     <InputText id="Contenido" class="form-control" placeholder="Contenido"
-                           @bind-Value="mensaje.Contenido" />
+                           @bind-Value="mensaje.Contenido" style="@(isSubmitting ? "pointer-events: none" : "")" />
                 </div>
                 <ValidationMessage For="() => this.mensaje.Contenido"></ValidationMessage>
-            <button type="submit" class="btn btn-info">Enviar</button>
+                <button type="submit" class="btn btn-info" disabled="@isSubmitting">Enviar</button>
             </div>
         </div>
     </EditForm>
+
+
 
 }
 
 @code {
     [Parameter] public string destinatarioId { get; set; }
 
-    private string _authMessage;
     private string _userId;
-    private IEnumerable<Claim> _claims = Enumerable.Empty<Claim>();
     ClaimsPrincipal _user;
     private List<Mensaje>? mensajes;
     private Medico medico;
     private Paciente paciente;
     Mensaje mensaje = new Mensaje();
+    bool isSubmitting;
 
     protected override async Task OnInitializedAsync()
     {
         mensaje = new Mensaje();
         await GetClaimsPrincipalData();
         mensajes = await getMensajes();
+
+        //Refresco de chat
+        var timer = new System.Threading.Timer((_) =>
+        {
+            InvokeAsync(async () =>
+       {
+       // Add your update logic here
+       mensajes = await getMensajes();
+       // Update the UI
+       StateHasChanged();
+       });
+        }, null, 0, 5000);
     }
 
     private async Task GetClaimsPrincipalData()
@@ -88,8 +99,6 @@ else
         var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
         _user = authState.User;
 
-        _authMessage = $"{_user.Identity.Name} is authenticated.";
-        _claims = _user.Claims;
         _userId = _user.FindFirst(c => c.Type == "sub")?.Value;
         if (_user.IsInRole("Medico"))
         {
@@ -103,32 +112,34 @@ else
         }
     }
 
-    private async void OnClickActualizar()
+    private async Task OnValidMensaje()
     {
-        mensajes = await getMensajes();
-    }
+        if (isSubmitting)
+            return;
 
-    private async void Enviar()
-    {
-        if (mensaje.Contenido != null)
+        isSubmitting = true;
+        try
         {
-            if (!mensaje.Contenido.Trim().Equals(""))
+            if (mensaje.Contenido != null)
             {
-                mensaje.FechaHora = DateTime.Now;
-                mensaje.MedicoId = medico.Id;
-                mensaje.PacienteId = paciente.Id;
-                mensaje.Emisor = _userId;
-                await Http.PostAsJsonAsync<Mensaje>("api/Mensajes", mensaje);
-                mensaje = new Mensaje();
-                mensajes = await getMensajes();
+                if (!mensaje.Contenido.Trim().Equals(""))
+                {
+                    mensaje.FechaHora = DateTime.Now;
+                    mensaje.MedicoId = medico.Id;
+                    mensaje.PacienteId = paciente.Id;
+                    mensaje.Emisor = _userId;
+                    await Http.PostAsJsonAsync<Mensaje>("api/Mensajes", mensaje);
+                    mensaje = new Mensaje();
+                    mensajes = await getMensajes();
+                }
             }
+            await Task.Delay(200);
+        }
+        finally
+        {
+            isSubmitting = false;
         }
 
-    }
-
-    private void OnChangeInput(ChangeEventArgs args)
-    {
-        mensaje.Contenido = args.Value.ToString();
     }
 
     private async Task<List<Mensaje>> getMensajes()
@@ -144,6 +155,7 @@ else
                 mensaje.Paciente = paciente;
                 mensaje.Medico = medico;
             }
+            ScrollToEnd();
         }
         catch (AccessTokenNotAvailableException exception)
         {
@@ -152,4 +164,8 @@ else
 
         return mensajes;
     }
+
+    void ScrollToEnd() {
+        JS.InvokeVoidAsync("scrollToEnd", "table-div");
+    } 
 }

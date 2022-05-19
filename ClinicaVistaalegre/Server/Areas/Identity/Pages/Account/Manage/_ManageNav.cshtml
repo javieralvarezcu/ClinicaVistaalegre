@@ -1,4 +1,7 @@
-﻿@inject SignInManager<ApplicationUser> SignInManager
+﻿@using ClinicaVistaalegre.Server.Areas.Identity.Pages.Account.Manage
+@using ClinicaVistaalegre.Server.Models
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<ApplicationUser> SignInManager
 @{
     var hasExternalLogins = (await SignInManager.GetExternalAuthenticationSchemesAsync()).Any();
 }

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "edA5sXwXBecYSeyfOC57pGO8Ao+kbESz9HExIBeutZg=",
+  "Hash": "un/HnBo46BeiBYHQA92KgndoqH+H6v9WR77mLMJYoFc=",
   "Source": "ClinicaVistaalegre.Server",
   "BasePath": "_content/ClinicaVistaalegre.Server",
   "Mode": "Default",
@@ -16262,6 +16262,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\obj\\Debug\\net6.0\\scopedcss\\bundle\\ClinicaVistaalegre.Client.styles.css"
+    },
+    {
+      "Identity": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\wwwroot\\assets\\MisChavalesDeAtmira.png",
+      "SourceId": "ClinicaVistaalegre.Client",
+      "SourceType": "Project",
+      "ContentRoot": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "assets/MisChavalesDeAtmira.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\MisChavalesDeAtmira.png"
     },
     {
       "Identity": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\wwwroot\\css\\app.css",

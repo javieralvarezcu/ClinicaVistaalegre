@@ -44,7 +44,7 @@
             Hora
         </label>
         <div class="col-sm-10">
-            <select id="Hora" style="@(horas.Count()==0 || Cita.MedicoId.Equals("") ? "pointer-events: none" : "")" onchange="@OnChangeSelect" class="form-control" placeholder="Hora">
+            <select id="Hora" onchange="@OnChangeSelect" class="form-control" placeholder="Hora">
             </select>
         </div>
     </div>
@@ -108,10 +108,14 @@
         stringDates);
         if (cita.FechaHora <= DateTime.Now.AddHours(1));
         {
-            await JS.InvokeAsync<object>(
+            if (cita.FechaHora.Hour != 0)
+            {
+                await JS.InvokeAsync<object>(
         "DefaultSelectedValue",
         "Hora",
         $"{cita.FechaHora.Hour}:{cita.FechaHora.Minute}");
+            }
+
         }
     }
 
@@ -151,7 +155,7 @@
         else
         {
             horas = new List<DateTime>();
-            rellenaSelect(new string[1]);
+            rellenaSelect(new string[1] { "Inserta una fecha posterior al día de hoy"});
             await Swal.FireAsync("Error de fecha", "Inserta una fecha posterior al día de hoy", "error");
         }
     }

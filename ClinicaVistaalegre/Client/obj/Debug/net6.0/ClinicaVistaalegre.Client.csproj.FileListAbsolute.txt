@@ -1733,3 +1733,4 @@ C:\Users\JAVIER.ALVAREZCUEV\ClinicaVistaalegre\ClinicaVistaalegre\Client\obj\Deb
 C:\Users\JAVIER.ALVAREZCUEV\ClinicaVistaalegre\ClinicaVistaalegre\Client\obj\Debug\net6.0\refint\ClinicaVistaalegre.Client.dll
 C:\Users\JAVIER.ALVAREZCUEV\ClinicaVistaalegre\ClinicaVistaalegre\Client\obj\Debug\net6.0\ClinicaVistaalegre.Client.pdb
 C:\Users\JAVIER.ALVAREZCUEV\ClinicaVistaalegre\ClinicaVistaalegre\Client\obj\Debug\net6.0\ref\ClinicaVistaalegre.Client.dll
+C:\Users\JAVIER.ALVAREZCUEV\ClinicaVistaalegre\ClinicaVistaalegre\Client\bin\Debug\net6.0\wwwroot\assets\MisChavalesDeAtmira.png

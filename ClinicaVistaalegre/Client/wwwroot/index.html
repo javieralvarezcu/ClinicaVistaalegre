@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <title>ClinicaVistaalegre</title>
+    <title>Clinica Vistaalegre</title>
     <base href="/" />
     <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet" />
     <link href="css/app.css" rel="stylesheet" />
@@ -53,14 +53,14 @@
 <script defer>
     window.DefaultSelectedValue = (id, hora) => {
         let select = document.getElementById(id);
-
+        console.log(hora)
         if (select != null) {
-            select.remove(0);
             let option = document.createElement('option')
             option.text = hora
             option.value = hora
             select.append(option)
         }
+        select.value = hora;
     }
 </script>
 

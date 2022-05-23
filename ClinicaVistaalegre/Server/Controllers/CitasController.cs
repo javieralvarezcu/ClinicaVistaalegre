@@ -142,7 +142,7 @@ namespace ClinicaVistaalegre.Server.Controllers
                     mensaje.Contenido = $"*Modificada cita con el motivo: {cita.Motivo} y fecha: {cita.FechaHora.ToString("dd-MM-yyyy HH:mm")}*";
                     mensaje.Emisor = cita.PacienteId;
                 }
-
+                _context.Mensajes.Add(mensaje);
                 await _context.SaveChangesAsync();
             }
             catch (DbUpdateConcurrencyException)

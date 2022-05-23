@@ -7,11 +7,13 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ClinicaVistaalegre.Server.Data;
 using ClinicaVistaalegre.Shared.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace ClinicaVistaalegre.Server.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class PacientesController : ControllerBase
     {
         private readonly ApplicationDbContext _context;

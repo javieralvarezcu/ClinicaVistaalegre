@@ -30,4 +30,8 @@
     <ProjectReference Include="..\Shared\ClinicaVistaalegre.Shared.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\assets\help\" />
+  </ItemGroup>
+
 </Project>

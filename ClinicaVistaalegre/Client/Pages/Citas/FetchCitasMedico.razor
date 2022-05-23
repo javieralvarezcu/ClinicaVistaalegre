@@ -1,4 +1,5 @@
 ﻿@page "/fetchcitasmedico"
+@attribute [Authorize(Roles = "Medico")]
 
 <PageTitle>Citas</PageTitle>
 
@@ -81,7 +82,9 @@ else
 
     protected override async Task OnInitializedAsync()
     {
-        GetClaimsPrincipalData();
+        await GetClaimsPrincipalData();
+        Task.WaitAll();
+
         citas = await getCitas();
     }
 
@@ -107,7 +110,7 @@ else
               "su cita se ha borrado.",
               SweetAlertIcon.Success
               );
-            await Http.DeleteAsync($"api/Citas/{CitaId}");
+            await Http.DeleteAsync($"api/Citas/{CitaId}/{_userId}");
             citas = await getCitas();
 
         }

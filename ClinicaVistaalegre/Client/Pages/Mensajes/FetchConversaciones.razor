@@ -1,5 +1,6 @@
 ﻿@page "/fetchconversaciones"
 @inject HttpClient Http
+@attribute [Authorize]
 
 
 <PageTitle>Chat</PageTitle>
@@ -160,7 +161,7 @@ else
                 var medicos = await Http.GetFromJsonAsync<List<Medico>>($"api/Medicos");
                 foreach   (var medico in medicos)
                 {
-                    _destinatarios.Add(medico.Id, $"{medico.Apellidos} - {medico.Especialidad.ToUpper()}+");
+                    _destinatarios.Add(medico.Id, $"{medico.Apellidos} - {medico.Especialidad.ToUpper()}");
                 }
             }
         }

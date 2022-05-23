@@ -5,7 +5,9 @@
 using System;
 using System.ComponentModel.DataAnnotations;
 using System.Threading.Tasks;
+using ClinicaVistaalegre.Server.Data;
 using ClinicaVistaalegre.Server.Models;
+using ClinicaVistaalegre.Shared.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
@@ -18,15 +20,18 @@ namespace ClinicaVistaalegre.Server.Areas.Identity.Pages.Account.Manage
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly SignInManager<ApplicationUser> _signInManager;
         private readonly ILogger<DeletePersonalDataModel> _logger;
+        private readonly ApplicationDbContext _dbContext;
 
         public DeletePersonalDataModel(
             UserManager<ApplicationUser> userManager,
             SignInManager<ApplicationUser> signInManager,
-            ILogger<DeletePersonalDataModel> logger)
+            ILogger<DeletePersonalDataModel> logger,
+            ApplicationDbContext dbContext)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _logger = logger;
+            _dbContext = dbContext;
         }
 
         /// <summary>
@@ -87,6 +92,16 @@ namespace ClinicaVistaalegre.Server.Areas.Identity.Pages.Account.Manage
                 }
             }
 
+            if (user.Especialidad.Equals("Paciente"))
+            {
+                _dbContext.Pacientes.Remove(new Paciente() { Id = user.Id });
+            }
+            else
+            {
+                _dbContext.Medicos.Remove(new Medico() { Id = user.Id });
+            }
+            await _dbContext.SaveChangesAsync();
+              
             var result = await _userManager.DeleteAsync(user);
             var userId = await _userManager.GetUserIdAsync(user);
             if (!result.Succeeded)

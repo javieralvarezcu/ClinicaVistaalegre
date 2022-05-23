@@ -2,11 +2,13 @@
 using Microsoft.EntityFrameworkCore;
 using ClinicaVistaalegre.Server.Data;
 using ClinicaVistaalegre.Shared.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace ClinicaVistaalegre.Server.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class MensajesController : ControllerBase
     {
         private readonly ApplicationDbContext _context;
@@ -98,7 +100,7 @@ namespace ClinicaVistaalegre.Server.Controllers
             return conversaciones;
         }
 
-            [Route("MedicosByPaciente/{pacienteId}")]
+        [Route("MedicosByPaciente/{pacienteId}")]
         public async Task<ActionResult<IEnumerable<Medico>>> GetMedicos(string pacienteId)
         {
             List<Medico> medicos = new List<Medico>();
@@ -148,37 +150,6 @@ namespace ClinicaVistaalegre.Server.Controllers
             }
 
             return mensaje;
-        }
-
-        // PUT: api/Mensajes/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutMensaje(string id, Mensaje mensaje)
-        {
-            if (id != mensaje.PacienteId)
-            {
-                return BadRequest();
-            }
-
-            _context.Entry(mensaje).State = EntityState.Modified;
-
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!MensajeExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            return NoContent();
         }
 
         // POST: api/Mensajes

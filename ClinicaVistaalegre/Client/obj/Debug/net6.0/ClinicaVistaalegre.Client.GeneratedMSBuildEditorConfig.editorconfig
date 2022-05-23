@@ -22,6 +22,10 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/JAVIER.ALVAREZCUEV/ClinicaVistaalegre/ClinicaVistaalegre/Client/Pages/About.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWJvdXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/JAVIER.ALVAREZCUEV/ClinicaVistaalegre/ClinicaVistaalegre/Client/Pages/Authentication.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXV0aGVudGljYXRpb24ucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
@@ -42,6 +46,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2l0YXNcVXBkYXRlQ2l0YXMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/JAVIER.ALVAREZCUEV/ClinicaVistaalegre/ClinicaVistaalegre/Client/Pages/Help.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSGVscC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/JAVIER.ALVAREZCUEV/ClinicaVistaalegre/ClinicaVistaalegre/Client/Pages/Index.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
@@ -52,10 +60,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/JAVIER.ALVAREZCUEV/ClinicaVistaalegre/ClinicaVistaalegre/Client/Pages/Mensajes/FetchConversaciones.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTWVuc2FqZXNcRmV0Y2hDb252ZXJzYWNpb25lcy5yYXpvcg==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/JAVIER.ALVAREZCUEV/ClinicaVistaalegre/ClinicaVistaalegre/Client/Shared/About.razor]
-build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXEFib3V0LnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/JAVIER.ALVAREZCUEV/ClinicaVistaalegre/ClinicaVistaalegre/Client/Shared/FormularioCita.razor]

@@ -1,11 +1,12 @@
 ﻿@page "/creacitas"
 @inject HttpClient Http
 @inject NavigationManager NavMan
+@attribute [Authorize(Roles = "Paciente")]
 
 
 <PageTitle>Citas</PageTitle>
 
-<h1>Crear cita</h1>
+<h1>Solicitar cita</h1>
 
 <FormularioCita TextoBoton="Solicitar cita" CitaChanged="@CrearCita" Cita="@cita"/>
 

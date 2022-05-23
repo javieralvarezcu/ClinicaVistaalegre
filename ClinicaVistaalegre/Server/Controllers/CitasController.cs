@@ -3,9 +3,11 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ClinicaVistaalegre.Server.Data;
 using ClinicaVistaalegre.Shared.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace ClinicaVistaalegre.Server.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class CitasController : ControllerBase
@@ -115,6 +117,32 @@ namespace ClinicaVistaalegre.Server.Controllers
 
             try
             {
+                var mensaje = new Mensaje()
+                {
+                    Contenido = "",
+                    Emisor = "",
+                    MedicoId = cita.MedicoId,
+                    PacienteId = cita.PacienteId,
+                    FechaHora = DateTime.Now
+                };
+
+                switch (cita.Estado)
+                {
+                    case "Aceptada":
+                        mensaje.Contenido = $"*Aceptada cita con el motivo: {cita.Motivo} y fecha: {cita.FechaHora.ToString("dd-MM-yyyy HH:mm")}*";
+                        mensaje.Emisor = cita.MedicoId;
+                        break;
+                    case "Cancelada":
+                        mensaje.Contenido = $"*Cancelada cita con el motivo: {cita.Motivo} y fecha: {cita.FechaHora.ToString("dd-MM-yyyy HH:mm")}*";
+                        mensaje.Emisor = cita.MedicoId;
+                        break;
+                }
+                if (cita.Estado.Equals(""))
+                {
+                    mensaje.Contenido = $"*Modificada cita con el motivo: {cita.Motivo} y fecha: {cita.FechaHora.ToString("dd-MM-yyyy HH:mm")}*";
+                    mensaje.Emisor = cita.PacienteId;
+                }
+
                 await _context.SaveChangesAsync();
             }
             catch (DbUpdateConcurrencyException)
@@ -138,14 +166,22 @@ namespace ClinicaVistaalegre.Server.Controllers
         public async Task<ActionResult<Cita>> PostCita(Cita cita)
         {
             _context.Citas.Add(cita);
+            _context.Mensajes.Add(new Mensaje()
+            {
+                Contenido = $"*Solicitada cita con el motivo: {cita.Motivo} y fecha: {cita.FechaHora.ToString("dd-MM-yyyy HH:mm")}*",
+                Emisor = cita.PacienteId,
+                MedicoId = cita.MedicoId,
+                PacienteId = cita.PacienteId,
+                FechaHora = DateTime.Now
+            });
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetCita", new { id = cita.Id }, cita);
         }
 
         // DELETE: api/Citas/5
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteCita(int id)
+        [HttpDelete("{id}/{emisor}")]
+        public async Task<IActionResult> DeleteCita(int id, string emisor)
         {
             var cita = await _context.Citas.FindAsync(id);
             if (cita == null)
@@ -154,6 +190,14 @@ namespace ClinicaVistaalegre.Server.Controllers
             }
 
             _context.Citas.Remove(cita);
+            _context.Mensajes.Add(new Mensaje()
+            {
+                Contenido = $"*Eliminada cita con el motivo: {cita.Motivo} y fecha: {cita.FechaHora.ToString("dd-MM-yyyy HH:mm")}*",
+                Emisor = emisor,
+                MedicoId = cita.MedicoId,
+                PacienteId = cita.PacienteId,
+                FechaHora = DateTime.Now
+            });
             await _context.SaveChangesAsync();
 
             return NoContent();

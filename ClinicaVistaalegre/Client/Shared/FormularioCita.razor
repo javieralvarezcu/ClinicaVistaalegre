@@ -1,4 +1,5 @@
 ﻿@page "/claims/formularioCita"
+@attribute [Authorize(Roles = "Paciente")]
 
 <EditForm Model="@Cita" OnValidSubmit="@OnValidSubmit">
     <div class="form-group row">

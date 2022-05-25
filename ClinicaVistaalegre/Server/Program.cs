@@ -4,14 +4,19 @@ using Microsoft.AspNetCore.Authentication;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.OpenApi.Models;
+using Newtonsoft.Json;
 
 var builder = WebApplication.CreateBuilder(args);
-var connectionString = builder.Configuration.GetConnectionString("BackupConnection"); ;
+var connectionString = builder.Configuration.GetConnectionString("BackupConnection");
 var identityLicense = builder.Configuration.GetSection("Licenses").GetSection("IdentityLicense").ToString();
 
 builder.Services.AddSwaggerGen(c =>
 {
-    c.SwaggerDoc("v1", new OpenApiInfo { Title = "ClinicaVistaalegreApi", Version = "v1" });
+    c.SwaggerDoc("v1", new OpenApiInfo {
+        Title = "ClinicaVistaalegreApi", 
+        Version = "v1",
+        Description = "Documentación de los endpoints de la API. Sólo para su lectura."
+    });
 });
 
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
@@ -45,6 +50,7 @@ builder.Services.AddAuthentication()
     .AddIdentityServerJwt();
 
 builder.Services.AddControllersWithViews();
+
 builder.Services.AddRazorPages();
 
 var app = builder.Build();
@@ -81,7 +87,10 @@ app.MapControllers();
 app.MapFallbackToFile("index.html");
 
 app.UseSwagger();
-app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json",
-                 "ClinicaVistaalegre v1"));
+app.UseSwaggerUI(
+    c => {
+        c.SwaggerEndpoint("/swagger/v1/swagger.json", "ClinicaVistaalegre v1");
+        c.SupportedSubmitMethods(new Swashbuckle.AspNetCore.SwaggerUI.SubmitMethod[] { });
+    });
 
 app.Run();

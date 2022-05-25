@@ -8,9 +8,11 @@ namespace ClinicaVistaalegre.Shared.Models
         [Key]
         public int Id { get; set; }
         public string PacienteId { get; set; }
+        [JsonIgnore]
         [JsonProperty(Required = Required.AllowNull)]
         public Paciente? Paciente { get; set; }
         public string MedicoId { get; set; }
+        [JsonIgnore]
         [JsonProperty(Required = Required.AllowNull)]
         public Medico? Medico { get; set; }
 

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "L1/dgCFV625jMfv0N7zJNQvazDoJcNoEf9WU5BO/lPGaeWEtalagLgMiMDmmBaOffNVXRbQkwGOGgnsHTlCxug==",
+  "dgSpecHash": "gBI4j4mi7RWN9wMR5TvUPljC1p1QbYqEyFhCvSYcCQUUrG48zHM5yWBwAM1irGEzgytWU75zTr2FseNHim7r7A==",
   "success": true,
   "projectFilePath": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Client\\ClinicaVistaalegre.Client.csproj",
   "expectedPackageFiles": [
@@ -214,7 +214,7 @@
     "C:\\Users\\JAVIER.ALVAREZCUEV\\.nuget\\packages\\system.windows.extensions\\4.7.0\\system.windows.extensions.4.7.0.nupkg.sha512",
     "C:\\Users\\JAVIER.ALVAREZCUEV\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
     "C:\\Users\\JAVIER.ALVAREZCUEV\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
-    "C:\\Users\\JAVIER.ALVAREZCUEV\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\6.0.4\\microsoft.netcore.app.runtime.mono.browser-wasm.6.0.4.nupkg.sha512"
+    "C:\\Users\\JAVIER.ALVAREZCUEV\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\6.0.5\\microsoft.netcore.app.runtime.mono.browser-wasm.6.0.5.nupkg.sha512"
   ],
   "logs": []
 }

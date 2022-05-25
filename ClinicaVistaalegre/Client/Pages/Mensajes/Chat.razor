@@ -86,12 +86,11 @@ else
         var timer = new System.Threading.Timer((_) =>
         {
             InvokeAsync(async () =>
-       {
-       // Add your update logic here
-       mensajes = await getMensajes();
-       // Update the UI
-       StateHasChanged();
-       });
+            {
+               mensajes = await getMensajes();
+
+               StateHasChanged();
+            });
         }, null, 0, 5000);
     }
 
@@ -166,7 +165,9 @@ else
         return mensajes;
     }
 
-    void ScrollToEnd() {
+    void ScrollToEnd()
+ 
+      {
         JS.InvokeVoidAsync("scrollToEnd", "table-div");
-    } 
+    }
 }

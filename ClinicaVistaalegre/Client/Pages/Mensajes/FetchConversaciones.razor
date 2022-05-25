@@ -82,6 +82,17 @@ else
         await GetClaimsPrincipalData();
         conversaciones = await getConversaciones();
         destinatarios = await getDestinatarios();
+
+        var timer = new System.Threading.Timer((_) =>
+        {
+            InvokeAsync(async () =>
+            {
+               conversaciones = await getConversaciones();
+               destinatarios = await getDestinatarios();
+
+               StateHasChanged();
+            });
+        }, null, 0, 5000);
     }
 
     private async Task OnChangeDestinatario(ChangeEventArgs args)

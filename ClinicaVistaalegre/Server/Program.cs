@@ -3,9 +3,16 @@ using ClinicaVistaalegre.Server.Models;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
-var connectionString = builder.Configuration.GetConnectionString("DefaultConnection"); ;
+var connectionString = builder.Configuration.GetConnectionString("BackupConnection"); ;
+var identityLicense = builder.Configuration.GetSection("Licenses").GetSection("IdentityLicense").ToString();
+
+builder.Services.AddSwaggerGen(c =>
+{
+    c.SwaggerDoc("v1", new OpenApiInfo { Title = "ClinicaVistaalegreApi", Version = "v1" });
+});
 
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(connectionString));;
@@ -27,7 +34,7 @@ builder.Services.AddDefaultIdentity<ApplicationUser>(options => {
 builder.Services.AddIdentityServer(
     options =>
 {
-    options.LicenseKey = "eyJhbGciOiJQUzI1NiIsImtpZCI6IklkZW50aXR5U2VydmVyTGljZW5zZWtleS83Y2VhZGJiNzgxMzA0NjllODgwNjg5MTAyNTQxNGYxNiIsInR5cCI6ImxpY2Vuc2Urand0In0.eyJpc3MiOiJodHRwczovL2R1ZW5kZXNvZnR3YXJlLmNvbSIsImF1ZCI6IklkZW50aXR5U2VydmVyIiwiaWF0IjoxNjUyODUzOTUxLCJleHAiOjE2ODQzODk5NTEsImNvbXBhbnlfbmFtZSI6IkphdmllciDDgWx2YXJleiBDdWV2YXMiLCJjb250YWN0X2luZm8iOiJqYXZpZXJhbHZhcmV6Y3VAZ21haWwuY29tIiwiZWRpdGlvbiI6IkNvbW11bml0eSJ9.UY0Msp__UVpLSZbG_QrITQ93dShGsMbpxZz_hy9YZ-1WOywIPZ4BXqkkuhVpm6N4lNCkCzvVNfGOotMUQXjPH0q6YLT6G2B9LeNPIxEVQkFH50Jze8X-5EBigZJxheW8Q-wfHS8YrwmMPylkrZjm0VPn4WrS4sTy1z6MhhsC5KNtwxckRwwLGF8TQIInfwofO46DPcSS4n90fJnKG4Nen7GUhPypMWITBe1dddUexZmIeMcXUMz816qtbYi8T4A9ZVleoNnraK9wdDD1cFWFuBQ4hu4jDOMLOahmx7sPpLHsG-L5fZ_RJ9mDKTsqckOsOtktSfdDsRorN2Et1zx15w";
+    options.LicenseKey = identityLicense;
 }
 )
     .AddApiAuthorization<ApplicationUser, ApplicationDbContext>(options => {
@@ -72,5 +79,9 @@ RolesData.SeedRoles(builder.Services.BuildServiceProvider()).Wait();
 app.MapRazorPages();
 app.MapControllers();
 app.MapFallbackToFile("index.html");
+
+app.UseSwagger();
+app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json",
+                 "ClinicaVistaalegre v1"));
 
 app.Run();

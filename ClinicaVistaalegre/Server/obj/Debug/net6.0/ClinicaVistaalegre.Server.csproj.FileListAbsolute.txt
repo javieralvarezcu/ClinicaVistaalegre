@@ -9,6 +9,7 @@ C:\Users\JAVIER.ALVAREZCUEV\ClinicaVistaalegre\ClinicaVistaalegre\Server\bin\Deb
 C:\Users\JAVIER.ALVAREZCUEV\ClinicaVistaalegre\ClinicaVistaalegre\Server\bin\Debug\net6.0\BlazorDebugProxy\Newtonsoft.Json.dll
 C:\Users\JAVIER.ALVAREZCUEV\ClinicaVistaalegre\ClinicaVistaalegre\Server\bin\Debug\net6.0\ClinicaVistaalegre.Server.staticwebassets.runtime.json
 C:\Users\JAVIER.ALVAREZCUEV\ClinicaVistaalegre\ClinicaVistaalegre\Server\bin\Debug\net6.0\ClinicaVistaalegre.Server.exe
+C:\Users\JAVIER.ALVAREZCUEV\ClinicaVistaalegre\ClinicaVistaalegre\Server\bin\Debug\net6.0\wwwroot\assets\MisChavalesDeAtmira.png
 C:\Users\JAVIER.ALVAREZCUEV\ClinicaVistaalegre\ClinicaVistaalegre\Server\bin\Debug\net6.0\ClinicaVistaalegre.Server.deps.json
 C:\Users\JAVIER.ALVAREZCUEV\ClinicaVistaalegre\ClinicaVistaalegre\Server\bin\Debug\net6.0\ClinicaVistaalegre.Server.runtimeconfig.json
 C:\Users\JAVIER.ALVAREZCUEV\ClinicaVistaalegre\ClinicaVistaalegre\Server\bin\Debug\net6.0\ClinicaVistaalegre.Server.dll
@@ -307,4 +308,3 @@ C:\Users\JAVIER.ALVAREZCUEV\ClinicaVistaalegre\ClinicaVistaalegre\Server\obj\Deb
 C:\Users\JAVIER.ALVAREZCUEV\ClinicaVistaalegre\ClinicaVistaalegre\Server\obj\Debug\net6.0\ClinicaVistaalegre.Server.pdb
 C:\Users\JAVIER.ALVAREZCUEV\ClinicaVistaalegre\ClinicaVistaalegre\Server\obj\Debug\net6.0\ClinicaVistaalegre.Server.genruntimeconfig.cache
 C:\Users\JAVIER.ALVAREZCUEV\ClinicaVistaalegre\ClinicaVistaalegre\Server\obj\Debug\net6.0\ref\ClinicaVistaalegre.Server.dll
-C:\Users\JAVIER.ALVAREZCUEV\ClinicaVistaalegre\ClinicaVistaalegre\Server\bin\Debug\net6.0\wwwroot\assets\MisChavalesDeAtmira.png

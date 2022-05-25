@@ -3,9 +3,20 @@
     "apis1": {
       "type": "apis"
     },
+    "mssql2": {
+      "type": "mssql",
+      "connectionId": "ConnectionStrings:BackupConnection",
+      "dynamicId": null
+    },
     "mssql1": {
       "type": "mssql",
-      "connectionId": "ConnectionStrings:DefaultConnection"
+      "connectionId": "ConnectionStrings:DefaultConnection",
+      "dynamicId": null
+    },
+    "mssql3": {
+      "type": "mssql",
+      "connectionId": "ConnectionStrings:LocalConnection",
+      "dynamicId": null
     }
   }
 }

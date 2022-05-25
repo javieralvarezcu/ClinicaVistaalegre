@@ -86,6 +86,16 @@ else
         Task.WaitAll();
 
         citas = await getCitas();
+
+        var timer = new System.Threading.Timer((_) =>
+        {
+            InvokeAsync(async () =>
+            {
+               citas = await getCitas();
+
+               StateHasChanged();
+            });
+        }, null, 0, 5000);
     }
 
     private async Task BorrarCita(int CitaId)
@@ -128,12 +138,35 @@ else
     {
         var citaCancelada = citas.First(x => x.Id == CitaId);
         citaCancelada.Estado = "Cancelada";
-        //citaAceptada.Paciente = null;
+
         string confirmacion = $"¿Deseas cancelar la cita con motivo:\n{citaCancelada.Motivo}?";
-        if (await JS.InvokeAsync<bool>("confirm", confirmacion))
+        SweetAlertResult result = await Swal.FireAsync(new SweetAlertOptions
+            {
+                Title = confirmacion,
+                Text = "No podrá aceptar la cita una vez cancelada",
+                Icon = SweetAlertIcon.Warning,
+                ShowCancelButton = true,
+                ConfirmButtonText = "Sí, cancelar",
+                CancelButtonText = "No, volver"
+            });
+
+        if (!string.IsNullOrEmpty(result.Value))
         {
+            await Swal.FireAsync(
+              "Cancelada",
+              "Su cita se ha cancelado.",
+              SweetAlertIcon.Success
+              );
             await Http.PutAsJsonAsync($"api/Citas/{CitaId}", citaCancelada);
             citas = await getCitas();
+        }
+        else if (result.Dismiss == DismissReason.Cancel)
+        {
+            await Swal.FireAsync(
+              "Falsa alarma...",
+              "Su cita sigue en vigor.",
+              SweetAlertIcon.Error
+              );
         }
     }
 
@@ -141,12 +174,36 @@ else
     {
         var citaAceptada = citas.First(x => x.Id == CitaId);
         citaAceptada.Estado = "Aceptada";
-        //citaAceptada.Paciente = null;
+
         string confirmacion = $"¿Deseas aceptar la cita con motivo:\n{citaAceptada.Motivo}?";
-        if (await JS.InvokeAsync<bool>("confirm", confirmacion))
+
+        SweetAlertResult result = await Swal.FireAsync(new SweetAlertOptions
+            {
+                Title = confirmacion,
+                Text = "¿Desea aceptar la cita seleccionada?",
+                Icon = SweetAlertIcon.Warning,
+                ShowCancelButton = true,
+                ConfirmButtonText = "Sí, aceptar",
+                CancelButtonText = "No, volver"
+            });
+
+        if (!string.IsNullOrEmpty(result.Value))
         {
+            await Swal.FireAsync(
+              "Aceptada",
+              "Su cita se ha aceptado.",
+              SweetAlertIcon.Success
+              );
             await Http.PutAsJsonAsync($"api/Citas/{CitaId}", citaAceptada);
             citas = await getCitas();
+        }
+        else if (result.Dismiss == DismissReason.Cancel)
+        {
+            await Swal.FireAsync(
+              "Falsa alarma...",
+              "Su cita sigue pendiente.",
+              SweetAlertIcon.Error
+              );
         }
     }
 

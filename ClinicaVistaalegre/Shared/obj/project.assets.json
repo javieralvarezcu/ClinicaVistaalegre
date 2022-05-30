@@ -48,19 +48,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\JAVIER.ALVAREZCUEV\\.nuget\\packages\\": {}
+    "C:\\Users\\santanitaxx6600xt\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Shared\\ClinicaVistaalegre.Shared.csproj",
+      "projectUniqueName": "C:\\Users\\santanitaxx6600xt\\Documents\\Git\\ClinicaVistaalegre\\ClinicaVistaalegre\\Shared\\ClinicaVistaalegre.Shared.csproj",
       "projectName": "ClinicaVistaalegre.Shared",
-      "projectPath": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Shared\\ClinicaVistaalegre.Shared.csproj",
-      "packagesPath": "C:\\Users\\JAVIER.ALVAREZCUEV\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\JAVIER.ALVAREZCUEV\\ClinicaVistaalegre\\ClinicaVistaalegre\\Shared\\obj\\",
+      "projectPath": "C:\\Users\\santanitaxx6600xt\\Documents\\Git\\ClinicaVistaalegre\\ClinicaVistaalegre\\Shared\\ClinicaVistaalegre.Shared.csproj",
+      "packagesPath": "C:\\Users\\santanitaxx6600xt\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\santanitaxx6600xt\\Documents\\Git\\ClinicaVistaalegre\\ClinicaVistaalegre\\Shared\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\JAVIER.ALVAREZCUEV\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\santanitaxx6600xt\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -106,7 +111,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
       }
     }
   }

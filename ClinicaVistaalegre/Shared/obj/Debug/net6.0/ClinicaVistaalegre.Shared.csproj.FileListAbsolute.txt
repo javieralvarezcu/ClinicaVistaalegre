@@ -10,3 +10,15 @@ C:\Users\JAVIER.ALVAREZCUEV\ClinicaVistaalegre\ClinicaVistaalegre\Shared\obj\Deb
 C:\Users\JAVIER.ALVAREZCUEV\ClinicaVistaalegre\ClinicaVistaalegre\Shared\obj\Debug\net6.0\refint\ClinicaVistaalegre.Shared.dll
 C:\Users\JAVIER.ALVAREZCUEV\ClinicaVistaalegre\ClinicaVistaalegre\Shared\obj\Debug\net6.0\ClinicaVistaalegre.Shared.pdb
 C:\Users\JAVIER.ALVAREZCUEV\ClinicaVistaalegre\ClinicaVistaalegre\Shared\obj\Debug\net6.0\ref\ClinicaVistaalegre.Shared.dll
+C:\Users\santanitaxx6600xt\Documents\Git\ClinicaVistaalegre\ClinicaVistaalegre\Shared\bin\Debug\net6.0\ClinicaVistaalegre.Shared.deps.json
+C:\Users\santanitaxx6600xt\Documents\Git\ClinicaVistaalegre\ClinicaVistaalegre\Shared\bin\Debug\net6.0\ClinicaVistaalegre.Shared.dll
+C:\Users\santanitaxx6600xt\Documents\Git\ClinicaVistaalegre\ClinicaVistaalegre\Shared\bin\Debug\net6.0\ref\ClinicaVistaalegre.Shared.dll
+C:\Users\santanitaxx6600xt\Documents\Git\ClinicaVistaalegre\ClinicaVistaalegre\Shared\bin\Debug\net6.0\ClinicaVistaalegre.Shared.pdb
+C:\Users\santanitaxx6600xt\Documents\Git\ClinicaVistaalegre\ClinicaVistaalegre\Shared\obj\Debug\net6.0\ClinicaVistaalegre.Shared.csproj.AssemblyReference.cache
+C:\Users\santanitaxx6600xt\Documents\Git\ClinicaVistaalegre\ClinicaVistaalegre\Shared\obj\Debug\net6.0\ClinicaVistaalegre.Shared.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\santanitaxx6600xt\Documents\Git\ClinicaVistaalegre\ClinicaVistaalegre\Shared\obj\Debug\net6.0\ClinicaVistaalegre.Shared.AssemblyInfoInputs.cache
+C:\Users\santanitaxx6600xt\Documents\Git\ClinicaVistaalegre\ClinicaVistaalegre\Shared\obj\Debug\net6.0\ClinicaVistaalegre.Shared.AssemblyInfo.cs
+C:\Users\santanitaxx6600xt\Documents\Git\ClinicaVistaalegre\ClinicaVistaalegre\Shared\obj\Debug\net6.0\ClinicaVistaalegre.Shared.csproj.CoreCompileInputs.cache
+C:\Users\santanitaxx6600xt\Documents\Git\ClinicaVistaalegre\ClinicaVistaalegre\Shared\obj\Debug\net6.0\ClinicaVistaalegre.Shared.dll
+C:\Users\santanitaxx6600xt\Documents\Git\ClinicaVistaalegre\ClinicaVistaalegre\Shared\obj\Debug\net6.0\ref\ClinicaVistaalegre.Shared.dll
+C:\Users\santanitaxx6600xt\Documents\Git\ClinicaVistaalegre\ClinicaVistaalegre\Shared\obj\Debug\net6.0\ClinicaVistaalegre.Shared.pdb

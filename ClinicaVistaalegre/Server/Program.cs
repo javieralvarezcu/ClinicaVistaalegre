@@ -3,16 +3,10 @@ using ClinicaVistaalegre.Server.Models;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("BackupConnection"); ;
 var identityLicense = builder.Configuration.GetSection("Licenses").GetSection("IdentityLicense").ToString();
-
-builder.Services.AddSwaggerGen(c =>
-{
-    c.SwaggerDoc("v1", new OpenApiInfo { Title = "ClinicaVistaalegreApi", Version = "v1" });
-});
 
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(connectionString));;
@@ -79,9 +73,5 @@ RolesData.SeedRoles(builder.Services.BuildServiceProvider()).Wait();
 app.MapRazorPages();
 app.MapControllers();
 app.MapFallbackToFile("index.html");
-
-app.UseSwagger();
-app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json",
-                 "ClinicaVistaalegre v1"));
 
 app.Run();

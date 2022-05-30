@@ -35,6 +35,7 @@ namespace ClinicaVistaalegre.Server.Controllers
         }
 
         // GET: api/CitasByPaciente/asdfg-qwerty-zxcvbn
+        [HttpGet]
         [Route("ByPaciente/{id}")]
         public async Task<ActionResult<List<Cita>>> GetCitasByPaciente(string id)
         {
@@ -50,6 +51,7 @@ namespace ClinicaVistaalegre.Server.Controllers
         }
 
         // GET: api/CitasByMedico/asdfg-qwerty-zxcvbn
+        [HttpGet]
         [Route("ByMedico/{id}")]
         public async Task<ActionResult<List<Cita>>> GetCitasByMedico(string id)
         {
@@ -64,6 +66,7 @@ namespace ClinicaVistaalegre.Server.Controllers
             return response.Where(x => x.MedicoId == id).OrderBy(x => x.FechaHora).ToList();
         }
 
+        [HttpGet]
         [Route("HorasByMedico/{medicoId}/{pacienteId}/{date}")]
         public async Task<ActionResult<List<DateTime>>> GetHorasByMedico(string medicoId, string pacienteId, string date)
         {

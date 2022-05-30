@@ -31,6 +31,7 @@ namespace ClinicaVistaalegre.Server.Controllers
         }
 
         // GET: api/Mensajes/Paciente/{pacienteId}/Medico/{medicoId}
+        [HttpGet]
         [Route("Paciente/{pacienteId}/Medico/{medicoId}")]
         public async Task<ActionResult<IEnumerable<Mensaje>>> GetMensajesPacienteMedico(string pacienteId, string medicoId)
         {
@@ -57,6 +58,7 @@ namespace ClinicaVistaalegre.Server.Controllers
             return NoContent();
         }
 
+        [HttpGet]
         [Route("ConversacionesByUser/{userId}")]
         public async Task<ActionResult<IEnumerable<Conversacion>>> GetConversaciones(string userId)
         {
@@ -100,6 +102,7 @@ namespace ClinicaVistaalegre.Server.Controllers
             return conversaciones;
         }
 
+        [HttpGet]
         [Route("MedicosByPaciente/{pacienteId}")]
         public async Task<ActionResult<IEnumerable<Medico>>> GetMedicos(string pacienteId)
         {
@@ -117,6 +120,7 @@ namespace ClinicaVistaalegre.Server.Controllers
             return medicos;
         }
 
+        [HttpGet]
         [Route("PacientesByMedico/{medicoId}")]
         public async Task<ActionResult<IEnumerable<Paciente>>> GetPacientes(string medicoId)
         {

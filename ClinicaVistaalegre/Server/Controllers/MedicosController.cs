@@ -24,14 +24,14 @@ namespace ClinicaVistaalegre.Server.Controllers
             _context = context;
         }
 
-        // GET: api/Medicos
+        //devuelve todos los médicos
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Medico>>> GetMedicos()
         {
             return await _context.Medicos.ToListAsync();
         }
 
-        // GET: api/Medicos/5
+        //devuelve un médico según su id
         [HttpGet("{id}")]
         public async Task<ActionResult<Medico>> GetMedico(string id)
         {
@@ -45,8 +45,7 @@ namespace ClinicaVistaalegre.Server.Controllers
             return medico;
         }
 
-        // PUT: api/Medicos/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        //actualiza un médico
         [HttpPut("{id}")]
         public async Task<IActionResult> PutMedico(string id, Medico medico)
         {
@@ -76,8 +75,7 @@ namespace ClinicaVistaalegre.Server.Controllers
             return NoContent();
         }
 
-        // POST: api/Medicos
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        //inserta un médico
         [HttpPost]
         public async Task<ActionResult<Medico>> PostMedico(Medico medico)
         {
@@ -101,7 +99,7 @@ namespace ClinicaVistaalegre.Server.Controllers
             return CreatedAtAction("GetMedico", new { id = medico.Id }, medico);
         }
 
-        // DELETE: api/Medicos/5
+        //borra un médico
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteMedico(string id)
         {

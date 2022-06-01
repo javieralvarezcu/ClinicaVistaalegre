@@ -19,7 +19,7 @@ namespace ClinicaVistaalegre.Server.Controllers
             _context = context;
         }
 
-        // GET: api/Citas
+        //devuelve todas las citas del sistema
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Cita>>> GetCitas()
         {
@@ -34,7 +34,7 @@ namespace ClinicaVistaalegre.Server.Controllers
             return response;
         }
 
-        // GET: api/CitasByPaciente/asdfg-qwerty-zxcvbn
+        //devuelve las citas de un paciente (enviandole su id)
         [HttpGet]
         [Route("ByPaciente/{id}")]
         public async Task<ActionResult<List<Cita>>> GetCitasByPaciente(string id)
@@ -50,7 +50,7 @@ namespace ClinicaVistaalegre.Server.Controllers
             return response.Where(x => x.PacienteId==id).ToList();
         }
 
-        // GET: api/CitasByMedico/asdfg-qwerty-zxcvbn
+        //devuelve las citas de un médico (enviandole su id)
         [HttpGet]
         [Route("ByMedico/{id}")]
         public async Task<ActionResult<List<Cita>>> GetCitasByMedico(string id)
@@ -66,6 +66,7 @@ namespace ClinicaVistaalegre.Server.Controllers
             return response.Where(x => x.MedicoId == id).OrderBy(x => x.FechaHora).ToList();
         }
 
+        //devuelve las horas que tiene disponible un médico según el día
         [HttpGet]
         [Route("HorasByMedico/{medicoId}/{pacienteId}/{date}")]
         public async Task<ActionResult<List<DateTime>>> GetHorasByMedico(string medicoId, string pacienteId, string date)
@@ -92,7 +93,7 @@ namespace ClinicaVistaalegre.Server.Controllers
             return horasDelDia;
         }
 
-        // GET: api/Citas/5
+        // devuelve uan cita según su id
         [HttpGet("{id}")]
         public async Task<ActionResult<Cita>> GetCita(int id)
         {
@@ -106,8 +107,7 @@ namespace ClinicaVistaalegre.Server.Controllers
             return cita;
         }
 
-        // PUT: api/Citas/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        //actualiza una cita
         [HttpPut("{id}")]
         public async Task<IActionResult> PutCita(int id, Cita cita)
         {
@@ -163,8 +163,7 @@ namespace ClinicaVistaalegre.Server.Controllers
             return NoContent();
         }
 
-        // POST: api/Citas
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        //inserta una cita
         [HttpPost]
         public async Task<ActionResult<Cita>> PostCita(Cita cita)
         {
@@ -182,7 +181,7 @@ namespace ClinicaVistaalegre.Server.Controllers
             return CreatedAtAction("GetCita", new { id = cita.Id }, cita);
         }
 
-        // DELETE: api/Citas/5
+        //borra una cita
         [HttpDelete("{id}/{emisor}")]
         public async Task<IActionResult> DeleteCita(int id, string emisor)
         {

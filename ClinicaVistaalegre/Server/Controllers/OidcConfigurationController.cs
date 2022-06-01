@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace ClinicaVistaalegre.Server.Controllers
 {
+    //controlador scaffoldeado de Identity Server
     public class OidcConfigurationController : Controller
     {
         private readonly ILogger<OidcConfigurationController> _logger;

@@ -77,6 +77,16 @@ else
         Task.WaitAll();
 
         citas = await getCitas();
+
+        var timer = new System.Threading.Timer((_) =>
+        {
+            InvokeAsync(async () =>
+            {
+               citas = await getCitas();
+
+               StateHasChanged();
+            });
+        }, null, 0, 5000);
     }
 
     private async Task BorrarCita(int CitaId)

@@ -19,7 +19,7 @@ namespace ClinicaVistaalegre.Server.Controllers
             _context = context;
         }
 
-        // GET: api/Mensajes
+        //devuelve todos los mensajes del sistema
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Mensaje>>> GetMensajes()
         {
@@ -30,7 +30,7 @@ namespace ClinicaVistaalegre.Server.Controllers
             return await _context.Mensajes.ToListAsync();
         }
 
-        // GET: api/Mensajes/Paciente/{pacienteId}/Medico/{medicoId}
+        //devuelve una conversación (mensajes entre un paciente y un médico)
         [HttpGet]
         [Route("Paciente/{pacienteId}/Medico/{medicoId}")]
         public async Task<ActionResult<IEnumerable<Mensaje>>> GetMensajesPacienteMedico(string pacienteId, string medicoId)
@@ -43,6 +43,7 @@ namespace ClinicaVistaalegre.Server.Controllers
             return await mensajes.ToListAsync();
         }
 
+        //borra una conversación (mensajes entre un paciente y un médico)
         [HttpDelete("Paciente/{pacienteId}/Medico/{medicoId}")]
         public async Task<IActionResult> DeleteMensajesPacienteMedico(string pacienteId, string medicoId)
         {
@@ -58,6 +59,7 @@ namespace ClinicaVistaalegre.Server.Controllers
             return NoContent();
         }
 
+        //devuelve las conversaciones (mensajes entre un paciente y un médico) de un usuario
         [HttpGet]
         [Route("ConversacionesByUser/{userId}")]
         public async Task<ActionResult<IEnumerable<Conversacion>>> GetConversaciones(string userId)
@@ -102,43 +104,7 @@ namespace ClinicaVistaalegre.Server.Controllers
             return conversaciones;
         }
 
-        [HttpGet]
-        [Route("MedicosByPaciente/{pacienteId}")]
-        public async Task<ActionResult<IEnumerable<Medico>>> GetMedicos(string pacienteId)
-        {
-            List<Medico> medicos = new List<Medico>();
-            if (_context.Mensajes == null)
-            {
-                return NotFound();
-            }
-            var mensajes = _context.Mensajes.Where(x => x.PacienteId == pacienteId);
-            foreach (var mensaje in mensajes)
-            {
-                medicos.Add(await Http.GetFromJsonAsync<Medico>($"api/Medicos/{mensaje.MedicoId}"));
-            }
-
-            return medicos;
-        }
-
-        [HttpGet]
-        [Route("PacientesByMedico/{medicoId}")]
-        public async Task<ActionResult<IEnumerable<Paciente>>> GetPacientes(string medicoId)
-        {
-            List<Paciente> pacientes = new List<Paciente>();
-            if (_context.Mensajes == null)
-            {
-                return NotFound();
-            }
-            var mensajes = _context.Mensajes.Where(x => x.MedicoId == medicoId);
-            foreach (var mensaje in mensajes)
-            {
-                pacientes.Add(await Http.GetFromJsonAsync<Paciente>($"api/Medicos/{mensaje.MedicoId}"));
-            }
-
-            return pacientes;
-        }
-
-        // GET: api/Mensajes/5
+        //devuelve un mensaje por su id
         [HttpGet("{id}")]
         public async Task<ActionResult<Mensaje>> GetMensaje(string id)
         {
@@ -156,8 +122,7 @@ namespace ClinicaVistaalegre.Server.Controllers
             return mensaje;
         }
 
-        // POST: api/Mensajes
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        //inserta un mensaje
         [HttpPost]
         public async Task<ActionResult<Mensaje>> PostMensaje(Mensaje mensaje)
         {
@@ -185,7 +150,7 @@ namespace ClinicaVistaalegre.Server.Controllers
             return CreatedAtAction("GetMensaje", new { id = mensaje.PacienteId }, mensaje);
         }
 
-        // DELETE: api/Mensajes/5
+        //borra un mensaje
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteMensaje(string id)
         {

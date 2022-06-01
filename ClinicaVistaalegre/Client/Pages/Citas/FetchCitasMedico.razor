@@ -137,7 +137,6 @@ else
     private async Task CancelarCita(int CitaId)
     {
         var citaCancelada = citas.First(x => x.Id == CitaId);
-        citaCancelada.Estado = "Cancelada";
 
         string confirmacion = $"¿Deseas cancelar la cita con motivo:\n{citaCancelada.Motivo}?";
         SweetAlertResult result = await Swal.FireAsync(new SweetAlertOptions
@@ -157,6 +156,7 @@ else
               "Su cita se ha cancelado.",
               SweetAlertIcon.Success
               );
+            citaCancelada.Estado = "Cancelada";
             await Http.PutAsJsonAsync($"api/Citas/{CitaId}", citaCancelada);
             citas = await getCitas();
         }
@@ -173,7 +173,6 @@ else
     private async Task AceptarCita(int CitaId)
     {
         var citaAceptada = citas.First(x => x.Id == CitaId);
-        citaAceptada.Estado = "Aceptada";
 
         string confirmacion = $"¿Deseas aceptar la cita con motivo:\n{citaAceptada.Motivo}?";
 
@@ -194,6 +193,7 @@ else
               "Su cita se ha aceptado.",
               SweetAlertIcon.Success
               );
+            citaAceptada.Estado = "Aceptada";
             await Http.PutAsJsonAsync($"api/Citas/{CitaId}", citaAceptada);
             citas = await getCitas();
         }

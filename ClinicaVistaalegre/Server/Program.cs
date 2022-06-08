@@ -1,20 +1,21 @@
 using ClinicaVistaalegre.Server.Data;
 using ClinicaVistaalegre.Server.Models;
 using Microsoft.AspNetCore.Authentication;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("BackupConnection"); ;
 var identityLicense = builder.Configuration.GetSection("Licenses").GetSection("IdentityLicense").ToString();
 
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseSqlServer(connectionString));;
+    options.UseSqlServer(connectionString)); ;
 
 // Add services to the container.
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
-builder.Services.AddDefaultIdentity<ApplicationUser>(options => {
+builder.Services.AddDefaultIdentity<ApplicationUser>(options =>
+{
     options.SignIn.RequireConfirmedAccount = false;
 
     options.Password.RequireDigit = false;
@@ -31,7 +32,8 @@ builder.Services.AddIdentityServer(
     options.LicenseKey = identityLicense;
 }
 )
-    .AddApiAuthorization<ApplicationUser, ApplicationDbContext>(options => {
+    .AddApiAuthorization<ApplicationUser, ApplicationDbContext>(options =>
+    {
         options.IdentityResources["openid"].UserClaims.Add("role");
         options.ApiResources.Single().UserClaims.Add("role");
     });

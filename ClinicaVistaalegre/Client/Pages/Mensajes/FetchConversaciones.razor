@@ -95,7 +95,7 @@ else
         }, null, 0, 5000);
     }
 
-    private async Task OnChangeDestinatario(ChangeEventArgs args)
+    private void OnChangeDestinatario(ChangeEventArgs args)
     {
         destinatarioId = args.Value.ToString();
         NavMan.NavigateTo($"chat/{destinatarioId}");
@@ -104,7 +104,18 @@ else
     private async Task BorrarConversacion(string destinatarioId)
     {
         string confirmacion = $"¿Deseas borrar la conversacion seleccionada?";
-        if (await JS.InvokeAsync<bool>("confirm", confirmacion))
+
+        SweetAlertResult result = await Swal.FireAsync(new SweetAlertOptions
+            {
+                Title = confirmacion,
+                Text = "No será posible recuperar el registro una vez borrado",
+                Icon = SweetAlertIcon.Warning,
+                ShowCancelButton = true,
+                ConfirmButtonText = "Sí, borrar",
+                CancelButtonText = "No, volver"
+            });
+
+        if (!string.IsNullOrEmpty(result.Value))
         {
             if (user.IsInRole("Medico"))
             {
@@ -114,7 +125,19 @@ else
             {
                 await Http.DeleteAsync($"api/Mensajes/Paciente/{_userId}/Medico/{destinatarioId}");
             }
-            conversaciones = await getConversaciones();
+
+            await Swal.FireAsync(
+              "Borrada",
+              "La conversación se ha borrado.",
+              SweetAlertIcon.Success);
+        }
+        else if (result.Dismiss == DismissReason.Cancel)
+        {
+            await Swal.FireAsync(
+              "Cancelada",
+              "Operación de borrado cancelada. La conversación sigue accesible.",
+              SweetAlertIcon.Error
+              );
         }
     }
 

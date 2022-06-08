@@ -1,8 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using ClinicaVistaalegre.Server.Data;
+﻿using ClinicaVistaalegre.Server.Data;
 using ClinicaVistaalegre.Shared.Models;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace ClinicaVistaalegre.Server.Controllers
 {
@@ -22,10 +22,10 @@ namespace ClinicaVistaalegre.Server.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Paciente>>> GetPacientes()
         {
-          if (_context.Pacientes == null)
-          {
-              return NotFound();
-          }
+            if (_context.Pacientes == null)
+            {
+                return NotFound();
+            }
             return await _context.Pacientes.ToListAsync();
         }
 
@@ -33,10 +33,10 @@ namespace ClinicaVistaalegre.Server.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<Paciente>> GetPaciente(string id)
         {
-          if (_context.Pacientes == null)
-          {
-              return NotFound();
-          }
+            if (_context.Pacientes == null)
+            {
+                return NotFound();
+            }
             var paciente = await _context.Pacientes.FindAsync(id);
 
             if (paciente == null)
@@ -81,10 +81,10 @@ namespace ClinicaVistaalegre.Server.Controllers
         [HttpPost]
         public async Task<ActionResult<Paciente>> PostPaciente(Paciente paciente)
         {
-          if (_context.Pacientes == null)
-          {
-              return Problem("Entity set 'ApplicationDbContext.Pacientes'  is null.");
-          }
+            if (_context.Pacientes == null)
+            {
+                return Problem("Entity set 'ApplicationDbContext.Pacientes'  is null.");
+            }
             _context.Pacientes.Add(paciente);
             try
             {

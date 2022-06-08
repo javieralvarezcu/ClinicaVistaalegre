@@ -1,8 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using ClinicaVistaalegre.Server.Data;
+﻿using ClinicaVistaalegre.Server.Data;
 using ClinicaVistaalegre.Shared.Models;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace ClinicaVistaalegre.Server.Controllers
 {
@@ -23,10 +23,10 @@ namespace ClinicaVistaalegre.Server.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Mensaje>>> GetMensajes()
         {
-          if (_context.Mensajes == null)
-          {
-              return NotFound();
-          }
+            if (_context.Mensajes == null)
+            {
+                return NotFound();
+            }
             return await _context.Mensajes.ToListAsync();
         }
 
@@ -50,7 +50,7 @@ namespace ClinicaVistaalegre.Server.Controllers
             if (_context.Mensajes != null)
             {
                 var mensajes = _context.Mensajes.Where(x => x.PacienteId == pacienteId && x.MedicoId == medicoId);
-                foreach(var mensaje in mensajes)
+                foreach (var mensaje in mensajes)
                 {
                     _context.Mensajes.Remove(mensaje);
                 }
@@ -66,7 +66,7 @@ namespace ClinicaVistaalegre.Server.Controllers
         {
             List<Conversacion> conversaciones = new List<Conversacion>();
             List<Mensaje> mensajes = new List<Mensaje>();
-            if(!_context.Medicos.Where(x => x.Id == userId).ToList().Any())
+            if (!_context.Medicos.Where(x => x.Id == userId).ToList().Any())
             {
                 mensajes = _context.Mensajes.Where(x => x.PacienteId == userId).ToList();
                 foreach (var mensaje in mensajes)
@@ -91,8 +91,8 @@ namespace ClinicaVistaalegre.Server.Controllers
                     var conversacion = new Conversacion()
                     {
                         destinatarioId = mensaje.PacienteId,
-                            ContenidoPrimerMensaje = mensaje.Contenido,
-                            FechaUltimoMensaje = mensaje.FechaHora
+                        ContenidoPrimerMensaje = mensaje.Contenido,
+                        FechaUltimoMensaje = mensaje.FechaHora
                     };
                     if (!conversaciones.Contains(conversacion))
                     {
@@ -108,10 +108,10 @@ namespace ClinicaVistaalegre.Server.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<Mensaje>> GetMensaje(string id)
         {
-          if (_context.Mensajes == null)
-          {
-              return NotFound();
-          }
+            if (_context.Mensajes == null)
+            {
+                return NotFound();
+            }
             var mensaje = await _context.Mensajes.FindAsync(id);
 
             if (mensaje == null)
@@ -126,10 +126,10 @@ namespace ClinicaVistaalegre.Server.Controllers
         [HttpPost]
         public async Task<ActionResult<Mensaje>> PostMensaje(Mensaje mensaje)
         {
-          if (_context.Mensajes == null)
-          {
-              return Problem("Entity set 'ApplicationDbContext.Mensajes'  is null.");
-          }
+            if (_context.Mensajes == null)
+            {
+                return Problem("Entity set 'ApplicationDbContext.Mensajes'  is null.");
+            }
             _context.Mensajes.Add(mensaje);
             try
             {

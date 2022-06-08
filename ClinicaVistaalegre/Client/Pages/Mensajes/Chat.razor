@@ -52,7 +52,7 @@ else
         <div class="form-group row">
             <div class="my-3 d-flex flex-row justify-content-between">
                 <div class="col-sm-10">
-                    <InputText id="Contenido" class="form-control" placeholder="Contenido"
+                    <InputText id="Contenido" class="form-control" placeholder="Contenido" autocomplete="off"
                            @bind-Value="mensaje.Contenido" style="@(isSubmitting ? "pointer-events: none" : "")" />
                 </div>
                 <ValidationMessage For="() => this.mensaje.Contenido"></ValidationMessage>

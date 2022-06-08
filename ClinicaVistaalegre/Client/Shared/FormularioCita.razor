@@ -7,7 +7,7 @@
             Motivo
         </label>
         <div class="col-sm-10">
-            <InputText id="Motivo" class="form-control" placeholder="Motivo"
+            <InputText id="Motivo" class="form-control" placeholder="Motivo" autocomplete="off"
                        @bind-Value="Cita.Motivo" />
         </div>
         <ValidationMessage For="() => this.Cita.Motivo">Inserte un motivo</ValidationMessage>
@@ -93,7 +93,11 @@
         string[] stringDates = new string[list.Count];
         for (int i = 0; i < list.Count; i++)
         {
-            stringDates[i] = $"{list[i].Hour}:{list[i].Minute}";
+            string parsedMinute=list[i].Minute.ToString();
+
+            if (parsedMinute == "0"){ parsedMinute = "00"; }
+
+            stringDates[i] = $"{list[i].Hour}:{parsedMinute}";
         }
 
         rellenaSelect(stringDates);

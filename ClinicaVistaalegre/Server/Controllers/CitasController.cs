@@ -1,9 +1,9 @@
 ﻿#nullable disable
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using ClinicaVistaalegre.Server.Data;
 using ClinicaVistaalegre.Shared.Models;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace ClinicaVistaalegre.Server.Controllers
 {
@@ -47,7 +47,7 @@ namespace ClinicaVistaalegre.Server.Controllers
                     cita.Estado = "Pasada";
                 }
             }
-            return response.Where(x => x.PacienteId==id).ToList();
+            return response.Where(x => x.PacienteId == id).ToList();
         }
 
         //devuelve las citas de un médico (enviandole su id)
@@ -56,7 +56,7 @@ namespace ClinicaVistaalegre.Server.Controllers
         public async Task<ActionResult<List<Cita>>> GetCitasByMedico(string id)
         {
             var response = await _context.Citas.ToListAsync();
-            foreach(var cita in response)
+            foreach (var cita in response)
             {
                 if (cita.FechaHora < DateTime.Now)
                 {
@@ -72,20 +72,20 @@ namespace ClinicaVistaalegre.Server.Controllers
         public async Task<ActionResult<List<DateTime>>> GetHorasByMedico(string medicoId, string pacienteId, string date)
         {
             var response = _context.Citas.ToListAsync().Result;
-            List<Cita> citasDiaMedico = response.Where(d => d.FechaHora.ToString("dd-MM-yyyy") == date && d.MedicoId==medicoId)
+            List<Cita> citasDiaMedico = response.Where(d => d.FechaHora.ToString("dd-MM-yyyy") == date && d.MedicoId == medicoId)
                 .ToList();
             var horas = citasDiaMedico
-                .Where(d => d.Estado!="Cancelada" && d.PacienteId==pacienteId)
+                .Where(d => d.Estado != "Cancelada" && d.PacienteId == pacienteId)
                 .Select(d => d.FechaHora).ToList();
             List<DateTime> horasDelDia = new List<DateTime>();
             DateTime tempHora = new DateTime().AddHours(8);
             do
             {
                 horasDelDia.Add(tempHora);
-                tempHora=tempHora.AddMinutes(10);
+                tempHora = tempHora.AddMinutes(10);
             } while (tempHora.Hour < 17);
 
-            foreach(var hora in horas)
+            foreach (var hora in horas)
             {
                 horasDelDia.Remove(new DateTime().AddHours(hora.Hour).AddMinutes(hora.Minute));
             }

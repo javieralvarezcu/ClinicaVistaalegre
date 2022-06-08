@@ -2,16 +2,13 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 #nullable disable
 
-using System;
-using System.ComponentModel.DataAnnotations;
-using System.Threading.Tasks;
 using ClinicaVistaalegre.Server.Data;
 using ClinicaVistaalegre.Server.Models;
 using ClinicaVistaalegre.Shared.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.Extensions.Logging;
+using System.ComponentModel.DataAnnotations;
 
 namespace ClinicaVistaalegre.Server.Areas.Identity.Pages.Account.Manage
 {
@@ -101,7 +98,7 @@ namespace ClinicaVistaalegre.Server.Areas.Identity.Pages.Account.Manage
                 _dbContext.Medicos.Remove(new Medico() { Id = user.Id });
             }
             await _dbContext.SaveChangesAsync();
-              
+
             var result = await _userManager.DeleteAsync(user);
             var userId = await _userManager.GetUserIdAsync(user);
             if (!result.Succeeded)

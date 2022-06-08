@@ -43,7 +43,8 @@ namespace ClinicaVistaalegre.Server.Data
             .HasForeignKey(p => p.MedicoId);
 
             modelBuilder.Entity<Mensaje>()
-                .HasKey(c => new {
+                .HasKey(c => new
+                {
                     c.Id
                 });
 
